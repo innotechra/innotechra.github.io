@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoTechra - Innovative Technology Solutions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit-icons.min.js"></script>
+    <style>
+        :root {
+            --brand-blue: #4a90a4;
+            --brand-green: #b4d455;
+            --dark-bg: #1e2836;
+            --light-text: #ffffff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        
+        /* Header Styles */
+        .navbar-custom {
+            background: var(--dark-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-custom .uk-navbar-nav > li > a {
+            color: var(--light-text);
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-custom .uk-navbar-nav > li > a:hover {
+            color: var(--brand-green);
+        }
+        
+        .brand-btn {
+            background: var(--brand-green);
+            color: var(--dark-bg);
+            font-weight: 600;
+            padding: 8px 24px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-btn:hover {
+            background: var(--brand-blue);
+            color: var(--light-text);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 164, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #2c3e50 0%, var(--brand-blue) 100%);
+            color: var(--light-text);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        /* Features Section */
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--brand-green);
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon svg {
+            color: white;
+        }
+        
+        .section-title {
+            color: var(--brand-blue);
+            position: relative;
+            display: inline-block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--brand-green);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--dark-bg);
+            color: var(--light-text);
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            color: var(--brand-green);
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        /* Services Section */
+        .service-item {
+            padding: 40px 30px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+        }
+        
+        .service-item:hover {
+            border-color: var(--brand-green);
+            box-shadow: 0 8px 25px rgba(74, 144, 164, 0.2);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--light-text);
+            padding: 60px 0 30px;
+        }
+        
+        footer h5 {
+            color: var(--brand-green);
+            margin-bottom: 20px;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--brand-green);
+            text-decoration: none;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--brand-green);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-button {
+            background: white;
+            color: var(--brand-blue);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            color: var(--brand-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header/Navigation -->
+    <header class="navbar-custom" uk-sticky>
+        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+            <div class="uk-container">
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo" href="#">
+                        <span style="color: var(--brand-blue); font-size: 1.5rem; font-weight: bold;">Inno<span style="color: var(--brand-green);">Techra</span></span>
+                    </a>
+                </div>
+                <div class="uk-navbar-center uk-visible@m">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="#">Home</a></li>
+                        <li>
+                            <a href="#">Solutions <span uk-icon="icon: chevron-down; ratio: 0.8"></span></a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">Cloud Services</a></li>
+                                    <li><a href="#">Cybersecurity</a></li>
+                                    <li><a href="#">AI & Analytics</a></li>
+                                    <li><a href="#">Digital Transformation</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="uk-navbar-right">
+                    <a href="#contact" class="brand-btn uk-visible@m">Get Started</a>
+                    <a class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <ul class="uk-nav uk-nav-default">
+                <li class="uk-active"><a href="#">Home</a></li>
+                <li class="uk-parent">
+                    <a href="#">Solutions</a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="#">Cloud Services</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">AI & Analytics</a></li>
+                        <li><a href="#">Digital Transformation</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="uk-container hero-content">
+            <div class="uk-grid uk-grid-large uk-flex-middle" uk-grid>
+                <div class="uk-width-1-2@m">
+                    <h1 class="hero-title">Innovating Tomorrow's Technology Today</h1>
+                    <p class="hero-subtitle">Empowering businesses with cutting-edge digital solutions and transformative technology services.</p>
+                    <a href="#services" class="brand-btn uk-margin-right">Explore Solutions</a>
+                    <a href="#contact" class="uk-button uk-button-text" style="color: white;">Contact Us <span uk-icon="arrow-right"></span></a>
+                </div>
+                <div class="uk-width-1-2@m uk-text-center">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%234a90a4' width='400' height='300' opacity='0.3'/%3E%3Cg fill='%23b4d455' opacity='0.5'%3E%3Ccircle cx='200' cy='150' r='80'/%3E%3Ccircle cx='120' cy='100' r='40'/%3E%3Ccircle cx='280' cy='200' r='50'/%3E%3C/g%3E%3C/svg%3E" alt="Technology Innovation" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-large uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
+                <div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-item">
+                        <div class="stat-number">250+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Expert Team</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="uk-section">
+        <div class="uk-container">
+            <div class="uk-text-center">
+                <h2 class="section-title">Why Choose InnoTechra</h2>
+            </div>
+            <div class="uk-grid uk-grid-medium uk-child-width-1-3@m uk-child-width-1-2@s uk-margin-large-top" uk-grid>
+                <div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span uk-icon="icon: bolt; ratio: 1.8"></span>
+                        </div>
+                        <h3>Fast & Efficient</h3>
+                        <p>Lightning-fast solutions that accelerate your digital transformation journey with proven methodologies.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span uk-icon="icon: lock; ratio: 1.8"></span>
+                        </div>
+                        <h3>Secure & Reliable</h3>
+                        <p>Enterprise-grade security measures ensuring your data and systems are protected 24/7.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span uk-icon="icon: users; ratio: 1.8"></span>
+                        </div>
+                        <h3>Expert Team</h3>
+                        <p>Certified professionals with decades of combined experience in cutting-edge technologies.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span uk-icon="icon: cog; ratio: 1.8"></span>
+                        </div>
+                        <h3>Customizable</h3>
+                        <p>Tailored solutions designed specifically for your unique business needs and goals.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span uk-icon="icon: lifesaver; ratio: 1.8"></span>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock technical support ensuring your operations never skip a beat.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span uk-icon="icon: world; ratio: 1.8"></span>
+                        </div>
+                        <h3>Global Reach</h3>
+                        <p>International presence with local expertise, serving clients across continents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <div class="uk-text-center">
+                <h2 class="section-title">Our Services</h2>
+                <p class="uk-text-lead">Comprehensive technology solutions for modern businesses</p>
+            </div>
+            <div class="uk-grid uk-grid-medium uk-child-width-1-4@l uk-child-width-1-2@m uk-margin-large-top" uk-grid>
+                <div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span uk-icon="icon: cloud-upload; ratio: 2"></span>
+                        </div>
+                        <h4>Cloud Solutions</h4>
+                        <p>Scalable cloud infrastructure and migration services.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span uk-icon="icon: database; ratio: 2"></span>
+                        </div>
+                        <h4>Data Analytics</h4>
+                        <p>Transform data into actionable business insights.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span uk-icon="icon: code; ratio: 2"></span>
+                        </div>
+                        <h4>Software Development</h4>
+                        <p>Custom applications built for your business.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <span uk-icon="icon: tablet; ratio: 2"></span>
+                        </div>
+                        <h4>IT Consulting</h4>
+                        <p>Strategic technology guidance and planning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="uk-container">
+            <h2 class="uk-h1" style="margin-bottom: 20px;">Ready to Transform Your Business?</h2>
+            <p class="uk-text-large" style="margin-bottom: 30px;">Let's discuss how InnoTechra can help you achieve your technology goals.</p>
+            <a href="#contact" class="cta-button">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-large" uk-grid>
+                <div class="uk-width-1-4@m">
+                    <h3 style="color: var(--brand-blue); font-weight: bold;">Inno<span style="color: var(--brand-green);">Techra</span></h3>
+                    <p>Innovating tomorrow's technology today. Your trusted partner in digital transformation.</p>
+                    <div class="social-icons uk-margin-top">
+                        <a href="#" uk-icon="linkedin"></a>
+                        <a href="#" uk-icon="facebook"></a>
+                        <a href="#" uk-icon="twitter"></a>
+                        <a href="#" uk-icon="instagram"></a>
+                    </div>
+                </div>
+                <div class="uk-width-1-4@m">
+                    <h5>Solutions</h5>
+                    <ul class="uk-list">
+                        <li><a href="#">Cloud Services</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">AI & Analytics</a></li>
+                        <li><a href="#">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@m">
+                    <h5>Company</h5>
+                    <ul class="uk-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">News & Resources</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4@m">
+                    <h5>Contact Us</h5>
+                    <ul class="uk-list">
+                        <li><span uk-icon="icon: location"></span> 123 Tech Street, Innovation City</li>
+                        <li><span uk-icon="icon: phone"></span> +1 (555) 123-4567</li>
+                        <li><span uk-icon="icon: mail"></span> info@innotechra.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="uk-margin-large-top">
+            <div class="uk-text-center uk-padding-small">
+                <p>© 2025 InnoTechra. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
