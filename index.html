@@ -1,536 +1,723 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InnoTechra - Innovative Technology Solutions</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/css/uikit.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.11/dist/js/uikit-icons.min.js"></script>
-    <style>
-        :root {
-            --brand-blue: #4a90a4;
-            --brand-green: #b4d455;
-            --dark-bg: #1e2836;
-            --light-text: #ffffff;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        }
-        
-        /* Header Styles */
-        .navbar-custom {
-            background: var(--dark-bg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-custom .uk-navbar-nav > li > a {
-            color: var(--light-text);
-            transition: color 0.3s ease;
-        }
-        
-        .navbar-custom .uk-navbar-nav > li > a:hover {
-            color: var(--brand-green);
-        }
-        
-        .brand-btn {
-            background: var(--brand-green);
-            color: var(--dark-bg);
-            font-weight: 600;
-            padding: 8px 24px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        
-        .brand-btn:hover {
-            background: var(--brand-blue);
-            color: var(--light-text);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(74, 144, 164, 0.4);
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, #2c3e50 0%, var(--brand-blue) 100%);
-            color: var(--light-text);
-            padding: 120px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-        
-        /* Features Section */
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 4px solid var(--brand-green);
-            padding: 30px;
-            background: white;
-            border-radius: 8px;
-            height: 100%;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        
-        .feature-icon svg {
-            color: white;
-        }
-        
-        .section-title {
-            color: var(--brand-blue);
-            position: relative;
-            display: inline-block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--brand-green);
-        }
-        
-        /* Stats Section */
-        .stats-section {
-            background: var(--dark-bg);
-            color: var(--light-text);
-            padding: 80px 0;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            color: var(--brand-green);
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.8;
-        }
-        
-        /* Services Section */
-        .service-item {
-            padding: 40px 30px;
-            background: white;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid #f0f0f0;
-        }
-        
-        .service-item:hover {
-            border-color: var(--brand-green);
-            box-shadow: 0 8px 25px rgba(74, 144, 164, 0.2);
-        }
-        
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark-bg);
-            color: var(--light-text);
-            padding: 60px 0 30px;
-        }
-        
-        footer h5 {
-            color: var(--brand-green);
-            margin-bottom: 20px;
-        }
-        
-        footer a {
-            color: rgba(255,255,255,0.7);
-            transition: color 0.3s ease;
-        }
-        
-        footer a:hover {
-            color: var(--brand-green);
-            text-decoration: none;
-        }
-        
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: var(--brand-green);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
-            padding: 80px 0;
-            color: white;
-            text-align: center;
-        }
-        
-        .cta-button {
-            background: white;
-            color: var(--brand-blue);
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            color: var(--brand-blue);
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
+  <head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="InnoTechra - Premier Cybersecurity Events">
+		<meta name="author" content="InnoTechra">
+		<!-- OG Meta Tags -->
+		<meta property="og:site_name" content="InnoTechra Events" />
+		<meta property="og:title" content="InnoTechra - Cybersecurity Events"/>
+		<meta property="og:description" content="Join industry leaders at exclusive cybersecurity events" />
+		<meta property="og:url" content="" />
+		<meta name="twitter:card" content="summary_large_image">
+		<title>InnoTechra Events</title>
+		<link href="https://cdn.jsdelivr.net/npm/uikit@3.23.11/dist/css/uikit.min.css" rel="stylesheet">
+		<style>
+			:root {
+				--inno-blue: #4A90E2;
+				--inno-green: #7ED321;
+				--inno-dark: #1a1a2e;
+				--inno-light: #f8f9fa;
+			}
+			
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			}
+			
+			.uk-navbar-container {
+				background: rgba(255, 255, 255, 0.95) !important;
+				backdrop-filter: blur(10px);
+			}
+			
+			.uk-navbar-sticky {
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+			}
+			
+			.uk-button-primary {
+				background-color: var(--inno-blue);
+				color: white;
+				border: none;
+			}
+			
+			.uk-button-primary:hover {
+				background-color: #3a7bc8;
+			}
+			
+			.uk-button-default {
+				background-color: transparent;
+				color: var(--inno-dark);
+				border: 2px solid var(--inno-green);
+			}
+			
+			.uk-button-default:hover {
+				background-color: var(--inno-green);
+				color: var(--inno-dark);
+				border: 2px solid var(--inno-green);
+			}
+			
+			.uk-text-primary {
+				color: var(--inno-blue) !important;
+			}
+			
+			.uk-text-success {
+				color: var(--inno-green) !important;
+			}
+			
+			.uk-section-primary {
+				background-color: var(--inno-blue);
+			}
+			
+			.uk-section-muted {
+				background-color: var(--inno-light);
+			}
+			
+			.testimonial {
+				background: transparent;
+				border-radius: 0;
+				padding: 0;
+				box-shadow: none;
+			}
+			
+			.testimonial-meta {
+				margin-top: 1.5rem;
+			}
+			
+			.event-card {
+				transition: transform 0.3s ease;
+			}
+			
+			.event-card:hover {
+				transform: translateY(-5px);
+			}
+			
+			.uk-icon-button {
+				background-color: var(--inno-blue);
+				color: white;
+			}
+			
+			.uk-icon-button:hover {
+				background-color: var(--inno-green);
+				color: var(--inno-dark);
+			}
+			
+			#footer {
+				background-color: var(--inno-dark);
+				color: white;
+			}
+			
+			.img-half {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			
+			.text-container {
+				max-width: 600px;
+			}
 
-    <!-- Header/Navigation -->
-    <header class="navbar-custom" uk-sticky>
-        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
-            <div class="uk-container">
-                <div class="uk-navbar-left">
-                    <a class="uk-navbar-item uk-logo" href="#">
-                        <span style="color: var(--brand-blue); font-size: 1.5rem; font-weight: bold;">Inno<span style="color: var(--brand-green);">Techra</span></span>
-                    </a>
-                </div>
-                <div class="uk-navbar-center uk-visible@m">
-                    <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="#">Home</a></li>
-                        <li>
-                            <a href="#">Solutions <span uk-icon="icon: chevron-down; ratio: 0.8"></span></a>
-                            <div class="uk-navbar-dropdown">
-                                <ul class="uk-nav uk-navbar-dropdown-nav">
-                                    <li><a href="#">Cloud Services</a></li>
-                                    <li><a href="#">Cybersecurity</a></li>
-                                    <li><a href="#">AI & Analytics</a></li>
-                                    <li><a href="#">Digital Transformation</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="uk-navbar-right">
-                    <a href="#contact" class="brand-btn uk-visible@m">Get Started</a>
-                    <a class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav"></a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="offcanvas-nav" uk-offcanvas="overlay: true">
-        <div class="uk-offcanvas-bar">
-            <button class="uk-offcanvas-close" type="button" uk-close></button>
-            <ul class="uk-nav uk-nav-default">
-                <li class="uk-active"><a href="#">Home</a></li>
-                <li class="uk-parent">
-                    <a href="#">Solutions</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">Cloud Services</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">AI & Analytics</a></li>
-                        <li><a href="#">Digital Transformation</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="uk-container hero-content">
-            <div class="uk-grid uk-grid-large uk-flex-middle" uk-grid>
-                <div class="uk-width-1-2@m">
-                    <h1 class="hero-title">Innovating Tomorrow's Technology Today</h1>
-                    <p class="hero-subtitle">Empowering businesses with cutting-edge digital solutions and transformative technology services.</p>
-                    <a href="#services" class="brand-btn uk-margin-right">Explore Solutions</a>
-                    <a href="#contact" class="uk-button uk-button-text" style="color: white;">Contact Us <span uk-icon="arrow-right"></span></a>
-                </div>
-                <div class="uk-width-1-2@m uk-text-center">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%234a90a4' width='400' height='300' opacity='0.3'/%3E%3Cg fill='%23b4d455' opacity='0.5'%3E%3Ccircle cx='200' cy='150' r='80'/%3E%3Ccircle cx='120' cy='100' r='40'/%3E%3Ccircle cx='280' cy='200' r='50'/%3E%3C/g%3E%3C/svg%3E" alt="Technology Innovation" style="max-width: 100%; height: auto;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="uk-container">
-            <div class="uk-grid uk-grid-large uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
-                <div>
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                </div>
-                <div>
-                    <div class="stat-item">
-                        <div class="stat-number">250+</div>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
-                </div>
-                <div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Expert Team</div>
-                    </div>
-                </div>
-                <div>
-                    <div class="stat-item">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="uk-section">
-        <div class="uk-container">
-            <div class="uk-text-center">
-                <h2 class="section-title">Why Choose InnoTechra</h2>
-            </div>
-            <div class="uk-grid uk-grid-medium uk-child-width-1-3@m uk-child-width-1-2@s uk-margin-large-top" uk-grid>
-                <div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span uk-icon="icon: bolt; ratio: 1.8"></span>
-                        </div>
-                        <h3>Fast & Efficient</h3>
-                        <p>Lightning-fast solutions that accelerate your digital transformation journey with proven methodologies.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span uk-icon="icon: lock; ratio: 1.8"></span>
-                        </div>
-                        <h3>Secure & Reliable</h3>
-                        <p>Enterprise-grade security measures ensuring your data and systems are protected 24/7.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span uk-icon="icon: users; ratio: 1.8"></span>
-                        </div>
-                        <h3>Expert Team</h3>
-                        <p>Certified professionals with decades of combined experience in cutting-edge technologies.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span uk-icon="icon: cog; ratio: 1.8"></span>
-                        </div>
-                        <h3>Customizable</h3>
-                        <p>Tailored solutions designed specifically for your unique business needs and goals.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span uk-icon="icon: lifesaver; ratio: 1.8"></span>
-                        </div>
-                        <h3>24/7 Support</h3>
-                        <p>Round-the-clock technical support ensuring your operations never skip a beat.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <span uk-icon="icon: world; ratio: 1.8"></span>
-                        </div>
-                        <h3>Global Reach</h3>
-                        <p>International presence with local expertise, serving clients across continents.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="uk-section uk-section-muted">
-        <div class="uk-container">
-            <div class="uk-text-center">
-                <h2 class="section-title">Our Services</h2>
-                <p class="uk-text-lead">Comprehensive technology solutions for modern businesses</p>
-            </div>
-            <div class="uk-grid uk-grid-medium uk-child-width-1-4@l uk-child-width-1-2@m uk-margin-large-top" uk-grid>
-                <div>
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <span uk-icon="icon: cloud-upload; ratio: 2"></span>
-                        </div>
-                        <h4>Cloud Solutions</h4>
-                        <p>Scalable cloud infrastructure and migration services.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <span uk-icon="icon: database; ratio: 2"></span>
-                        </div>
-                        <h4>Data Analytics</h4>
-                        <p>Transform data into actionable business insights.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <span uk-icon="icon: code; ratio: 2"></span>
-                        </div>
-                        <h4>Software Development</h4>
-                        <p>Custom applications built for your business.</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <span uk-icon="icon: tablet; ratio: 2"></span>
-                        </div>
-                        <h4>IT Consulting</h4>
-                        <p>Strategic technology guidance and planning.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="uk-container">
-            <h2 class="uk-h1" style="margin-bottom: 20px;">Ready to Transform Your Business?</h2>
-            <p class="uk-text-large" style="margin-bottom: 30px;">Let's discuss how InnoTechra can help you achieve your technology goals.</p>
-            <a href="#contact" class="cta-button">Schedule a Consultation</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="uk-container">
-            <div class="uk-grid uk-grid-large" uk-grid>
-                <div class="uk-width-1-4@m">
-                    <h3 style="color: var(--brand-blue); font-weight: bold;">Inno<span style="color: var(--brand-green);">Techra</span></h3>
-                    <p>Innovating tomorrow's technology today. Your trusted partner in digital transformation.</p>
-                    <div class="social-icons uk-margin-top">
-                        <a href="#" uk-icon="linkedin"></a>
-                        <a href="#" uk-icon="facebook"></a>
-                        <a href="#" uk-icon="twitter"></a>
-                        <a href="#" uk-icon="instagram"></a>
-                    </div>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h5>Solutions</h5>
-                    <ul class="uk-list">
-                        <li><a href="#">Cloud Services</a></li>
-                        <li><a href="#">Cybersecurity</a></li>
-                        <li><a href="#">AI & Analytics</a></li>
-                        <li><a href="#">Digital Transformation</a></li>
-                    </ul>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h5>Company</h5>
-                    <ul class="uk-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">News & Resources</a></li>
-                    </ul>
-                </div>
-                <div class="uk-width-1-4@m">
-                    <h5>Contact Us</h5>
-                    <ul class="uk-list">
-                        <li><span uk-icon="icon: location"></span> 123 Tech Street, Innovation City</li>
-                        <li><span uk-icon="icon: phone"></span> +1 (555) 123-4567</li>
-                        <li><span uk-icon="icon: mail"></span> info@innotechra.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="uk-margin-large-top">
-            <div class="uk-text-center uk-padding-small">
-                <p>© 2025 InnoTechra. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-</body>
+			#hero .uk-slideshow-items li::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(26, 26, 46, 0.5);
+			}
+		</style>
+  </head>
+  <body>
+	<!-- Navbar Start -->
+	<div uk-sticky="start: 200; show-on-up: true; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+		<nav class="uk-navbar-container">
+			<div class="uk-container">
+				<div uk-navbar>
+					<div class="uk-navbar-left">
+						<a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">
+							<span style="color: var(--inno-blue); font-weight: bold; font-size: 1.5rem;">Inno<span style="color: var(--inno-green);">Techra</span></span>
+						</a>
+					</div>
+					<div class="uk-navbar-center">
+						<ul class="uk-navbar-nav uk-visible@m">
+							<li><a href="#about">About</a></li>
+							<li>
+								<a href="#">Events <span uk-navbar-parent-icon></span></a>
+								<div class="uk-navbar-dropdown">
+									<ul class="uk-nav uk-navbar-dropdown-nav">
+										<li><a href="#nordics">Nordics Edition</a></li>
+										<li><a href="#benelux">Benelux Edition</a></li>
+										<li><a href="#dach">DACH Edition</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="#speakers">Speakers</a></li>
+							<li><a href="#partners">Partners</a></li>
+						</ul>
+					</div>
+					<div class="uk-navbar-right">
+						<a class="uk-button uk-button-default uk-visible@m" href="#register">Register Now</a>
+						<div class="uk-navbar-item uk-hidden@m"><a href="#off-canvas" class="uk-button uk-button-default" uk-icon="icon: menu" uk-toggle></a></div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	
+	<!-- Off-canvas menu -->
+	<div class="uk-hidden@m" id="off-canvas" uk-offcanvas="overlay: true; flip: true">
+		<div class="uk-offcanvas-bar">
+			<div>
+				<a class="off-canvas-logo" href="#" style="color: var(--inno-blue); font-weight: bold; font-size: 1.5rem;">Inno<span style="color: var(--inno-green);">Techra</span></a>			
+					
+				<ul class="uk-nav uk-nav-default uk-margin-medium-top">
+					<li><a href="#about">About</a></li>
+					<li><a href="#nordics">Nordics Edition</a></li>
+					<li><a href="#benelux">Benelux Edition</a></li>
+					<li><a href="#dach">DACH Edition</a></li>
+					<li><a href="#speakers">Speakers</a></li>
+					<li><a href="#partners">Partners</a></li>
+				</ul>
+					
+				<ul class="uk-iconnav socials uk-margin-medium-top">
+					<li><a href="#" class="uk-icon-button" uk-icon="icon: linkedin"></a></li>
+					<li><a href="#" class="uk-icon-button" uk-icon="icon: instagram"></a></li>
+					<li><a href="#" class="uk-icon-button" uk-icon="icon: x"></a></li>
+					<li><a href="#" class="uk-icon-button" uk-icon="icon: facebook"></a></li>
+				</ul>
+				<a class="uk-button uk-button-default uk-margin-medium-top" href="#register">Register Now</a>
+			</div>
+			
+			<button class="uk-offcanvas-close" type="button" uk-close></button>
+		</div>
+	</div>
+	<!-- Navbar End -->
+	
+	<!-- Hero Slideshow Start -->
+	<div id="hero" class="uk-position-relative" loading="lazy" uk-slideshow="animation: fade; autoplay: true; ratio: false">
+		<ul class="uk-slideshow-items" uk-height-viewport>
+			<li>
+				<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+					<img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=1080&fit=crop" alt="Cybersecurity Conference" uk-cover>
+				</div>
+			</li>
+			<li>
+				<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+					<img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920&h=1080&fit=crop" alt="Business Networking" uk-cover>
+				</div>
+			</li>
+			<li>
+				<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+					<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920&h=1080&fit=crop" alt="Technology Event" uk-cover>
+				</div>
+			</li>	
+		</ul>
+		
+		<div class="uk-position-center uk-position-z-index">
+			<div class="uk-container">
+				<div class="uk-width-2-3@m">
+					<div class="uk-light">
+						<h1>The most exclusive Cyber Security events in the world</h1>
+						<p>Join us at exclusive cybersecurity events featuring C-Suite decision makers, expert-led discussions, and unmatched networking opportunities. Connect with industry leaders and elevate your cybersecurity knowledge.</p>
+						<a class="uk-button uk-button-default uk-button-large" href="#events">View Events</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!-- Hero Slideshow End -->
+	
+	<!-- About Section Start -->
+	<section id="about" class="uk-section uk-section-large">
+		<div class="uk-container">
+			<div class="uk-flex uk-flex-middle uk-grid-large uk-child-width-expand@s" uk-grid>
+				<div>
+					<img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800" alt="Cybersecurity Conference">
+				</div>
+				<div>
+					<div class="text-container">
+						<div class="uk-text-uppercase uk-text-bold uk-text-primary">Excellence in Cybersecurity</div>
+						<h2 class="uk-heading-medium">Why Should You Join Our Conference</h2>
+						<p>Next IT Security brings together C-Level cybersecurity decision makers for a day of expert-led discussions on the most current security challenges. This event provides an invaluable opportunity to explore the latest developments in cybersecurity.</p>
+						<ul class="uk-list uk-list-bullet">
+							<li>100+ C-Suite Attendees per Event</li>
+							<li>20+ Expert Speakers</li>
+							<li>400+ Minutes of Networking</li>
+							<li>Exclusive Content & Discussions</li>
+						</ul>
+						<a class="uk-button uk-button-primary uk-button-large" href="#events">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- About Section End -->
+	
+	<!-- Events Overview Start -->
+	<section id="events" class="uk-section uk-section-large uk-section-muted">
+		<div class="uk-container">
+			<div class="text-container uk-text-center uk-margin-auto uk-margin-large-bottom">
+				<h2 class="uk-heading-medium">Upcoming Events 2026</h2>
+				<p class="uk-text-lead">Join us at exclusive venues across Europe</p>
+			</div>
+			<div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+				<div>
+					<div class="uk-card uk-card-default uk-box-shadow-medium event-card">
+						<div class="uk-card-media-top">
+							<img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800" alt="Stockholm">
+						</div>
+						<div class="uk-card-body">
+							<span class="uk-badge" style="background-color: var(--inno-blue);">March 12, 2026</span>
+							<h3 class="uk-card-title">Nordics Edition</h3>
+							<p><span uk-icon="icon: location"></span> The Grand Hotel, Stockholm</p>
+							<p>Connect with industry leaders and end the day with a luxurious Networking Dinner Cruise.</p>
+							<a class="uk-button uk-button-text uk-text-primary" href="#nordics">Read More →</a>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="uk-card uk-card-default uk-box-shadow-medium event-card">
+						<div class="uk-card-media-top">
+							<img src="https://images.unsplash.com/photo-1585211969224-3e992986159d?w=800" alt="Amsterdam">
+						</div>
+						<div class="uk-card-body">
+							<span class="uk-badge" style="background-color: var(--inno-green); color: var(--inno-dark);">April 16, 2026</span>
+							<h3 class="uk-card-title">Benelux Edition</h3>
+							<p><span uk-icon="icon: location"></span> Koepelkerk, Amsterdam</p>
+							<p>After a scenic cruise, network during a delightful dinner at the stunning LuminAir.</p>
+							<a class="uk-button uk-button-text uk-text-primary" href="#benelux">Read More →</a>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="uk-card uk-card-default uk-box-shadow-medium event-card">
+						<div class="uk-card-media-top">
+							<img src="https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?w=800" alt="Frankfurt">
+						</div>
+						<div class="uk-card-body">
+							<span class="uk-badge" style="background-color: var(--inno-blue);">April 30, 2026</span>
+							<h3 class="uk-card-title">DACH Edition</h3>
+							<p><span uk-icon="icon: location"></span> Steigenberger Icon, Frankfurt</p>
+							<p>Connect with industry leaders and elevate your cybersecurity knowledge.</p>
+							<a class="uk-button uk-button-text uk-text-primary" href="#dach">Read More →</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Events Overview End -->
+	
+	<!-- Side by Side Start -->
+	<section class="uk-section uk-padding-remove">		
+		<div class="uk-card uk-flex uk-flex-middle@m uk-grid-collapse uk-child-width-1-2@m uk-margin uk-background-default" uk-grid>
+			<div class="uk-card-media-left uk-cover-container">
+				<img class="img-half" src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800" alt="Expert Speakers" uk-cover>
+				<canvas width="800" height="800"></canvas>
+			</div>
+			<div>
+				<div class="uk-container">
+					<div class="uk-card-body">
+						<div class="uk-dark">
+							<h2 class="uk-heading-medium">Expert-Led Discussions</h2>
+							<p>We invite the best and brightest in the cybersecurity industry to share their knowledge and insights. Our events feature keynote speeches from renowned speakers on hot topics such as ransomware prevention, cloud security, zero trust architecture, and emerging threats.</p>
+						</div>
+						<a class="uk-button uk-button-primary uk-button-large" href="#speakers">View Speakers</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Side by Side End -->
+	
+	<!-- Side by Side Start -->
+	<section class="uk-section uk-padding-remove">		
+		<div class="uk-card uk-flex uk-flex-middle@m uk-grid-collapse uk-child-width-1-2@m uk-margin uk-background-default" uk-grid>
+			<div>
+				<div class="uk-container">
+					<div class="uk-card-body">
+						<div class="uk-dark">
+							<h2 class="uk-heading-medium">Learn About New Trends</h2>
+							<p>Stay ahead of the curve with insights into the latest developments in cybersecurity. From AI-powered security solutions to compliance frameworks like NIS2 and DORA, our events cover the topics that matter most to security leaders today.</p>
+						</div>
+						<a class="uk-button uk-button-primary uk-button-large" href="#events">Explore Topics</a>
+					</div>
+				</div>
+			</div>
+			<div class="uk-card-media-right uk-cover-container">
+				<img class="img-half" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Technology" uk-cover>
+				<canvas width="800" height="800"></canvas>
+			</div>
+		</div>
+	</section>
+	<!-- Side by Side End -->
+	
+	<!-- Event Topics Start -->
+	<div class="uk-section uk-section-large uk-section-muted">
+		<div class="uk-container">
+			<div class="text-container uk-text-center uk-margin-auto uk-margin-large-bottom">
+				<p class="uk-text-uppercase uk-text-bold uk-text-primary">What We Cover</p>
+				<h2 class="uk-heading-medium">Hot Topics in Cybersecurity</h2>
+				<p>Our agenda is curated by CISOs for CISOs, covering the most pressing challenges in modern security</p>
+			</div>
+			<div class="uk-child-width-1-2@m uk-grid-large" uk-grid>
+				<div>
+					<h3 class="uk-heading-small uk-text-center uk-margin-large-bottom">Security Challenges</h3>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>Ransomware & Malware Prevention</div>
+						</div>
+						<p class="uk-text-muted">Latest strategies to protect against evolving ransomware threats and advanced persistent threats</p>
+					</div>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>Zero Trust Architecture</div>
+						</div>
+						<p class="uk-text-muted">Implementing zero trust principles across your organization's infrastructure</p>
+					</div>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>Cloud Security</div>
+						</div>
+						<p class="uk-text-muted">Securing multi-cloud environments and managing cloud-native security challenges</p>
+					</div>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>AI & Machine Learning in Security</div>
+						</div>
+						<p class="uk-text-muted">Leveraging AI for threat detection while defending against AI-powered attacks</p>
+					</div>
+				</div>
+				<div>
+					<h3 class="uk-heading-small uk-text-center uk-margin-large-bottom">Compliance & Governance</h3>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>NIS2 Directive</div>
+						</div>
+						<p class="uk-text-muted">Understanding and implementing requirements of the new NIS2 directive</p>
+					</div>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>DORA Compliance</div>
+						</div>
+						<p class="uk-text-muted">Digital Operational Resilience Act requirements for financial services</p>
+					</div>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>GDPR & Data Privacy</div>
+						</div>
+						<p class="uk-text-muted">Best practices for data protection and privacy compliance</p>
+					</div>
+					<div>
+						<div class="uk-grid-small uk-text-large" uk-grid>
+							<div class="uk-width-expand" uk-leader>Security Governance</div>
+						</div>
+						<p class="uk-text-muted">Building effective security governance frameworks and risk management programs</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Event Topics End -->
+	
+	<!-- Attendees Section Start -->
+	<section class="uk-section uk-section-large">
+		<div class="uk-container">
+			<div class="text-container uk-text-center uk-margin-auto uk-margin-large-bottom">
+				<p class="uk-text-uppercase uk-text-bold uk-text-success">Who Attends</p>
+				<h2 class="uk-heading-medium">A Most Exclusive Gathering</h2>
+				<p>Connect with C-Suite executives from leading organizations across Europe</p>
+			</div>
+			<div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-small" uk-grid>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>NATO</h4>
+						<p class="uk-text-meta">Deputy CIO for Cybersecurity</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>European Investment Bank</h4>
+						<p class="uk-text-meta">Senior Head, CISO</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>Booking.com</h4>
+						<p class="uk-text-meta">CISO</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>Volvo Group</h4>
+						<p class="uk-text-meta">Information Security Officer</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>Ericsson</h4>
+						<p class="uk-text-meta">Group CSO</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>ING Bank</h4>
+						<p class="uk-text-meta">Global IAM</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>Philips</h4>
+						<p class="uk-text-meta">Head of Data Security</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>SAP</h4>
+						<p class="uk-text-meta">VP, Chief Security Officer</p>
+					</div>
+				</div>
+				<div class="uk-text-center">
+					<div class="uk-card uk-card-body uk-card-default">
+						<h4>Rabobank</h4>
+						<p class="uk-text-meta">Cyber Security PM</p>
+					</div>
+				</div>
+			</div>
+			<div class="uk-text-center uk-margin-medium-top">
+				<a class="uk-button uk-button-default" href="#attendees">View All Attendees</a>
+			</div>
+		</div>
+	</section>
+	<!-- Attendees Section End -->
+	
+	<!-- News and Updates Start -->
+	<section class="uk-section uk-section-large uk-section-muted">
+		<div class="uk-container">
+			<div class="uk-flex uk-flex-between uk-flex-middle uk-margin-large-bottom" uk-grid>
+				<div>
+					<h2 class="uk-heading-medium">Latest Insights</h2>
+				</div>
+				<div>
+					<a class="uk-button uk-button-default" href="#blog" uk-icon="icon: chevron-right">View All</a>
+				</div>
+			</div>
+			<div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
+				<div>
+					<a href="#" class="uk-card uk-card-default uk-box-shadow-small uk-card-hover uk-display-block uk-link-toggle">
+						<div class="uk-card-media-top">
+							<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600" alt="Cybersecurity">
+						</div>
+						<div class="uk-card-body">
+							<h3 class="uk-card-title"><span class="uk-link-heading">Building Collective Defense in the Nordic Region</span></h3>
+							<div class="blog-date uk-text-meta">December 20, 2025</div>
+							<p>Shared responsibility between public and private sectors in Nordic IT security landscape</p>
+						</div>
+					</a>
+				</div>
+				<div>
+					<a href="#" class="uk-card uk-card-default uk-box-shadow-small uk-card-hover uk-display-block uk-link-toggle">
+						<div class="uk-card-media-top">
+							<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="Infrastructure">
+						</div>
+						<div class="uk-card-body">
+							<h3 class="uk-card-title"><span class="uk-link-heading">Critical Infrastructure in DACH Region</span></h3>
+							<div class="blog-date uk-text-meta">November 7, 2025</div>
+							<p>Why critical infrastructure protection has become paramount in the DACH region</p>
+						</div>
+					</a>
+				</div>
+				<div>
+					<a href="#" class="uk-card uk-card-default uk-box-shadow-small uk-card-hover uk-display-block uk-link-toggle">
+						<div class="uk-card-media-top">
+							<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="Collaboration">
+						</div>
+						<div class="uk-card-body">
+							<h3 class="uk-card-title"><span class="uk-link-heading">Public-Private Sector Cooperation in Benelux</span></h3>
+							<div class="blog-date uk-text-meta">November 3, 2025</div>
+							<p>Building stronger security through shared resources in the Benelux region</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- News and Updates End -->
+	
+	<!-- Testimonials Start -->
+	<section class="uk-section uk-section-large">
+		<div class="uk-container">
+			<div class="text-container uk-margin-auto uk-width-2-3@m uk-margin-large-bottom uk-text-center">
+				<div class="uk-text-uppercase uk-text-bold uk-text-success">Testimonials</div>
+				<h2 class="uk-heading-medium">What Attendees Say</h2>
+				<p>Hear from security leaders who have experienced our events</p>
+			</div>
+			<div uk-slider="autoplay: true; pause-on-hover: true">
+				<div class="uk-position-relative">
+					<div class="uk-slider-container uk-slider-container-offset">
+						<div class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-match uk-grid uk-grid-large">
+							<div>
+								<div class="testimonial uk-text-center">
+									<div class="testimonial-content">
+										<p>"Excellent networking opportunity with genuine C-level decision makers. The quality of discussions and speakers was outstanding. Highly recommend for any CISO looking to stay ahead."</p>
+									</div>
+									<div class="testimonial-meta">
+										<div class="uk-width-auto">
+											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=12" width="80" height="80" alt="">
+										</div>
+										<h5>Lars Anderson</h5>
+										<div class="">CISO, Major Bank</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="testimonial uk-text-center">
+									<div class="testimonial-content">
+										<p>"The InnoTechra events provide real value. I've built lasting connections with peers facing similar challenges and gained actionable insights to improve our security posture."</p>
+									</div>
+									<div class="testimonial-meta">
+										<div class="uk-width-auto">
+											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=47" width="80" height="80" alt="">
+										</div>
+										<h5>Sophie Mueller</h5>
+										<div class="">Head of Security, Tech Corp</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="testimonial uk-text-center">
+									<div class="testimonial-content">
+										<p>"A must-attend event for security leaders. The intimate setting allows for meaningful conversations, and the speaker lineup is always top-notch. Worth every minute."</p>
+									</div>
+									<div class="testimonial-meta">
+										<div class="uk-width-auto">
+											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=33" width="80" height="80" alt="">
+										</div>
+										<h5>Jan van der Berg</h5>
+										<div class="">CTO, Enterprise Solutions</div>
+									</div>
+								</div>
+							</div>
+							<div>
+								<div class="testimonial uk-text-center">
+									<div class="testimonial-content">
+										<p>"InnoTechra events are different. Focused on real challenges, with speakers who actually understand the complexity of modern security landscapes. Great networking too."</p>
+									</div>
+									<div class="testimonial-meta">
+										<div class="uk-width-auto">
+											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=20" width="80" height="80" alt="">
+										</div>
+										<h5>Maria Johansson</h5>
+										<div class="">CISO, Healthcare Group</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<a href class="uk-position-center-left-out uk-slidenav-large" uk-slidenav-previous uk-slider-item="previous"></a>
+						<a href class="uk-position-center-right-out uk-slidenav-large" uk-slidenav-next uk-slider-item="next"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Testimonials End -->
+	
+	<!-- CTA Section Start -->
+	<section class="uk-section uk-section-large" style="background: linear-gradient(135deg, var(--inno-blue) 0%, var(--inno-dark) 100%);">
+		<div class="uk-container uk-light">
+			<div class="text-container uk-text-center uk-margin-auto">
+				<h2 class="uk-heading-medium">Ready to Join?</h2>
+				<p class="uk-text-lead">Secure your spot at the next InnoTechra event and connect with Europe's leading cybersecurity decision makers.</p>
+				<a class="uk-button uk-button-default uk-button-large uk-margin-small-right" href="#events">View Events</a>
+				<a class="uk-button uk-button-large" style="background: white; color: var(--inno-blue);" href="#register">Register Now</a>
+			</div>
+		</div>
+	</section>
+	<!-- CTA Section End -->
+	
+	<!-- Footer Start -->	
+	<footer id="footer" class="uk-section uk-section-large uk-padding-remove-bottom uk-light">
+		<div class="uk-container">	
+			<div class="uk-grid-large uk-margin-large-bottom" uk-grid>
+				<div class="uk-width-1-3@m">
+					<a class="uk-logo" href="#" aria-label="Back to Home">
+						<span style="color: var(--inno-blue); font-weight: bold; font-size: 1.5rem;">Inno<span style="color: var(--inno-green);">Techra</span></span>
+					</a>
+					<div class="text-container uk-margin-medium-top">
+						<p class="uk-text-meta">Bringing together C-Level cybersecurity decision makers for exclusive events across Europe. Join us in shaping the future of digital security.</p>
+					</div>
+					<ul class="uk-iconnav socials uk-margin-medium-top">
+						<li><a href="#" class="uk-icon-button" uk-icon="icon: linkedin"></a></li>
+						<li><a href="#" class="uk-icon-button" uk-icon="icon: instagram"></a></li>
+						<li><a href="#" class="uk-icon-button" uk-icon="icon: x"></a></li>
+						<li><a href="#" class="uk-icon-button" uk-icon="icon: facebook"></a></li>
+					</ul>
+				</div>
+				<div class="uk-width-2-3@m">
+					<ul class="uk-hidden@m" uk-accordion>
+						<li>
+							<a class="uk-accordion-title uk-h4" href>Events</a>
+							<div class="uk-accordion-content">
+								<ul class="uk-nav uk-nav-default">
+									<li><a href="#nordics">Nordics Edition</a></li>
+									<li><a href="#benelux">Benelux Edition</a></li>
+									<li><a href="#dach">DACH Edition</a></li>
+									<li><a href="#speakers">Speakers</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a class="uk-accordion-title uk-h4" href>Information</a>
+							<div class="uk-accordion-content">
+								<ul class="uk-nav uk-nav-default">
+									<li><a href="#contact">Contact Us</a></li>
+									<li><a href="#partners">Partner With Us</a></li>
+									<li><a href="#register">Register</a></li>
+									<li><a href="#attendees">Attendees</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>				
+				
+					<div class="uk-child-width-1-2@m uk-visible@m" uk-grid>
+						<div>
+							<h4 class="uk-text-uppercase">Events</h4>
+							<ul class="uk-nav uk-nav-default">
+								<li><a href="#nordics">Nordics Edition</a></li>
+								<li><a href="#benelux">Benelux Edition</a></li>
+								<li><a href="#dach">DACH Edition</a></li>
+								<li><a href="#speakers">Speakers</a></li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="uk-text-uppercase">Information</h4>
+							<ul class="uk-nav uk-nav-default">
+								<li><a href="#contact">Contact Us</a></li>
+								<li><a href="#partners">Partner With Us</a></li>
+								<li><a href="#register">Register</a></li>
+								<li><a href="#attendees">Attendees</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="uk-flex uk-flex-between uk-flex-middle uk-flex-wrap-reverse uk-margin-bottom">
+				<div class="copyright uk-text-meta">Copyright &copy; 2026 InnoTechra. All rights reserved.</div>
+				<div class="legal">
+					<ul class="uk-nav uk-nav-default uk-flex">
+						<li class="uk-margin-left"><a href="#privacy">Privacy Policy</a></li>
+						<li class="uk-margin-left"><a href="#terms">Terms and Conditions</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer End -->
+	
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.23.11/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.23.11/dist/js/uikit-icons.min.js"></script>
+  </body>
 </html>
