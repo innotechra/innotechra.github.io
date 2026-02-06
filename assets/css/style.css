@@ -105,12 +105,55 @@ a:hover,
   color: var(--uk-global-link-hover-color);
 }
 
-/* Headings */
+/* Headings - More specific selectors to override UIkit */
 h1, h2, h3, h4, h5, h6,
-.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6 {
-  color: var(--uk-global-emphasis-color);
-  font-weight: 700;
-  font-family: var(--uk-global-font-family);
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6,
+.uk-heading-small,
+.uk-heading-medium,
+.uk-heading-large,
+.uk-heading-xlarge,
+.uk-heading-2xlarge,
+.uk-heading-3xlarge {
+  color: var(--uk-global-emphasis-color) !important;
+  font-weight: 700 !important;
+  font-family: var(--uk-global-font-family) !important;
+}
+
+/* Individual heading sizes for more control */
+h1, .uk-h1, .uk-heading-xlarge, .uk-heading-2xlarge, .uk-heading-3xlarge {
+  font-weight: 700 !important;
+  font-family: var(--uk-global-font-family) !important;
+  color: var(--uk-global-emphasis-color) !important;
+}
+
+h2, .uk-h2, .uk-heading-large {
+  font-weight: 700 !important;
+  font-family: var(--uk-global-font-family) !important;
+  color: var(--uk-global-emphasis-color) !important;
+}
+
+h3, .uk-h3, .uk-heading-medium {
+  font-weight: 600 !important;
+  font-family: var(--uk-global-font-family) !important;
+  color: var(--uk-global-emphasis-color) !important;
+}
+
+h4, .uk-h4, .uk-heading-small {
+  font-weight: 600 !important;
+  font-family: var(--uk-global-font-family) !important;
+  color: var(--uk-global-emphasis-color) !important;
+}
+
+h5, .uk-h5 {
+  font-weight: 500 !important;
+  font-family: var(--uk-global-font-family) !important;
+  color: var(--uk-global-emphasis-color) !important;
+}
+
+h6, .uk-h6 {
+  font-weight: 500 !important;
+  font-family: var(--uk-global-font-family) !important;
+  color: var(--uk-global-emphasis-color) !important;
 }
 
 /* Buttons - Primary */
