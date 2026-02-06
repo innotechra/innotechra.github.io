@@ -1,0 +1,441 @@
+/* Your existing font import */
+@import url(https://fonts.bunny.net/css?family=inter:300,300i,400,500,700);
+
+/* INNOTECHRA UIkit Theme - Pastel Green & Teal */
+
+:root {
+  /* Typography - Using Inter */
+  --uk-global-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --uk-global-font-size: 16px;
+  --uk-global-line-height: 1.6;
+  
+  --uk-global-small-font-size: 0.875rem;
+  --uk-global-medium-font-size: 1.25rem;
+  --uk-global-large-font-size: 1.5rem;
+  --uk-global-xlarge-font-size: 2rem;
+  --uk-global-xxlarge-font-size: 2.625rem;
+  
+  /* Primary Colors - Teal/Cyan range from logo */
+  --uk-primary-color: #2ca5b8;
+  --uk-primary-light: #4dbdcc;
+  --uk-primary-dark: #1f8a9a;
+  
+  /* Secondary - Pastel Green */
+  --uk-secondary-color: #5fbd8f;
+  --uk-secondary-light: #7dcca7;
+  --uk-secondary-dark: #4a9e75;
+  
+  /* Success - Pastel Green */
+  --uk-success-color: #5fbd8f;
+  
+  /* Warning - Warm complement */
+  --uk-warning-color: #f0b755;
+  
+  /* Danger - Soft coral */
+  --uk-danger-color: #e87383;
+  
+  /* Muted - Soft teal gray */
+  --uk-muted-color: #8ba5a8;
+  
+  /* Global colors */
+  --uk-global-background: #f8fcfc;
+  --uk-global-muted-background: #f0f7f8;
+  --uk-global-primary-background: #2ca5b8;
+  --uk-global-secondary-background: #5fbd8f;
+  --uk-global-success-background: #5fbd8f;
+  --uk-global-warning-background: #f0b755;
+  --uk-global-danger-background: #e87383;
+  
+  /* Text colors */
+  --uk-global-color: #2d4547;
+  --uk-global-emphasis-color: #1a2f31;
+  --uk-global-muted-color: #6b8385;
+  --uk-global-link-color: #1f8a9a;
+  --uk-global-link-hover-color: #2ca5b8;
+  --uk-global-inverse-color: #ffffff;
+  
+  /* Border */
+  --uk-global-border: #d4e5e7;
+  --uk-global-border-width: 1px;
+  
+  /* Spacing */
+  --uk-global-small-gutter: 15px;
+  --uk-global-medium-gutter: 30px;
+  --uk-global-gutter: 30px;
+  --uk-global-large-gutter: 50px;
+  --uk-global-xlarge-gutter: 70px;
+  
+  /* Control height */
+  --uk-global-control-height: 42px;
+  --uk-global-control-small-height: 32px;
+  --uk-global-control-large-height: 52px;
+  
+  /* Border radius */
+  --uk-border-rounded-border-radius: 6px;
+  --uk-border-radius-small: 4px;
+  --uk-border-radius-medium: 8px;
+  --uk-border-radius-large: 12px;
+  
+  /* Box shadows - Soft tech aesthetic */
+  --uk-global-small-box-shadow: 0 2px 4px rgba(44, 165, 184, 0.08);
+  --uk-global-medium-box-shadow: 0 4px 12px rgba(44, 165, 184, 0.12);
+  --uk-global-large-box-shadow: 0 8px 20px rgba(44, 165, 184, 0.15);
+  --uk-global-xlarge-box-shadow: 0 14px 28px rgba(44, 165, 184, 0.18);
+}
+
+/* Base */
+body {
+  background-color: var(--uk-global-background);
+  color: var(--uk-global-color);
+  font-family: var(--uk-global-font-family);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a,
+.uk-link {
+  color: var(--uk-global-link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover,
+.uk-link:hover {
+  color: var(--uk-global-link-hover-color);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6 {
+  color: var(--uk-global-emphasis-color);
+  font-weight: 700;
+  font-family: var(--uk-global-font-family);
+}
+
+/* Buttons - Primary */
+.uk-button-primary {
+  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--uk-border-rounded-border-radius);
+  transition: all 0.3s ease;
+  box-shadow: var(--uk-global-small-box-shadow);
+  font-weight: 500;
+}
+
+.uk-button-primary:hover,
+.uk-button-primary:focus {
+  background: linear-gradient(135deg, #1f8a9a 0%, #2ca5b8 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--uk-global-medium-box-shadow);
+}
+
+.uk-button-primary:active {
+  background: linear-gradient(135deg, #1a7585 0%, #1f8a9a 100%);
+  transform: translateY(0);
+}
+
+/* Buttons - Secondary */
+.uk-button-secondary {
+  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--uk-border-rounded-border-radius);
+  transition: all 0.3s ease;
+  box-shadow: var(--uk-global-small-box-shadow);
+  font-weight: 500;
+}
+
+.uk-button-secondary:hover,
+.uk-button-secondary:focus {
+  background: linear-gradient(135deg, #4a9e75 0%, #5fbd8f 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--uk-global-medium-box-shadow);
+}
+
+/* Buttons - Default */
+.uk-button-default {
+  background-color: #ffffff;
+  color: var(--uk-global-color);
+  border: 1px solid var(--uk-global-border);
+  border-radius: var(--uk-border-rounded-border-radius);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.uk-button-default:hover,
+.uk-button-default:focus {
+  background-color: var(--uk-global-muted-background);
+  border-color: var(--uk-primary-color);
+  color: var(--uk-global-emphasis-color);
+  transform: translateY(-1px);
+  box-shadow: var(--uk-global-small-box-shadow);
+}
+
+/* All buttons */
+.uk-button {
+  border-radius: var(--uk-border-rounded-border-radius);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-family: var(--uk-global-font-family);
+}
+
+/* Cards */
+.uk-card {
+  background-color: #ffffff;
+  border-radius: var(--uk-border-radius-medium);
+  border-top: 3px solid var(--uk-primary-color);
+  box-shadow: var(--uk-global-small-box-shadow);
+  transition: all 0.3s ease;
+}
+
+.uk-card:hover {
+  box-shadow: var(--uk-global-medium-box-shadow);
+  transform: translateY(-4px);
+}
+
+.uk-card-primary {
+  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%);
+  border-top: none;
+}
+
+.uk-card-secondary {
+  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%);
+  border-top: none;
+}
+
+.uk-card-header {
+  border-bottom: 1px solid rgba(44, 165, 184, 0.1);
+}
+
+.uk-card-title {
+  font-weight: 700;
+}
+
+/* Navbar */
+.uk-navbar {
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(44, 165, 184, 0.08);
+  transition: all 0.3s ease;
+}
+
+.uk-navbar-nav > li > a {
+  color: var(--uk-global-color);
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a:focus,
+.uk-navbar-nav > li.uk-active > a {
+  color: var(--uk-primary-color);
+}
+
+.uk-navbar-item,
+.uk-navbar-nav > li > a {
+  min-height: 70px;
+}
+
+/* Hero/Section */
+.uk-section-primary {
+  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 50%, #5fbd8f 100%);
+}
+
+.uk-section-secondary {
+  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%);
+}
+
+.uk-section-muted {
+  background-color: var(--uk-global-muted-background);
+}
+
+/* Form inputs */
+.uk-input,
+.uk-select,
+.uk-textarea {
+  border: 1px solid var(--uk-global-border);
+  border-radius: var(--uk-border-rounded-border-radius);
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  font-family: var(--uk-global-font-family);
+}
+
+.uk-input:focus,
+.uk-select:focus,
+.uk-textarea:focus {
+  border-color: var(--uk-primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(44, 165, 184, 0.1);
+}
+
+/* Labels */
+.uk-form-label {
+  font-weight: 500;
+  color: var(--uk-global-emphasis-color);
+}
+
+/* Badges/Labels */
+.uk-label,
+.uk-badge {
+  border-radius: var(--uk-border-radius-small);
+  font-weight: 500;
+}
+
+.uk-label-success,
+.uk-badge-success {
+  background-color: var(--uk-success-color);
+}
+
+/* Progress bars */
+.uk-progress {
+  background-color: var(--uk-global-muted-background);
+  border-radius: var(--uk-border-rounded-border-radius);
+}
+
+.uk-progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #2ca5b8 0%, #5fbd8f 100%);
+  border-radius: var(--uk-border-rounded-border-radius);
+}
+
+.uk-progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #2ca5b8 0%, #5fbd8f 100%);
+  border-radius: var(--uk-border-rounded-border-radius);
+}
+
+/* Alerts/Notifications */
+.uk-alert {
+  border-radius: var(--uk-border-radius-medium);
+  border-left: 4px solid;
+}
+
+.uk-alert-primary {
+  background-color: rgba(44, 165, 184, 0.1);
+  border-left-color: var(--uk-primary-color);
+  color: var(--uk-primary-dark);
+}
+
+.uk-alert-success {
+  background-color: rgba(95, 189, 143, 0.1);
+  border-left-color: var(--uk-success-color);
+  color: var(--uk-secondary-dark);
+}
+
+/* Tables */
+.uk-table th {
+  color: var(--uk-global-emphasis-color);
+  font-weight: 600;
+}
+
+.uk-table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--uk-global-muted-background);
+}
+
+.uk-table-hover tbody tr:hover {
+  background-color: rgba(44, 165, 184, 0.05);
+}
+
+/* Accordion */
+.uk-accordion-title {
+  color: var(--uk-global-emphasis-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.uk-accordion-title:hover,
+.uk-open > .uk-accordion-title {
+  color: var(--uk-primary-color);
+}
+
+/* Pagination */
+.uk-pagination > * > * {
+  border-radius: var(--uk-border-radius-small);
+  transition: all 0.3s ease;
+}
+
+.uk-pagination > .uk-active > * {
+  background-color: var(--uk-primary-color);
+  color: #ffffff;
+}
+
+/* Modals */
+.uk-modal-dialog {
+  border-radius: var(--uk-border-radius-large);
+  box-shadow: var(--uk-global-xlarge-box-shadow);
+}
+
+.uk-modal-header {
+  border-bottom: 1px solid var(--uk-global-border);
+}
+
+.uk-modal-footer {
+  border-top: 1px solid var(--uk-global-border);
+}
+
+.uk-modal-title {
+  font-weight: 700;
+}
+
+/* Dropdowns */
+.uk-dropdown {
+  border-radius: var(--uk-border-radius-medium);
+  box-shadow: var(--uk-global-large-box-shadow);
+  border: 1px solid var(--uk-global-border);
+}
+
+/* Tabs */
+.uk-tab > * > a {
+  color: var(--uk-global-color);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.uk-tab > * > a:hover {
+  color: var(--uk-primary-color);
+}
+
+.uk-tab > .uk-active > a {
+  color: var(--uk-primary-color);
+  border-color: var(--uk-primary-color);
+}
+
+/* Utility classes */
+.uk-background-primary {
+  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%) !important;
+}
+
+.uk-background-secondary {
+  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%) !important;
+}
+
+/* Icon colors */
+.uk-icon-button {
+  transition: all 0.3s ease;
+}
+
+.uk-icon-button:hover {
+  background-color: var(--uk-primary-color);
+  color: #ffffff;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom tech accents */
+.uk-card-badge {
+  background: linear-gradient(135deg, #2ca5b8 0%, #5fbd8f 100%);
+  border-radius: var(--uk-border-radius-small);
+  font-weight: 500;
+}
+
+/* Animation enhancements */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
