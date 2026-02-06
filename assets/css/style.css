@@ -288,7 +288,6 @@ a:hover,
 .uk-card {
   background-color: #ffffff !important;
   border-radius: var(--uk-border-radius-medium) !important;
-  border-top: 3px solid var(--uk-primary-color);
   box-shadow: var(--uk-global-small-box-shadow) !important;
   transition: all 0.3s ease;
 }
