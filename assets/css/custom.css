@@ -1,305 +1,151 @@
-
-
-/* Custom Styles for TechWiser X */
+/* INNOTECHRA Bulma Theme - Pastel Green & Teal */
+/* Add this to your custom.css after Bulma */
 
 :root {
-    --bulma-family-primary: 'Inter', sans-serif;
-    --primary-color: #00d1b2;
-    --dark-color: #1a1a1a;
-    --light-color: #f5f5f5;
+  /* Primary Colors - Teal/Cyan range from logo */
+  --bulma-primary-h: 180deg;
+  --bulma-primary-s: 65%;
+  --bulma-primary-l: 45%;
+  
+  /* Secondary/Link - Deeper teal */
+  --bulma-link-h: 190deg;
+  --bulma-link-s: 70%;
+  --bulma-link-l: 40%;
+  
+  /* Info - Lighter pastel teal */
+  --bulma-info-h: 175deg;
+  --bulma-info-s: 55%;
+  --bulma-info-l: 60%;
+  
+  /* Success - Pastel green */
+  --bulma-success-h: 150deg;
+  --bulma-success-s: 50%;
+  --bulma-success-l: 55%;
+  
+  /* Warning - Warm complement */
+  --bulma-warning-h: 45deg;
+  --bulma-warning-s: 85%;
+  --bulma-warning-l: 65%;
+  
+  /* Danger - Soft coral */
+  --bulma-danger-h: 355deg;
+  --bulma-danger-s: 70%;
+  --bulma-danger-l: 60%;
+  
+  /* Background colors - Light and clean */
+  --bulma-scheme-main: hsl(180, 20%, 98%);
+  --bulma-scheme-main-bis: hsl(180, 15%, 96%);
+  --bulma-scheme-main-ter: hsl(180, 10%, 94%);
+  
+  /* Text colors */
+  --bulma-text-strong: hsl(190, 15%, 20%);
+  --bulma-text: hsl(190, 10%, 30%);
+  --bulma-text-light: hsl(190, 8%, 50%);
+  
+  /* Border */
+  --bulma-border: hsl(180, 15%, 85%);
+  --bulma-border-hover: hsl(180, 25%, 70%);
+  
+  /* Typography */
+  --bulma-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --bulma-family-secondary: Georgia, serif;
+  --bulma-family-code: "Courier New", monospace;
+  
+  --bulma-size-1: 3rem;
+  --bulma-size-2: 2.5rem;
+  --bulma-size-3: 2rem;
+  --bulma-size-4: 1.5rem;
+  --bulma-size-5: 1.25rem;
+  --bulma-size-6: 1rem;
+  --bulma-size-7: 0.875rem;
+  
+  --bulma-weight-light: 300;
+  --bulma-weight-normal: 400;
+  --bulma-weight-medium: 500;
+  --bulma-weight-semibold: 600;
+  --bulma-weight-bold: 700;
+  
+  /* Spacing */
+  --bulma-block-spacing: 1.5rem;
+  --bulma-section-padding: 3rem 1.5rem;
+  --bulma-section-padding-medium: 9rem 1.5rem;
+  --bulma-section-padding-large: 18rem 1.5rem;
+  
+  /* Radius */
+  --bulma-radius-small: 4px;
+  --bulma-radius: 6px;
+  --bulma-radius-medium: 8px;
+  --bulma-radius-large: 12px;
+  --bulma-radius-rounded: 9999px;
+  
+  /* Shadows - Soft tech aesthetic */
+  --bulma-shadow-small: 0 2px 4px hsla(180, 50%, 40%, 0.08);
+  --bulma-shadow: 0 4px 8px hsla(180, 50%, 40%, 0.12);
+  --bulma-shadow-medium: 0 8px 16px hsla(180, 50%, 40%, 0.15);
+  --bulma-shadow-large: 0 12px 24px hsla(180, 50%, 40%, 0.18);
+  
+  /* Navbar */
+  --bulma-navbar-height: 4rem;
+  --bulma-navbar-background-color: hsl(180, 25%, 96%);
+  --bulma-navbar-item-hover-background-color: hsl(180, 30%, 90%);
+  --bulma-navbar-item-active-background-color: hsl(180, 35%, 85%);
+  
+  /* Footer */
+  --bulma-footer-background-color: hsl(190, 20%, 25%);
+  --bulma-footer-color: hsl(180, 15%, 85%);
+  --bulma-footer-padding: 3rem 1.5rem 6rem;
+  
+  /* Card */
+  --bulma-card-background-color: hsl(0, 0%, 100%);
+  --bulma-card-shadow: var(--bulma-shadow);
+  --bulma-card-header-background-color: transparent;
+  --bulma-card-header-shadow: 0 1px 2px hsla(180, 30%, 50%, 0.1);
+  
+  /* Button */
+  --bulma-button-padding-vertical: 0.5em;
+  --bulma-button-padding-horizontal: 1.25em;
+  --bulma-button-focus-border-color: hsl(180, 65%, 45%);
+  --bulma-button-active-border-color: hsl(180, 70%, 40%);
 }
 
-/* Hero Gradient */
-.hero-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* Custom enhancements for tech aesthetic */
+.hero.is-primary {
+  background: linear-gradient(135deg, 
+    hsl(180, 65%, 45%) 0%, 
+    hsl(190, 70%, 50%) 100%);
 }
 
-/* Event Cards */
-.event-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Feature Boxes */
-.feature-box {
-    transition: all 0.3s ease;
-    height: 100%;
-    border-left: 4px solid var(--primary-color);
-}
-
-.feature-box:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Speaker Cards */
-.speaker-card {
-    transition: transform 0.3s ease;
-    height: 100%;
-}
-
-.speaker-card:hover {
-    transform: scale(1.05);
-}
-
-.speaker-card .card-image img {
-    object-fit: cover;
-}
-
-/* Audience/Model Boxes */
-.audience-box,
-.model-box {
-    height: 100%;
-    transition: all 0.3s ease;
-}
-
-.audience-box:hover,
-.model-box:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    transform: translateY(-3px);
-}
-
-/* Testimonial Boxes */
-.testimonial-box {
-    height: 100%;
-    border-top: 3px solid var(--primary-color);
-    position: relative;
-    padding: 1.5rem;
-}
-
-.testimonial-box::before {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    color: var(--primary-color);
-    opacity: 0.3;
-    font-family: Georgia, serif;
-}
-
-/* Stat Boxes */
-.stat-box {
-    padding: 2rem 1rem;
-}
-
-.stat-box .title {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-/* Content Blocks */
-.content-block {
-    padding: 2rem;
-    background: white;
-    border-radius: 6px;
-    height: 100%;
-}
-
-/* Sponsor Marquee */
-.sponsor-marquee {
-    overflow: hidden;
-    padding: 2rem 0;
-    position: relative;
-}
-
-.sponsor-track {
-    display: flex;
-    animation: scroll 30s linear infinite;
-}
-
-.sponsor-item {
-    flex: 0 0 auto;
-    margin: 0 2rem;
-    display: flex;
-    align-items: center;
-}
-
-.sponsor-item img {
-    max-width: 150px;
-    max-height: 80px;
-    object-fit: contain;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-}
-
-.sponsor-item img:hover {
-    filter: grayscale(0%);
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Benefit Boxes */
-.benefit-box {
-    height: 100%;
-    transition: all 0.3s ease;
-}
-
-.benefit-box:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.benefit-box .image {
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Engagement Cards */
-.engagement-card {
-    transition: all 0.3s ease;
-    height: 100%;
-}
-
-.engagement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* Agenda Items */
-.agenda-timeline {
-    position: relative;
-}
-
-.agenda-item {
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-}
-
-.agenda-item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Countdown Boxes */
-.countdown-box {
-    background: var(--primary-color);
-    color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    margin: 0.5rem;
-    min-width: 120px;
-}
-
-.countdown-box .title {
-    color: white;
-    margin-bottom: 0;
-}
-
-.countdown-box .subtitle {
-    color: white;
-}
-
-/* CTA Boxes */
-.cta-box {
-    padding: 3rem 2rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-}
-
-/* Navigation Enhancements */
-.navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-dropdown {
-    border-top: 2px solid var(--primary-color);
-}
-
-/* Button Enhancements */
 .button.is-primary {
-    background-color: var(--primary-color);
-    transition: all 0.3s ease;
+  background: linear-gradient(135deg, 
+    hsl(180, 65%, 45%) 0%, 
+    hsl(185, 65%, 48%) 100%);
+  transition: all 0.3s ease;
 }
 
 .button.is-primary:hover {
-    background-color: #00b89c;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 209, 178, 0.3);
+  background: linear-gradient(135deg, 
+    hsl(180, 70%, 40%) 0%, 
+    hsl(185, 70%, 43%) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--bulma-shadow-medium);
 }
 
-/* Footer Styles */
-.footer a:hover {
-    color: var(--primary-color) !important;
+/* Smooth transitions */
+.button, .card, .notification, .message {
+  transition: all 0.2s ease;
 }
 
-.footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Tech-inspired accents */
+.box, .card {
+  border-top: 3px solid hsl(180, 65%, 45%);
 }
 
-.footer ul li {
-    margin-bottom: 0.5rem;
+/* Link hover effects */
+a:not(.button):not(.navbar-item) {
+  color: hsl(190, 70%, 40%);
+  transition: color 0.2s ease;
 }
 
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-    .sponsor-item {
-        margin: 0 1rem;
-    }
-    
-    .countdown-box {
-        padding: 1rem;
-        min-width: 80px;
-    }
-    
-    .countdown-box .title {
-        font-size: 2rem;
-    }
-}
-
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Section Spacing */
-.section {
-    padding: 3rem 1.5rem;
-}
-
-/* Box Shadows */
-.box {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
-}
-
-.box:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Image Transitions */
-img {
-    transition: transform 0.3s ease;
-}
-
-/* Card Enhancements */
-.card {
-    overflow: hidden;
-}
-
-.card-image {
-    overflow: hidden;
-}
-
-.card-image img {
-    transition: transform 0.5s ease;
-}
-
-.card:hover .card-image img {
-    transform: scale(1.1);
+a:not(.button):not(.navbar-item):hover {
+  color: hsl(180, 65%, 45%);
 }
