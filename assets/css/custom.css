@@ -136,9 +136,9 @@
 }
 
 /* Tech-inspired accents */
-.box, .card {
+/*.box, .card {
   border-top: 3px solid hsl(180, 65%, 45%);
-}
+} */
 
 /* Link hover effects */
 a:not(.button):not(.navbar-item) {
