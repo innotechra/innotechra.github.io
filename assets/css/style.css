@@ -1,8 +1,14 @@
 /* Your existing font import */
 @import url(https://fonts.bunny.net/css?family=inter:300,300i,400,500,700);
 
-/* INNOTECHRA UIkit Theme - Pastel Green & Teal */
+/* ============================================
+   INNOTECHRA UIkit 3.23.11 Theme
+   Pastel Green & Teal
+   ============================================ */
 
+/* ============================================
+   CSS VARIABLES
+   ============================================ */
 :root {
   /* Typography - Using Inter */
   --uk-global-font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -83,260 +89,398 @@
   --uk-global-xlarge-box-shadow: 0 14px 28px rgba(44, 165, 184, 0.18);
 }
 
-/* Base */
+/* ============================================
+   BASE STYLES
+   ============================================ */
 body {
-  background-color: var(--uk-global-background);
-  color: var(--uk-global-color);
-  font-family: var(--uk-global-font-family);
-  font-weight: 400;
+  background-color: var(--uk-global-background) !important;
+  color: var(--uk-global-color) !important;
+  font-family: var(--uk-global-font-family) !important;
+  font-weight: 400 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Links */
+/* ============================================
+   TYPOGRAPHY - HEADINGS
+   ============================================ */
+body h1, 
+body h2, 
+body h3, 
+body h4, 
+body h5, 
+body h6,
+body .uk-h1, 
+body .uk-h2, 
+body .uk-h3, 
+body .uk-h4, 
+body .uk-h5, 
+body .uk-h6,
+body .uk-heading-small,
+body .uk-heading-medium,
+body .uk-heading-large,
+body .uk-heading-xlarge,
+body .uk-heading-2xlarge,
+body .uk-heading-3xlarge {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #1a2f31 !important;
+  margin: 0 0 20px 0;
+  text-transform: none !important;
+}
+
+body h1, 
+body .uk-h1, 
+body .uk-heading-xlarge, 
+body .uk-heading-2xlarge, 
+body .uk-heading-3xlarge {
+  font-weight: 700 !important;
+}
+
+body h2, 
+body .uk-h2, 
+body .uk-heading-large {
+  font-weight: 700 !important;
+}
+
+body h3, 
+body .uk-h3, 
+body .uk-heading-medium {
+  font-weight: 600 !important;
+}
+
+body h4, 
+body .uk-h4, 
+body .uk-heading-small {
+  font-weight: 600 !important;
+}
+
+body h5, 
+body .uk-h5 {
+  font-weight: 500 !important;
+}
+
+body h6, 
+body .uk-h6 {
+  font-weight: 500 !important;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
 a,
 .uk-link {
-  color: var(--uk-global-link-color);
+  color: var(--uk-global-link-color) !important;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 a:hover,
 .uk-link:hover {
-  color: var(--uk-global-link-hover-color);
+  color: var(--uk-global-link-hover-color) !important;
 }
 
-/* Headings - More specific selectors to override UIkit */
-h1, h2, h3, h4, h5, h6,
-.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6,
-.uk-heading-small,
-.uk-heading-medium,
-.uk-heading-large,
-.uk-heading-xlarge,
-.uk-heading-2xlarge,
-.uk-heading-3xlarge {
-  color: var(--uk-global-emphasis-color) !important;
-  font-weight: 700 !important;
-  font-family: var(--uk-global-font-family) !important;
-}
+/* ============================================
+   BUTTONS
+   ============================================ */
 
-/* Individual heading sizes for more control */
-h1, .uk-h1, .uk-heading-xlarge, .uk-heading-2xlarge, .uk-heading-3xlarge {
-  font-weight: 700 !important;
-  font-family: var(--uk-global-font-family) !important;
-  color: var(--uk-global-emphasis-color) !important;
-}
-
-h2, .uk-h2, .uk-heading-large {
-  font-weight: 700 !important;
-  font-family: var(--uk-global-font-family) !important;
-  color: var(--uk-global-emphasis-color) !important;
-}
-
-h3, .uk-h3, .uk-heading-medium {
-  font-weight: 600 !important;
-  font-family: var(--uk-global-font-family) !important;
-  color: var(--uk-global-emphasis-color) !important;
-}
-
-h4, .uk-h4, .uk-heading-small {
-  font-weight: 600 !important;
-  font-family: var(--uk-global-font-family) !important;
-  color: var(--uk-global-emphasis-color) !important;
-}
-
-h5, .uk-h5 {
+/* All buttons base */
+.uk-button {
+  border-radius: var(--uk-border-rounded-border-radius) !important;
+  transition: all 0.3s ease !important;
   font-weight: 500 !important;
   font-family: var(--uk-global-font-family) !important;
-  color: var(--uk-global-emphasis-color) !important;
 }
 
-h6, .uk-h6 {
-  font-weight: 500 !important;
-  font-family: var(--uk-global-font-family) !important;
-  color: var(--uk-global-emphasis-color) !important;
-}
-
-/* Buttons - Primary */
+/* Primary Button */
 .uk-button-primary {
-  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%);
-  color: #ffffff;
-  border: none;
-  border-radius: var(--uk-border-rounded-border-radius);
-  transition: all 0.3s ease;
-  box-shadow: var(--uk-global-small-box-shadow);
-  font-weight: 500;
+  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: var(--uk-global-small-box-shadow) !important;
 }
 
 .uk-button-primary:hover,
 .uk-button-primary:focus {
-  background: linear-gradient(135deg, #1f8a9a 0%, #2ca5b8 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #1f8a9a 0%, #2ca5b8 100%) !important;
+  color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: var(--uk-global-medium-box-shadow);
+  box-shadow: var(--uk-global-medium-box-shadow) !important;
 }
 
-.uk-button-primary:active {
-  background: linear-gradient(135deg, #1a7585 0%, #1f8a9a 100%);
+.uk-button-primary:active,
+.uk-button-primary.uk-active {
+  background: linear-gradient(135deg, #1a7585 0%, #1f8a9a 100%) !important;
   transform: translateY(0);
+  color: #ffffff !important;
 }
 
-/* Buttons - Secondary */
+/* Secondary Button */
 .uk-button-secondary {
-  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%);
-  color: #ffffff;
-  border: none;
-  border-radius: var(--uk-border-rounded-border-radius);
-  transition: all 0.3s ease;
-  box-shadow: var(--uk-global-small-box-shadow);
-  font-weight: 500;
+  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: var(--uk-global-small-box-shadow) !important;
 }
 
 .uk-button-secondary:hover,
 .uk-button-secondary:focus {
-  background: linear-gradient(135deg, #4a9e75 0%, #5fbd8f 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #4a9e75 0%, #5fbd8f 100%) !important;
+  color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: var(--uk-global-medium-box-shadow);
+  box-shadow: var(--uk-global-medium-box-shadow) !important;
 }
 
-/* Buttons - Default */
+.uk-button-secondary:active,
+.uk-button-secondary.uk-active {
+  background: linear-gradient(135deg, #3d8962 0%, #4a9e75 100%) !important;
+  transform: translateY(0);
+  color: #ffffff !important;
+}
+
+/* Default Button */
 .uk-button-default {
-  background-color: #ffffff;
-  color: var(--uk-global-color);
-  border: 1px solid var(--uk-global-border);
-  border-radius: var(--uk-border-rounded-border-radius);
-  transition: all 0.3s ease;
-  font-weight: 500;
+  background-color: #ffffff !important;
+  color: var(--uk-global-color) !important;
+  border: 1px solid var(--uk-global-border) !important;
 }
 
 .uk-button-default:hover,
 .uk-button-default:focus {
-  background-color: var(--uk-global-muted-background);
-  border-color: var(--uk-primary-color);
-  color: var(--uk-global-emphasis-color);
+  background-color: var(--uk-global-muted-background) !important;
+  border-color: var(--uk-primary-color) !important;
+  color: var(--uk-global-emphasis-color) !important;
   transform: translateY(-1px);
-  box-shadow: var(--uk-global-small-box-shadow);
+  box-shadow: var(--uk-global-small-box-shadow) !important;
 }
 
-/* All buttons */
-.uk-button {
-  border-radius: var(--uk-border-rounded-border-radius);
-  transition: all 0.3s ease;
-  font-weight: 500;
-  font-family: var(--uk-global-font-family);
+.uk-button-default:active,
+.uk-button-default.uk-active {
+  background-color: #e8f4f5 !important;
+  transform: translateY(0);
 }
 
-/* Cards */
+/* Danger Button */
+.uk-button-danger {
+  background-color: var(--uk-danger-color) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.uk-button-danger:hover,
+.uk-button-danger:focus {
+  background-color: #e05566 !important;
+  color: #ffffff !important;
+}
+
+/* Text Button */
+.uk-button-text {
+  color: var(--uk-global-link-color) !important;
+}
+
+.uk-button-text:hover,
+.uk-button-text:focus {
+  color: var(--uk-global-link-hover-color) !important;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
 .uk-card {
-  background-color: #ffffff;
-  border-radius: var(--uk-border-radius-medium);
+  background-color: #ffffff !important;
+  border-radius: var(--uk-border-radius-medium) !important;
   border-top: 3px solid var(--uk-primary-color);
-  box-shadow: var(--uk-global-small-box-shadow);
+  box-shadow: var(--uk-global-small-box-shadow) !important;
   transition: all 0.3s ease;
 }
 
 .uk-card:hover {
-  box-shadow: var(--uk-global-medium-box-shadow);
+  box-shadow: var(--uk-global-medium-box-shadow) !important;
   transform: translateY(-4px);
 }
 
 .uk-card-primary {
-  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%);
-  border-top: none;
+  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%) !important;
+  border-top: none !important;
+  color: #ffffff !important;
+}
+
+.uk-card-primary.uk-card-body,
+.uk-card-primary > :not([class*='uk-card-media']) {
+  color: #ffffff !important;
+}
+
+.uk-card-primary .uk-card-title {
+  color: #ffffff !important;
 }
 
 .uk-card-secondary {
-  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%);
-  border-top: none;
+  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%) !important;
+  border-top: none !important;
+  color: #ffffff !important;
+}
+
+.uk-card-secondary.uk-card-body,
+.uk-card-secondary > :not([class*='uk-card-media']) {
+  color: #ffffff !important;
+}
+
+.uk-card-secondary .uk-card-title {
+  color: #ffffff !important;
+}
+
+.uk-card-default {
+  background-color: #ffffff !important;
+  color: var(--uk-global-color) !important;
 }
 
 .uk-card-header {
-  border-bottom: 1px solid rgba(44, 165, 184, 0.1);
+  border-bottom: 1px solid rgba(44, 165, 184, 0.1) !important;
+}
+
+.uk-card-footer {
+  border-top: 1px solid rgba(44, 165, 184, 0.1) !important;
 }
 
 .uk-card-title {
-  font-weight: 700;
+  font-weight: 700 !important;
+  color: var(--uk-global-emphasis-color) !important;
 }
 
-/* Navbar */
+.uk-card-badge {
+  background: linear-gradient(135deg, #2ca5b8 0%, #5fbd8f 100%) !important;
+  border-radius: var(--uk-border-radius-small) !important;
+  font-weight: 500;
+  color: #ffffff !important;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
 .uk-navbar {
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: rgba(255, 255, 255, 0.98) !important;
   backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(44, 165, 184, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(44, 165, 184, 0.08) !important;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: rgba(255, 255, 255, 0.98) !important;
 }
 
 .uk-navbar-nav > li > a {
-  color: var(--uk-global-color);
+  color: var(--uk-global-color) !important;
   transition: color 0.3s ease;
   font-weight: 500;
+  min-height: 70px;
 }
 
 .uk-navbar-nav > li:hover > a,
 .uk-navbar-nav > li > a:focus,
 .uk-navbar-nav > li.uk-active > a {
-  color: var(--uk-primary-color);
+  color: var(--uk-primary-color) !important;
 }
 
-.uk-navbar-item,
-.uk-navbar-nav > li > a {
+.uk-navbar-item {
   min-height: 70px;
+  color: var(--uk-global-color) !important;
 }
 
-/* Hero/Section */
+.uk-navbar-toggle {
+  color: var(--uk-global-color) !important;
+}
+
+.uk-navbar-toggle:hover,
+.uk-navbar-toggle:focus {
+  color: var(--uk-primary-color) !important;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
 .uk-section-primary {
-  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 50%, #5fbd8f 100%);
+  background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 50%, #5fbd8f 100%) !important;
 }
 
 .uk-section-secondary {
-  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%);
+  background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%) !important;
 }
 
 .uk-section-muted {
-  background-color: var(--uk-global-muted-background);
+  background-color: var(--uk-global-muted-background) !important;
 }
 
-/* Form inputs */
+.uk-section-default {
+  background-color: #ffffff !important;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
 .uk-input,
 .uk-select,
 .uk-textarea {
-  border: 1px solid var(--uk-global-border);
-  border-radius: var(--uk-border-rounded-border-radius);
-  background-color: #ffffff;
+  border: 1px solid var(--uk-global-border) !important;
+  border-radius: var(--uk-border-rounded-border-radius) !important;
+  background-color: #ffffff !important;
   transition: all 0.3s ease;
-  font-family: var(--uk-global-font-family);
+  font-family: var(--uk-global-font-family) !important;
+  color: var(--uk-global-color) !important;
 }
 
 .uk-input:focus,
 .uk-select:focus,
 .uk-textarea:focus {
-  border-color: var(--uk-primary-color);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(44, 165, 184, 0.1);
+  border-color: var(--uk-primary-color) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(44, 165, 184, 0.1) !important;
+  background-color: #ffffff !important;
 }
 
-/* Labels */
 .uk-form-label {
-  font-weight: 500;
-  color: var(--uk-global-emphasis-color);
+  font-weight: 500 !important;
+  color: var(--uk-global-emphasis-color) !important;
 }
 
-/* Badges/Labels */
+.uk-checkbox,
+.uk-radio {
+  border-color: var(--uk-global-border) !important;
+}
+
+.uk-checkbox:checked,
+.uk-radio:checked {
+  background-color: var(--uk-primary-color) !important;
+  border-color: var(--uk-primary-color) !important;
+}
+
+/* ============================================
+   LABELS & BADGES
+   ============================================ */
 .uk-label,
 .uk-badge {
-  border-radius: var(--uk-border-radius-small);
-  font-weight: 500;
+  border-radius: var(--uk-border-radius-small) !important;
+  font-weight: 500 !important;
 }
 
 .uk-label-success,
 .uk-badge-success {
-  background-color: var(--uk-success-color);
+  background-color: var(--uk-success-color) !important;
 }
 
-/* Progress bars */
+.uk-label-warning,
+.uk-badge-warning {
+  background-color: var(--uk-warning-color) !important;
+}
+
+.uk-label-danger,
+.uk-badge-danger {
+  background-color: var(--uk-danger-color) !important;
+}
+
+/* ============================================
+   PROGRESS BARS
+   ============================================ */
 .uk-progress {
-  background-color: var(--uk-global-muted-background);
-  border-radius: var(--uk-border-rounded-border-radius);
+  background-color: var(--uk-global-muted-background) !important;
+  border-radius: var(--uk-border-rounded-border-radius) !important;
 }
 
 .uk-progress::-webkit-progress-value {
@@ -349,103 +493,206 @@ h6, .uk-h6 {
   border-radius: var(--uk-border-rounded-border-radius);
 }
 
-/* Alerts/Notifications */
+/* ============================================
+   ALERTS
+   ============================================ */
 .uk-alert {
-  border-radius: var(--uk-border-radius-medium);
+  border-radius: var(--uk-border-radius-medium) !important;
   border-left: 4px solid;
 }
 
 .uk-alert-primary {
-  background-color: rgba(44, 165, 184, 0.1);
-  border-left-color: var(--uk-primary-color);
-  color: var(--uk-primary-dark);
+  background-color: rgba(44, 165, 184, 0.1) !important;
+  border-left-color: var(--uk-primary-color) !important;
+  color: var(--uk-primary-dark) !important;
 }
 
 .uk-alert-success {
-  background-color: rgba(95, 189, 143, 0.1);
-  border-left-color: var(--uk-success-color);
-  color: var(--uk-secondary-dark);
+  background-color: rgba(95, 189, 143, 0.1) !important;
+  border-left-color: var(--uk-success-color) !important;
+  color: var(--uk-secondary-dark) !important;
 }
 
-/* Tables */
+.uk-alert-warning {
+  background-color: rgba(240, 183, 85, 0.1) !important;
+  border-left-color: var(--uk-warning-color) !important;
+  color: #c5941e !important;
+}
+
+.uk-alert-danger {
+  background-color: rgba(232, 115, 131, 0.1) !important;
+  border-left-color: var(--uk-danger-color) !important;
+  color: #c93d52 !important;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
 .uk-table th {
-  color: var(--uk-global-emphasis-color);
-  font-weight: 600;
+  color: var(--uk-global-emphasis-color) !important;
+  font-weight: 600 !important;
 }
 
-.uk-table-striped tbody tr:nth-of-type(odd) {
-  background-color: var(--uk-global-muted-background);
+.uk-table-striped tbody tr:nth-of-type(odd),
+.uk-table-striped > tr:nth-of-type(odd) {
+  background-color: var(--uk-global-muted-background) !important;
 }
 
-.uk-table-hover tbody tr:hover {
-  background-color: rgba(44, 165, 184, 0.05);
+.uk-table-hover tbody tr:hover,
+.uk-table-hover > tr:hover {
+  background-color: rgba(44, 165, 184, 0.05) !important;
 }
 
-/* Accordion */
+/* ============================================
+   ACCORDION
+   ============================================ */
 .uk-accordion-title {
-  color: var(--uk-global-emphasis-color);
-  font-weight: 500;
+  color: var(--uk-global-emphasis-color) !important;
+  font-weight: 500 !important;
   transition: color 0.3s ease;
 }
 
 .uk-accordion-title:hover,
 .uk-open > .uk-accordion-title {
-  color: var(--uk-primary-color);
+  color: var(--uk-primary-color) !important;
 }
 
-/* Pagination */
+/* ============================================
+   PAGINATION
+   ============================================ */
 .uk-pagination > * > * {
-  border-radius: var(--uk-border-radius-small);
+  border-radius: var(--uk-border-radius-small) !important;
   transition: all 0.3s ease;
+  color: var(--uk-global-color) !important;
+}
+
+.uk-pagination > * > *:hover {
+  color: var(--uk-primary-color) !important;
+  background-color: var(--uk-global-muted-background) !important;
 }
 
 .uk-pagination > .uk-active > * {
-  background-color: var(--uk-primary-color);
-  color: #ffffff;
+  background-color: var(--uk-primary-color) !important;
+  color: #ffffff !important;
 }
 
-/* Modals */
+.uk-pagination > .uk-disabled > * {
+  color: var(--uk-global-muted-color) !important;
+}
+
+/* ============================================
+   MODALS
+   ============================================ */
 .uk-modal-dialog {
-  border-radius: var(--uk-border-radius-large);
-  box-shadow: var(--uk-global-xlarge-box-shadow);
+  border-radius: var(--uk-border-radius-large) !important;
+  box-shadow: var(--uk-global-xlarge-box-shadow) !important;
+  background-color: #ffffff !important;
 }
 
 .uk-modal-header {
-  border-bottom: 1px solid var(--uk-global-border);
+  border-bottom: 1px solid var(--uk-global-border) !important;
+  background-color: transparent !important;
 }
 
 .uk-modal-footer {
-  border-top: 1px solid var(--uk-global-border);
+  border-top: 1px solid var(--uk-global-border) !important;
+  background-color: transparent !important;
 }
 
 .uk-modal-title {
-  font-weight: 700;
+  font-weight: 700 !important;
+  color: var(--uk-global-emphasis-color) !important;
 }
 
-/* Dropdowns */
+.uk-modal-body {
+  color: var(--uk-global-color) !important;
+}
+
+/* ============================================
+   DROPDOWNS
+   ============================================ */
 .uk-dropdown {
-  border-radius: var(--uk-border-radius-medium);
-  box-shadow: var(--uk-global-large-box-shadow);
-  border: 1px solid var(--uk-global-border);
+  border-radius: var(--uk-border-radius-medium) !important;
+  box-shadow: var(--uk-global-large-box-shadow) !important;
+  border: 1px solid var(--uk-global-border) !important;
+  background-color: #ffffff !important;
 }
 
-/* Tabs */
+.uk-dropdown-nav > li > a {
+  color: var(--uk-global-color) !important;
+}
+
+.uk-dropdown-nav > li > a:hover {
+  color: var(--uk-primary-color) !important;
+}
+
+.uk-dropdown-nav > li.uk-active > a {
+  color: var(--uk-primary-color) !important;
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+.uk-tab {
+  border-bottom: 1px solid var(--uk-global-border);
+}
+
 .uk-tab > * > a {
-  color: var(--uk-global-color);
+  color: var(--uk-global-color) !important;
   transition: all 0.3s ease;
-  font-weight: 500;
+  font-weight: 500 !important;
+  border-bottom: 2px solid transparent;
 }
 
 .uk-tab > * > a:hover {
-  color: var(--uk-primary-color);
+  color: var(--uk-primary-color) !important;
 }
 
 .uk-tab > .uk-active > a {
-  color: var(--uk-primary-color);
-  border-color: var(--uk-primary-color);
+  color: var(--uk-primary-color) !important;
+  border-bottom-color: var(--uk-primary-color) !important;
 }
 
-/* Utility classes */
+/* ============================================
+   BREADCRUMB
+   ============================================ */
+.uk-breadcrumb > * > * {
+  color: var(--uk-global-muted-color) !important;
+}
+
+.uk-breadcrumb > * > *:hover {
+  color: var(--uk-primary-color) !important;
+}
+
+.uk-breadcrumb > :last-child > * {
+  color: var(--uk-global-color) !important;
+}
+
+/* ============================================
+   ICONS
+   ============================================ */
+.uk-icon-button {
+  background-color: var(--uk-global-muted-background) !important;
+  color: var(--uk-global-color) !important;
+  transition: all 0.3s ease;
+}
+
+.uk-icon-button:hover,
+.uk-icon-button:focus {
+  background-color: var(--uk-primary-color) !important;
+  color: #ffffff !important;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+.uk-list-bullet > li::before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='6' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle fill='%232ca5b8' cx='3' cy='3' r='3'/%3E%3C/svg%3E") !important;
+}
+
+/* ============================================
+   BACKGROUNDS
+   ============================================ */
 .uk-background-primary {
   background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%) !important;
 }
@@ -454,29 +701,60 @@ h6, .uk-h6 {
   background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%) !important;
 }
 
-/* Icon colors */
-.uk-icon-button {
-  transition: all 0.3s ease;
+.uk-background-muted {
+  background-color: var(--uk-global-muted-background) !important;
 }
 
-.uk-icon-button:hover {
-  background-color: var(--uk-primary-color);
-  color: #ffffff;
+.uk-background-default {
+  background-color: #ffffff !important;
 }
 
-/* Smooth scrolling */
+/* ============================================
+   TEXT COLORS
+   ============================================ */
+.uk-text-primary {
+  color: var(--uk-primary-color) !important;
+}
+
+.uk-text-secondary {
+  color: var(--uk-secondary-color) !important;
+}
+
+.uk-text-success {
+  color: var(--uk-success-color) !important;
+}
+
+.uk-text-warning {
+  color: var(--uk-warning-color) !important;
+}
+
+.uk-text-danger {
+  color: var(--uk-danger-color) !important;
+}
+
+.uk-text-muted {
+  color: var(--uk-global-muted-color) !important;
+}
+
+.uk-text-emphasis {
+  color: var(--uk-global-emphasis-color) !important;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom tech accents */
-.uk-card-badge {
-  background: linear-gradient(135deg, #2ca5b8 0%, #5fbd8f 100%);
-  border-radius: var(--uk-border-radius-small);
-  font-weight: 500;
+::selection {
+  background-color: rgba(44, 165, 184, 0.2);
+  color: var(--uk-global-emphasis-color);
 }
 
-/* Animation enhancements */
+/* ============================================
+   ANIMATION ENHANCEMENTS
+   ============================================ */
 @media (prefers-reduced-motion: no-preference) {
   * {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
