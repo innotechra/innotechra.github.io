@@ -1,723 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- SEO Meta Tags -->
-		<meta name="description" content="InnoTechra - Premier Cybersecurity Events">
-		<meta name="author" content="InnoTechra">
-		<!-- OG Meta Tags -->
-		<meta property="og:site_name" content="InnoTechra Events" />
-		<meta property="og:title" content="InnoTechra - Cybersecurity Events"/>
-		<meta property="og:description" content="Join industry leaders at exclusive cybersecurity events" />
-		<meta property="og:url" content="" />
-		<meta name="twitter:card" content="summary_large_image">
-		<title>InnoTechra Events</title>
-		<link href="https://cdn.jsdelivr.net/npm/uikit@3.23.11/dist/css/uikit.min.css" rel="stylesheet">
-		<style>
-			:root {
-				--inno-blue: #4A90E2;
-				--inno-green: #7ED321;
-				--inno-dark: #1a1a2e;
-				--inno-light: #f8f9fa;
-			}
-			
-			body {
-				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-			}
-			
-			.uk-navbar-container {
-				background: rgba(255, 255, 255, 0.95) !important;
-				backdrop-filter: blur(10px);
-			}
-			
-			.uk-navbar-sticky {
-				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-			}
-			
-			.uk-button-primary {
-				background-color: var(--inno-blue);
-				color: white;
-				border: none;
-			}
-			
-			.uk-button-primary:hover {
-				background-color: #3a7bc8;
-			}
-			
-			.uk-button-default {
-				background-color: transparent;
-				color: var(--inno-dark);
-				border: 2px solid var(--inno-green);
-			}
-			
-			.uk-button-default:hover {
-				background-color: var(--inno-green);
-				color: var(--inno-dark);
-				border: 2px solid var(--inno-green);
-			}
-			
-			.uk-text-primary {
-				color: var(--inno-blue) !important;
-			}
-			
-			.uk-text-success {
-				color: var(--inno-green) !important;
-			}
-			
-			.uk-section-primary {
-				background-color: var(--inno-blue);
-			}
-			
-			.uk-section-muted {
-				background-color: var(--inno-light);
-			}
-			
-			.testimonial {
-				background: transparent;
-				border-radius: 0;
-				padding: 0;
-				box-shadow: none;
-			}
-			
-			.testimonial-meta {
-				margin-top: 1.5rem;
-			}
-			
-			.event-card {
-				transition: transform 0.3s ease;
-			}
-			
-			.event-card:hover {
-				transform: translateY(-5px);
-			}
-			
-			.uk-icon-button {
-				background-color: var(--inno-blue);
-				color: white;
-			}
-			
-			.uk-icon-button:hover {
-				background-color: var(--inno-green);
-				color: var(--inno-dark);
-			}
-			
-			#footer {
-				background-color: var(--inno-dark);
-				color: white;
-			}
-			
-			.img-half {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-			
-			.text-container {
-				max-width: 600px;
-			}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | InnoTechra</title>
+    <link rel="stylesheet" href="assets/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="assets/img/logo.svg" alt="" style="max-height: 50px;">
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">Event Calendar</a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="region-benelux.html">Region Benelux</a>
+                            <a class="navbar-item" href="region-uk.html">Region UK</a>
+                            <a class="navbar-item" href="region-dach.html">Region DACH</a>
+                        </div>
+                    </div>
+                    <a class="navbar-item" href="why-attend.html">Why Attend</a>
+                    <a class="navbar-item" href="why-sponsor.html">Why Sponsor</a>
+                    <a class="navbar-item" href="#testimonials">Testimonials</a>
+                    <a class="navbar-item" href="#sponsorship">Sponsorship</a>
+                    <div class="navbar-item">
+                        <a class="button is-primary" href="https://buytickets.at/techwiserx2026" target="_blank">
+                            <strong>Get Tickets</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-			#hero .uk-slideshow-items li::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: rgba(26, 26, 46, 0.5);
-			}
-		</style>
-  </head>
-  <body>
-	<!-- Navbar Start -->
-	<div uk-sticky="start: 200; show-on-up: true; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-		<nav class="uk-navbar-container">
-			<div class="uk-container">
-				<div uk-navbar>
-					<div class="uk-navbar-left">
-						<a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">
-							<span style="color: var(--inno-blue); font-weight: bold; font-size: 1.5rem;">Inno<span style="color: var(--inno-green);">Techra</span></span>
-						</a>
-					</div>
-					<div class="uk-navbar-center">
-						<ul class="uk-navbar-nav uk-visible@m">
-							<li><a href="#about">About</a></li>
-							<li>
-								<a href="#">Events <span uk-navbar-parent-icon></span></a>
-								<div class="uk-navbar-dropdown">
-									<ul class="uk-nav uk-navbar-dropdown-nav">
-										<li><a href="#nordics">Nordics Edition</a></li>
-										<li><a href="#benelux">Benelux Edition</a></li>
-										<li><a href="#dach">DACH Edition</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#speakers">Speakers</a></li>
-							<li><a href="#partners">Partners</a></li>
-						</ul>
-					</div>
-					<div class="uk-navbar-right">
-						<a class="uk-button uk-button-default uk-visible@m" href="#register">Register Now</a>
-						<div class="uk-navbar-item uk-hidden@m"><a href="#off-canvas" class="uk-button uk-button-default" uk-icon="icon: menu" uk-toggle></a></div>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</div>
-	
-	<!-- Off-canvas menu -->
-	<div class="uk-hidden@m" id="off-canvas" uk-offcanvas="overlay: true; flip: true">
-		<div class="uk-offcanvas-bar">
-			<div>
-				<a class="off-canvas-logo" href="#" style="color: var(--inno-blue); font-weight: bold; font-size: 1.5rem;">Inno<span style="color: var(--inno-green);">Techra</span></a>			
-					
-				<ul class="uk-nav uk-nav-default uk-margin-medium-top">
-					<li><a href="#about">About</a></li>
-					<li><a href="#nordics">Nordics Edition</a></li>
-					<li><a href="#benelux">Benelux Edition</a></li>
-					<li><a href="#dach">DACH Edition</a></li>
-					<li><a href="#speakers">Speakers</a></li>
-					<li><a href="#partners">Partners</a></li>
-				</ul>
-					
-				<ul class="uk-iconnav socials uk-margin-medium-top">
-					<li><a href="#" class="uk-icon-button" uk-icon="icon: linkedin"></a></li>
-					<li><a href="#" class="uk-icon-button" uk-icon="icon: instagram"></a></li>
-					<li><a href="#" class="uk-icon-button" uk-icon="icon: x"></a></li>
-					<li><a href="#" class="uk-icon-button" uk-icon="icon: facebook"></a></li>
-				</ul>
-				<a class="uk-button uk-button-default uk-margin-medium-top" href="#register">Register Now</a>
-			</div>
-			
-			<button class="uk-offcanvas-close" type="button" uk-close></button>
-		</div>
-	</div>
-	<!-- Navbar End -->
-	
-	<!-- Hero Slideshow Start -->
-	<div id="hero" class="uk-position-relative" loading="lazy" uk-slideshow="animation: fade; autoplay: true; ratio: false">
-		<ul class="uk-slideshow-items" uk-height-viewport>
-			<li>
-				<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-					<img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=1080&fit=crop" alt="Cybersecurity Conference" uk-cover>
-				</div>
-			</li>
-			<li>
-				<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-					<img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920&h=1080&fit=crop" alt="Business Networking" uk-cover>
-				</div>
-			</li>
-			<li>
-				<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-					<img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1920&h=1080&fit=crop" alt="Technology Event" uk-cover>
-				</div>
-			</li>	
-		</ul>
-		
-		<div class="uk-position-center uk-position-z-index">
-			<div class="uk-container">
-				<div class="uk-width-2-3@m">
-					<div class="uk-light">
-						<h1>The most exclusive Cyber Security events in the world</h1>
-						<p>Join us at exclusive cybersecurity events featuring C-Suite decision makers, expert-led discussions, and unmatched networking opportunities. Connect with industry leaders and elevate your cybersecurity knowledge.</p>
-						<a class="uk-button uk-button-default uk-button-large" href="#events">View Events</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-	<!-- Hero Slideshow End -->
-	
-	<!-- About Section Start -->
-	<section id="about" class="uk-section uk-section-large">
-		<div class="uk-container">
-			<div class="uk-flex uk-flex-middle uk-grid-large uk-child-width-expand@s" uk-grid>
-				<div>
-					<img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800" alt="Cybersecurity Conference">
-				</div>
-				<div>
-					<div class="text-container">
-						<div class="uk-text-uppercase uk-text-bold uk-text-primary">Excellence in Cybersecurity</div>
-						<h2 class="uk-heading-medium">Why Should You Join Our Conference</h2>
-						<p>Next IT Security brings together C-Level cybersecurity decision makers for a day of expert-led discussions on the most current security challenges. This event provides an invaluable opportunity to explore the latest developments in cybersecurity.</p>
-						<ul class="uk-list uk-list-bullet">
-							<li>100+ C-Suite Attendees per Event</li>
-							<li>20+ Expert Speakers</li>
-							<li>400+ Minutes of Networking</li>
-							<li>Exclusive Content & Discussions</li>
-						</ul>
-						<a class="uk-button uk-button-primary uk-button-large" href="#events">Learn More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- About Section End -->
-	
-	<!-- Events Overview Start -->
-	<section id="events" class="uk-section uk-section-large uk-section-muted">
-		<div class="uk-container">
-			<div class="text-container uk-text-center uk-margin-auto uk-margin-large-bottom">
-				<h2 class="uk-heading-medium">Upcoming Events 2026</h2>
-				<p class="uk-text-lead">Join us at exclusive venues across Europe</p>
-			</div>
-			<div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
-				<div>
-					<div class="uk-card uk-card-default uk-box-shadow-medium event-card">
-						<div class="uk-card-media-top">
-							<img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=800" alt="Stockholm">
-						</div>
-						<div class="uk-card-body">
-							<span class="uk-badge" style="background-color: var(--inno-blue);">March 12, 2026</span>
-							<h3 class="uk-card-title">Nordics Edition</h3>
-							<p><span uk-icon="icon: location"></span> The Grand Hotel, Stockholm</p>
-							<p>Connect with industry leaders and end the day with a luxurious Networking Dinner Cruise.</p>
-							<a class="uk-button uk-button-text uk-text-primary" href="#nordics">Read More →</a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="uk-card uk-card-default uk-box-shadow-medium event-card">
-						<div class="uk-card-media-top">
-							<img src="https://images.unsplash.com/photo-1585211969224-3e992986159d?w=800" alt="Amsterdam">
-						</div>
-						<div class="uk-card-body">
-							<span class="uk-badge" style="background-color: var(--inno-green); color: var(--inno-dark);">April 16, 2026</span>
-							<h3 class="uk-card-title">Benelux Edition</h3>
-							<p><span uk-icon="icon: location"></span> Koepelkerk, Amsterdam</p>
-							<p>After a scenic cruise, network during a delightful dinner at the stunning LuminAir.</p>
-							<a class="uk-button uk-button-text uk-text-primary" href="#benelux">Read More →</a>
-						</div>
-					</div>
-				</div>
-				<div>
-					<div class="uk-card uk-card-default uk-box-shadow-medium event-card">
-						<div class="uk-card-media-top">
-							<img src="https://images.unsplash.com/photo-1564221710304-0b37c8b9d729?w=800" alt="Frankfurt">
-						</div>
-						<div class="uk-card-body">
-							<span class="uk-badge" style="background-color: var(--inno-blue);">April 30, 2026</span>
-							<h3 class="uk-card-title">DACH Edition</h3>
-							<p><span uk-icon="icon: location"></span> Steigenberger Icon, Frankfurt</p>
-							<p>Connect with industry leaders and elevate your cybersecurity knowledge.</p>
-							<a class="uk-button uk-button-text uk-text-primary" href="#dach">Read More →</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Events Overview End -->
-	
-	<!-- Side by Side Start -->
-	<section class="uk-section uk-padding-remove">		
-		<div class="uk-card uk-flex uk-flex-middle@m uk-grid-collapse uk-child-width-1-2@m uk-margin uk-background-default" uk-grid>
-			<div class="uk-card-media-left uk-cover-container">
-				<img class="img-half" src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800" alt="Expert Speakers" uk-cover>
-				<canvas width="800" height="800"></canvas>
-			</div>
-			<div>
-				<div class="uk-container">
-					<div class="uk-card-body">
-						<div class="uk-dark">
-							<h2 class="uk-heading-medium">Expert-Led Discussions</h2>
-							<p>We invite the best and brightest in the cybersecurity industry to share their knowledge and insights. Our events feature keynote speeches from renowned speakers on hot topics such as ransomware prevention, cloud security, zero trust architecture, and emerging threats.</p>
-						</div>
-						<a class="uk-button uk-button-primary uk-button-large" href="#speakers">View Speakers</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Side by Side End -->
-	
-	<!-- Side by Side Start -->
-	<section class="uk-section uk-padding-remove">		
-		<div class="uk-card uk-flex uk-flex-middle@m uk-grid-collapse uk-child-width-1-2@m uk-margin uk-background-default" uk-grid>
-			<div>
-				<div class="uk-container">
-					<div class="uk-card-body">
-						<div class="uk-dark">
-							<h2 class="uk-heading-medium">Learn About New Trends</h2>
-							<p>Stay ahead of the curve with insights into the latest developments in cybersecurity. From AI-powered security solutions to compliance frameworks like NIS2 and DORA, our events cover the topics that matter most to security leaders today.</p>
-						</div>
-						<a class="uk-button uk-button-primary uk-button-large" href="#events">Explore Topics</a>
-					</div>
-				</div>
-			</div>
-			<div class="uk-card-media-right uk-cover-container">
-				<img class="img-half" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800" alt="Technology" uk-cover>
-				<canvas width="800" height="800"></canvas>
-			</div>
-		</div>
-	</section>
-	<!-- Side by Side End -->
-	
-	<!-- Event Topics Start -->
-	<div class="uk-section uk-section-large uk-section-muted">
-		<div class="uk-container">
-			<div class="text-container uk-text-center uk-margin-auto uk-margin-large-bottom">
-				<p class="uk-text-uppercase uk-text-bold uk-text-primary">What We Cover</p>
-				<h2 class="uk-heading-medium">Hot Topics in Cybersecurity</h2>
-				<p>Our agenda is curated by CISOs for CISOs, covering the most pressing challenges in modern security</p>
-			</div>
-			<div class="uk-child-width-1-2@m uk-grid-large" uk-grid>
-				<div>
-					<h3 class="uk-heading-small uk-text-center uk-margin-large-bottom">Security Challenges</h3>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>Ransomware & Malware Prevention</div>
-						</div>
-						<p class="uk-text-muted">Latest strategies to protect against evolving ransomware threats and advanced persistent threats</p>
-					</div>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>Zero Trust Architecture</div>
-						</div>
-						<p class="uk-text-muted">Implementing zero trust principles across your organization's infrastructure</p>
-					</div>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>Cloud Security</div>
-						</div>
-						<p class="uk-text-muted">Securing multi-cloud environments and managing cloud-native security challenges</p>
-					</div>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>AI & Machine Learning in Security</div>
-						</div>
-						<p class="uk-text-muted">Leveraging AI for threat detection while defending against AI-powered attacks</p>
-					</div>
-				</div>
-				<div>
-					<h3 class="uk-heading-small uk-text-center uk-margin-large-bottom">Compliance & Governance</h3>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>NIS2 Directive</div>
-						</div>
-						<p class="uk-text-muted">Understanding and implementing requirements of the new NIS2 directive</p>
-					</div>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>DORA Compliance</div>
-						</div>
-						<p class="uk-text-muted">Digital Operational Resilience Act requirements for financial services</p>
-					</div>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>GDPR & Data Privacy</div>
-						</div>
-						<p class="uk-text-muted">Best practices for data protection and privacy compliance</p>
-					</div>
-					<div>
-						<div class="uk-grid-small uk-text-large" uk-grid>
-							<div class="uk-width-expand" uk-leader>Security Governance</div>
-						</div>
-						<p class="uk-text-muted">Building effective security governance frameworks and risk management programs</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Event Topics End -->
-	
-	<!-- Attendees Section Start -->
-	<section class="uk-section uk-section-large">
-		<div class="uk-container">
-			<div class="text-container uk-text-center uk-margin-auto uk-margin-large-bottom">
-				<p class="uk-text-uppercase uk-text-bold uk-text-success">Who Attends</p>
-				<h2 class="uk-heading-medium">A Most Exclusive Gathering</h2>
-				<p>Connect with C-Suite executives from leading organizations across Europe</p>
-			</div>
-			<div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-small" uk-grid>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>NATO</h4>
-						<p class="uk-text-meta">Deputy CIO for Cybersecurity</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>European Investment Bank</h4>
-						<p class="uk-text-meta">Senior Head, CISO</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>Booking.com</h4>
-						<p class="uk-text-meta">CISO</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>Volvo Group</h4>
-						<p class="uk-text-meta">Information Security Officer</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>Ericsson</h4>
-						<p class="uk-text-meta">Group CSO</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>ING Bank</h4>
-						<p class="uk-text-meta">Global IAM</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>Philips</h4>
-						<p class="uk-text-meta">Head of Data Security</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>SAP</h4>
-						<p class="uk-text-meta">VP, Chief Security Officer</p>
-					</div>
-				</div>
-				<div class="uk-text-center">
-					<div class="uk-card uk-card-body uk-card-default">
-						<h4>Rabobank</h4>
-						<p class="uk-text-meta">Cyber Security PM</p>
-					</div>
-				</div>
-			</div>
-			<div class="uk-text-center uk-margin-medium-top">
-				<a class="uk-button uk-button-default" href="#attendees">View All Attendees</a>
-			</div>
-		</div>
-	</section>
-	<!-- Attendees Section End -->
-	
-	<!-- News and Updates Start -->
-	<section class="uk-section uk-section-large uk-section-muted">
-		<div class="uk-container">
-			<div class="uk-flex uk-flex-between uk-flex-middle uk-margin-large-bottom" uk-grid>
-				<div>
-					<h2 class="uk-heading-medium">Latest Insights</h2>
-				</div>
-				<div>
-					<a class="uk-button uk-button-default" href="#blog" uk-icon="icon: chevron-right">View All</a>
-				</div>
-			</div>
-			<div class="uk-child-width-1-3@m uk-grid-match" uk-grid>
-				<div>
-					<a href="#" class="uk-card uk-card-default uk-box-shadow-small uk-card-hover uk-display-block uk-link-toggle">
-						<div class="uk-card-media-top">
-							<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600" alt="Cybersecurity">
-						</div>
-						<div class="uk-card-body">
-							<h3 class="uk-card-title"><span class="uk-link-heading">Building Collective Defense in the Nordic Region</span></h3>
-							<div class="blog-date uk-text-meta">December 20, 2025</div>
-							<p>Shared responsibility between public and private sectors in Nordic IT security landscape</p>
-						</div>
-					</a>
-				</div>
-				<div>
-					<a href="#" class="uk-card uk-card-default uk-box-shadow-small uk-card-hover uk-display-block uk-link-toggle">
-						<div class="uk-card-media-top">
-							<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="Infrastructure">
-						</div>
-						<div class="uk-card-body">
-							<h3 class="uk-card-title"><span class="uk-link-heading">Critical Infrastructure in DACH Region</span></h3>
-							<div class="blog-date uk-text-meta">November 7, 2025</div>
-							<p>Why critical infrastructure protection has become paramount in the DACH region</p>
-						</div>
-					</a>
-				</div>
-				<div>
-					<a href="#" class="uk-card uk-card-default uk-box-shadow-small uk-card-hover uk-display-block uk-link-toggle">
-						<div class="uk-card-media-top">
-							<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600" alt="Collaboration">
-						</div>
-						<div class="uk-card-body">
-							<h3 class="uk-card-title"><span class="uk-link-heading">Public-Private Sector Cooperation in Benelux</span></h3>
-							<div class="blog-date uk-text-meta">November 3, 2025</div>
-							<p>Building stronger security through shared resources in the Benelux region</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- News and Updates End -->
-	
-	<!-- Testimonials Start -->
-	<section class="uk-section uk-section-large">
-		<div class="uk-container">
-			<div class="text-container uk-margin-auto uk-width-2-3@m uk-margin-large-bottom uk-text-center">
-				<div class="uk-text-uppercase uk-text-bold uk-text-success">Testimonials</div>
-				<h2 class="uk-heading-medium">What Attendees Say</h2>
-				<p>Hear from security leaders who have experienced our events</p>
-			</div>
-			<div uk-slider="autoplay: true; pause-on-hover: true">
-				<div class="uk-position-relative">
-					<div class="uk-slider-container uk-slider-container-offset">
-						<div class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-match uk-grid uk-grid-large">
-							<div>
-								<div class="testimonial uk-text-center">
-									<div class="testimonial-content">
-										<p>"Excellent networking opportunity with genuine C-level decision makers. The quality of discussions and speakers was outstanding. Highly recommend for any CISO looking to stay ahead."</p>
-									</div>
-									<div class="testimonial-meta">
-										<div class="uk-width-auto">
-											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=12" width="80" height="80" alt="">
-										</div>
-										<h5>Lars Anderson</h5>
-										<div class="">CISO, Major Bank</div>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="testimonial uk-text-center">
-									<div class="testimonial-content">
-										<p>"The InnoTechra events provide real value. I've built lasting connections with peers facing similar challenges and gained actionable insights to improve our security posture."</p>
-									</div>
-									<div class="testimonial-meta">
-										<div class="uk-width-auto">
-											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=47" width="80" height="80" alt="">
-										</div>
-										<h5>Sophie Mueller</h5>
-										<div class="">Head of Security, Tech Corp</div>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="testimonial uk-text-center">
-									<div class="testimonial-content">
-										<p>"A must-attend event for security leaders. The intimate setting allows for meaningful conversations, and the speaker lineup is always top-notch. Worth every minute."</p>
-									</div>
-									<div class="testimonial-meta">
-										<div class="uk-width-auto">
-											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=33" width="80" height="80" alt="">
-										</div>
-										<h5>Jan van der Berg</h5>
-										<div class="">CTO, Enterprise Solutions</div>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div class="testimonial uk-text-center">
-									<div class="testimonial-content">
-										<p>"InnoTechra events are different. Focused on real challenges, with speakers who actually understand the complexity of modern security landscapes. Great networking too."</p>
-									</div>
-									<div class="testimonial-meta">
-										<div class="uk-width-auto">
-											<img class="uk-comment-avatar uk-border-circle" src="https://i.pravatar.cc/150?img=20" width="80" height="80" alt="">
-										</div>
-										<h5>Maria Johansson</h5>
-										<div class="">CISO, Healthcare Group</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<a href class="uk-position-center-left-out uk-slidenav-large" uk-slidenav-previous uk-slider-item="previous"></a>
-						<a href class="uk-position-center-right-out uk-slidenav-large" uk-slidenav-next uk-slider-item="next"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Testimonials End -->
-	
-	<!-- CTA Section Start -->
-	<section class="uk-section uk-section-large" style="background: linear-gradient(135deg, var(--inno-blue) 0%, var(--inno-dark) 100%);">
-		<div class="uk-container uk-light">
-			<div class="text-container uk-text-center uk-margin-auto">
-				<h2 class="uk-heading-medium">Ready to Join?</h2>
-				<p class="uk-text-lead">Secure your spot at the next InnoTechra event and connect with Europe's leading cybersecurity decision makers.</p>
-				<a class="uk-button uk-button-default uk-button-large uk-margin-small-right" href="#events">View Events</a>
-				<a class="uk-button uk-button-large" style="background: white; color: var(--inno-blue);" href="#register">Register Now</a>
-			</div>
-		</div>
-	</section>
-	<!-- CTA Section End -->
-	
-	<!-- Footer Start -->	
-	<footer id="footer" class="uk-section uk-section-large uk-padding-remove-bottom uk-light">
-		<div class="uk-container">	
-			<div class="uk-grid-large uk-margin-large-bottom" uk-grid>
-				<div class="uk-width-1-3@m">
-					<a class="uk-logo" href="#" aria-label="Back to Home">
-						<span style="color: var(--inno-blue); font-weight: bold; font-size: 1.5rem;">Inno<span style="color: var(--inno-green);">Techra</span></span>
-					</a>
-					<div class="text-container uk-margin-medium-top">
-						<p class="uk-text-meta">Bringing together C-Level cybersecurity decision makers for exclusive events across Europe. Join us in shaping the future of digital security.</p>
-					</div>
-					<ul class="uk-iconnav socials uk-margin-medium-top">
-						<li><a href="#" class="uk-icon-button" uk-icon="icon: linkedin"></a></li>
-						<li><a href="#" class="uk-icon-button" uk-icon="icon: instagram"></a></li>
-						<li><a href="#" class="uk-icon-button" uk-icon="icon: x"></a></li>
-						<li><a href="#" class="uk-icon-button" uk-icon="icon: facebook"></a></li>
-					</ul>
-				</div>
-				<div class="uk-width-2-3@m">
-					<ul class="uk-hidden@m" uk-accordion>
-						<li>
-							<a class="uk-accordion-title uk-h4" href>Events</a>
-							<div class="uk-accordion-content">
-								<ul class="uk-nav uk-nav-default">
-									<li><a href="#nordics">Nordics Edition</a></li>
-									<li><a href="#benelux">Benelux Edition</a></li>
-									<li><a href="#dach">DACH Edition</a></li>
-									<li><a href="#speakers">Speakers</a></li>
-								</ul>
-							</div>
-						</li>
-						<li>
-							<a class="uk-accordion-title uk-h4" href>Information</a>
-							<div class="uk-accordion-content">
-								<ul class="uk-nav uk-nav-default">
-									<li><a href="#contact">Contact Us</a></li>
-									<li><a href="#partners">Partner With Us</a></li>
-									<li><a href="#register">Register</a></li>
-									<li><a href="#attendees">Attendees</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>				
-				
-					<div class="uk-child-width-1-2@m uk-visible@m" uk-grid>
-						<div>
-							<h4 class="uk-text-uppercase">Events</h4>
-							<ul class="uk-nav uk-nav-default">
-								<li><a href="#nordics">Nordics Edition</a></li>
-								<li><a href="#benelux">Benelux Edition</a></li>
-								<li><a href="#dach">DACH Edition</a></li>
-								<li><a href="#speakers">Speakers</a></li>
-							</ul>
-						</div>
-						<div>
-							<h4 class="uk-text-uppercase">Information</h4>
-							<ul class="uk-nav uk-nav-default">
-								<li><a href="#contact">Contact Us</a></li>
-								<li><a href="#partners">Partner With Us</a></li>
-								<li><a href="#register">Register</a></li>
-								<li><a href="#attendees">Attendees</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr>
-			<div class="uk-flex uk-flex-between uk-flex-middle uk-flex-wrap-reverse uk-margin-bottom">
-				<div class="copyright uk-text-meta">Copyright &copy; 2026 InnoTechra. All rights reserved.</div>
-				<div class="legal">
-					<ul class="uk-nav uk-nav-default uk-flex">
-						<li class="uk-margin-left"><a href="#privacy">Privacy Policy</a></li>
-						<li class="uk-margin-left"><a href="#terms">Terms and Conditions</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- Footer End -->
-	
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.23.11/dist/js/uikit.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.23.11/dist/js/uikit-icons.min.js"></script>
-  </body>
+    <!-- Hero Section -->
+    <section class="hero is-medium is-dark hero-gradient">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="subtitle is-5">TechWiserX 2026 AI & Cyber Series</p>
+                <h1 class="title is-1 is-spaced">TechWiserX 2026 AI & Cyber Series Europe</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Cards Section -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <!-- Amsterdam Event -->
+                <div class="column is-4">
+                    <div class="card event-card">
+                        <div class="card-content">
+                            <p class="subtitle is-6 has-text-grey-light">region benelux</p>
+                            <h2 class="title is-3">Amsterdam</h2>
+                            <p class="subtitle is-5">9th of April</p>
+                            <a href="https://buytickets.at/techwiserx2026" class="button is-primary is-fullwidth" target="_blank">Get Tickets</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- London Event -->
+                <div class="column is-4">
+                    <div class="card event-card">
+                        <div class="card-content">
+                            <p class="subtitle is-6 has-text-grey-light">region UK</p>
+                            <h2 class="title is-3">London</h2>
+                            <p class="subtitle is-5">18th of June</p>
+                            <a href="https://buytickets.at/techwiserx2026" class="button is-primary is-fullwidth" target="_blank">Get Tickets</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Munich Event -->
+                <div class="column is-4">
+                    <div class="card event-card">
+                        <div class="card-content">
+                            <p class="subtitle is-6 has-text-grey-light">region DACH</p>
+                            <h2 class="title is-3">Munich</h2>
+                            <p class="subtitle is-5">12th of November</p>
+                            <a href="https://buytickets.at/techwiserx2026" class="button is-primary is-fullwidth" target="_blank">Get Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Series Sponsors -->
+    <section class="section has-background-light">
+        <div class="container">
+            <h2 class="title is-3 has-text-centered">Series Sponsors</h2>
+            <div class="sponsor-marquee">
+                <div class="sponsor-track">
+                    <!-- Sponsor logos would go here -->
+                    <div class="sponsor-item">
+                        <img src="https://via.placeholder.com/150x80?text=Sponsor+1" alt="Sponsor 1">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="https://via.placeholder.com/150x80?text=Sponsor+2" alt="Sponsor 2">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="https://via.placeholder.com/150x80?text=Sponsor+3" alt="Sponsor 3">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="https://via.placeholder.com/150x80?text=Sponsor+4" alt="Sponsor 4">
+                    </div>
+                    <div class="sponsor-item">
+                        <img src="https://via.placeholder.com/150x80?text=Sponsor+5" alt="Sponsor 5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Us Section -->
+    <section class="section">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="subtitle is-5">Why Join Us?</h2>
+                <h3 class="title is-2">About the TechWiserX 2026 AI & Cyber Series Europe</h3>
+            </div>
+            <div class="content is-medium">
+                <p>The TechWiserX 2026 AI & Cyber Series Europe is an exclusive, invite-only event designed to bring together senior leaders from key industries, including financial services, banking, insurance, manufacturing, retail, healthcare, and automotive.</p>
+                <p>Hosted across the UK, Dach, and the Benelux region, TechWiserX 2026 AI & Cyber Series Europe delivers cutting-edge cybersecurity content curated by the most influential industry experts. It offers unparalleled networking opportunities and a platform for pre-qualified meetings with leading solution providers, fostering meaningful discussions and actionable strategies to tackle the evolving cyber threat landscape.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="columns is-multiline mt-6">
+                <div class="column is-6">
+                    <div class="box feature-box">
+                        <h4 class="title is-4">Full Day Of Priority Networking</h4>
+                        <p>Private, moderated discussions enabling deeper peer exchange on cyber risk, resilience, and enterprise security strategy.</p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="box feature-box">
+                        <h4 class="title is-4">150+ Senior Decision Makers</h4>
+                        <p>A full-day agenda of confirmed 1:1 meetings with senior cybersecurity and technology leaders—built for relevance and outcomes.</p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="box feature-box">
+                        <h4 class="title is-4">AI & Cyber On The Spot</h4>
+                        <p>Keynotes and expert sessions featuring CISOs and security executives sharing actionable frameworks and future-facing perspectives.</p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="box feature-box">
+                        <h4 class="title is-4">20+ Expert Speakers</h4>
+                        <p>Curated introductions based on your strategic priorities, ensuring every connection is intentional, high-quality, and time-efficient.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="has-text-centered mt-5">
+                <a href="https://buytickets.at/techwiserx2026" class="button is-primary is-large" target="_blank">Get Tickets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Networking Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-6">
+                    <div class="content-block">
+                        <h3 class="title is-3">Network With Senior IT/ IT SEC Leaders</h3>
+                        <p>Connect with leaders to share strategy and solve security challenges through exclusive peer networking.</p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="content-block">
+                        <h3 class="title is-3">Showcase Your Solution In Pre-Qualified 1-2-1 Meetings</h3>
+                        <p>Guaranteed 1:1 meetings with pre-qualified global C-suite decision-makers.</p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="content-block">
+                        <h3 class="title is-3">Closed Door Roundtable Sessions With Top Experts</h3>
+                        <p>Private, off-the-record discussions for senior IT and security leaders on cybersecurity and risk strategy.</p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div class="content-block">
+                        <h3 class="title is-3">Engage In Exciting Panel Discussions</h3>
+                        <p>Engage in real-time discussions with senior IT leaders on security strategy and the future of TechWiser</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="columns is-multiline has-text-centered mt-6">
+                <div class="column is-3">
+                    <div class="stat-box">
+                        <h4 class="title is-2">100+</h4>
+                        <p class="subtitle is-5">senior decision makers</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="stat-box">
+                        <h4 class="title is-2">20+</h4>
+                        <p class="subtitle is-5">expert speakers</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="stat-box">
+                        <h4 class="title is-2">1 day</h4>
+                        <p class="subtitle is-5">3 tracks</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="stat-box">
+                        <h4 class="title is-2">AI & Cyber</h4>
+                        <p class="subtitle is-5">on the spot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Series Speakers</h2>
+            <p class="subtitle is-5 has-text-centered mb-6">At TechWiserX 2026 AI & Cyber Series Europe, we bring together the visionaries defining the future of AI, cyber resilience, data strategy, and more.</p>
+            
+            <div class="columns is-multiline">
+                <!-- Speaker Cards -->
+                <div class="column is-3">
+                    <div class="card speaker-card">
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="https://techwiserevents.com/wp-content/uploads/2026/02/burak-erkek.jpg" alt="Burak Erkek">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="title is-5">Burak Erkek</h4>
+                            <p class="subtitle is-6">Head of Technology & Data</p>
+                            <p class="has-text-weight-bold">Garanti BBVA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-3">
+                    <div class="card speaker-card">
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="https://techwiserevents.com/wp-content/uploads/2026/02/giana-quandt.jpg" alt="Giana Quandt">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="title is-5">Giana Quandt</h4>
+                            <p class="subtitle is-6">Chief Compliance Officer</p>
+                            <p class="has-text-weight-bold">KBC Bank</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-3">
+                    <div class="card speaker-card">
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="https://techwiserevents.com/wp-content/uploads/2026/02/Martin-Dimovski.jpg" alt="Martin Dimovski">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="title is-5">Martin Dimovski</h4>
+                            <p class="subtitle is-6">Team Lead DevOps Sec</p>
+                            <p class="has-text-weight-bold">ABN AMRO Bank</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-3">
+                    <div class="card speaker-card">
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="https://techwiserevents.com/wp-content/uploads/2026/02/Adeiza-Yisa.jpg" alt="Adeiza Yisa">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <h4 class="title is-5">Adeiza Yisa</h4>
+                            <p class="subtitle is-6">BISO Leader</p>
+                            <p class="has-text-weight-bold">Shell</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who You Will Meet Section -->
+    <section class="section has-background-light">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">Who You Will Meet?</h2>
+            
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="box audience-box">
+                        <div class="has-text-centered mb-4">
+                            <i class="fas fa-users fa-3x has-text-primary"></i>
+                        </div>
+                        <h3 class="title is-4">C-Level Executives (60%)</h3>
+                        <p>CIOs, CTOs, CISOs, CDOs, and senior AI leaders — along with Directors and Heads of IT & CyberSecurity — make up the core of our audience. These top decision-makers are shaping their organizations' tech strategies, data initiatives, and security investments.</p>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="box audience-box">
+                        <div class="has-text-centered mb-4">
+                            <i class="fas fa-code fa-3x has-text-info"></i>
+                        </div>
+                        <h3 class="title is-4">Technical Experts (30%)</h3>
+                        <p>Head of the Engineering, Software Development Leads, Cloud & Security Leads. These experts are responsible for the implementing and managing the IT infrastructure and security systems.</p>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="box audience-box">
+                        <div class="has-text-centered mb-4">
+                            <i class="fas fa-briefcase fa-3x has-text-success"></i>
+                        </div>
+                        <h3 class="title is-4">Other Stakeholders (10%)</h3>
+                        <p>Innovation, Compliance, Transformation Heads. These stakeholders are focused on the driving digital transformation, ensuring regulatory compliance, and the fostering a culture of the innovation within their organizations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered mb-6">What Industry Leaders Say about TechWiser</h2>
+            
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="box testimonial-box">
+                        <p class="mb-4">"Excellent, good event with opportunities to network in a relax environment/atmosphere, interesting table companions & discussions!"</p>
+                        <p class="has-text-weight-bold">Group Security-Regulatory & Standards</p>
+                        <p class="has-text-primary">PHILIPS</p>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="box testimonial-box">
+                        <p class="mb-4">"Great networking! Pleasant experience, interested in coming ones."</p>
+                        <p class="has-text-weight-bold">Senior Cybersecurity Officer</p>
+                        <p class="has-text-primary">NN Group</p>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="box testimonial-box">
+                        <p class="mb-4">"Great venue, very interesting conversations"</p>
+                        <p class="has-text-weight-bold">Director of Cybersecurity</p>
+                        <p class="has-text-primary">ING</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Delegate Section -->
+    <section class="section has-background-primary has-text-white">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-8">
+                    <h2 class="title is-3 has-text-white">Attend as a VIP Delegate</h2>
+                    <p class="subtitle is-5 has-text-white">Are you an IT or IT Security leader based in Amsterdam? Seize the opportunity to showcase your expertise, engage with industry peers, exchange valuable insights, and explore the most innovative solutions available.</p>
+                    <p class="has-text-white">Senior IT / IT Security decision-makers may qualify for a complimentary VIP ticket code (selected attendees only).</p>
+                </div>
+                <div class="column is-4 has-text-centered">
+                    <a href="#" class="button is-white is-large">Registration Link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer has-background-dark has-text-white-ter">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <img src="https://techwiserevents.com/wp-content/uploads/2025/05/logo-new1-removebg-preview.png" alt="TechWiser X" style="max-width: 150px; margin-bottom: 1rem;">
+                    <div class="buttons">
+                        <a href="https://www.linkedin.com/company/techwiser02/posts/?feedView=all" class="button is-small is-rounded" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61583076514064&locale=hu_HU" class="button is-small is-rounded" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Event Calendar</h4>
+                    <ul>
+                        <li><a href="region-benelux.html" class="has-text-white-ter">Region Benelux</a></li>
+                        <li><a href="region-uk.html" class="has-text-white-ter">Region UK</a></li>
+                        <li><a href="region-dach.html" class="has-text-white-ter">Region DACH</a></li>
+                    </ul>
+                </div>
+
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Useful Link</h4>
+                    <ul>
+                        <li><a href="why-sponsor.html" class="has-text-white-ter">Why Sponsor</a></li>
+                        <li><a href="why-attend.html" class="has-text-white-ter">Why Attend</a></li>
+                        <li><a href="#testimonials" class="has-text-white-ter">Testimonials</a></li>
+                        <li><a href="#" class="has-text-white-ter">Sponsorship</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content has-text-centered has-text-white-ter mt-5">
+                <p>Stay connected and follow us for real-time event updates, speaker announcements, and exclusive content on LinkedIn, Facebook and our website www.techwiser.io.</p>
+                <p class="is-size-7">By registering for our event through any platform such as Meta or form, you acknowledge and agree to our Privacy Policy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
 </html>

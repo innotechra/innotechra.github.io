@@ -1,0 +1,302 @@
+/* Custom Styles for TechWiser X */
+
+:root {
+    --primary-color: #00d1b2;
+    --dark-color: #1a1a1a;
+    --light-color: #f5f5f5;
+}
+
+/* Hero Gradient */
+.hero-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Event Cards */
+.event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Boxes */
+.feature-box {
+    transition: all 0.3s ease;
+    height: 100%;
+    border-left: 4px solid var(--primary-color);
+}
+
+.feature-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Speaker Cards */
+.speaker-card {
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.speaker-card:hover {
+    transform: scale(1.05);
+}
+
+.speaker-card .card-image img {
+    object-fit: cover;
+}
+
+/* Audience/Model Boxes */
+.audience-box,
+.model-box {
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.audience-box:hover,
+.model-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+/* Testimonial Boxes */
+.testimonial-box {
+    height: 100%;
+    border-top: 3px solid var(--primary-color);
+    position: relative;
+    padding: 1.5rem;
+}
+
+.testimonial-box::before {
+    content: '"';
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    color: var(--primary-color);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+}
+
+/* Stat Boxes */
+.stat-box {
+    padding: 2rem 1rem;
+}
+
+.stat-box .title {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Content Blocks */
+.content-block {
+    padding: 2rem;
+    background: white;
+    border-radius: 6px;
+    height: 100%;
+}
+
+/* Sponsor Marquee */
+.sponsor-marquee {
+    overflow: hidden;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.sponsor-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+}
+
+.sponsor-item {
+    flex: 0 0 auto;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.sponsor-item img {
+    max-width: 150px;
+    max-height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.sponsor-item img:hover {
+    filter: grayscale(0%);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Benefit Boxes */
+.benefit-box {
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.benefit-box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-box .image {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Engagement Cards */
+.engagement-card {
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.engagement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Agenda Items */
+.agenda-timeline {
+    position: relative;
+}
+
+.agenda-item {
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.agenda-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Countdown Boxes */
+.countdown-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+    min-width: 120px;
+}
+
+.countdown-box .title {
+    color: white;
+    margin-bottom: 0;
+}
+
+.countdown-box .subtitle {
+    color: white;
+}
+
+/* CTA Boxes */
+.cta-box {
+    padding: 3rem 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+}
+
+/* Navigation Enhancements */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-dropdown {
+    border-top: 2px solid var(--primary-color);
+}
+
+/* Button Enhancements */
+.button.is-primary {
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.button.is-primary:hover {
+    background-color: #00b89c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 209, 178, 0.3);
+}
+
+/* Footer Styles */
+.footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+.footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .sponsor-item {
+        margin: 0 1rem;
+    }
+    
+    .countdown-box {
+        padding: 1rem;
+        min-width: 80px;
+    }
+    
+    .countdown-box .title {
+        font-size: 2rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Spacing */
+.section {
+    padding: 3rem 1.5rem;
+}
+
+/* Box Shadows */
+.box {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Transitions */
+img {
+    transition: transform 0.3s ease;
+}
+
+/* Card Enhancements */
+.card {
+    overflow: hidden;
+}
+
+.card-image {
+    overflow: hidden;
+}
+
+.card-image img {
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.1);
+}
