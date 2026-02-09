@@ -425,48 +425,81 @@ a:hover,
 }
 
 /* ============================================
-   TIMELINE / AGENDA - TECHWISER STYLE
+   TIMELINE / AGENDA - TECHWISER STYLE (CENTERED)
    ============================================ */
 .agenda-timeline {
   position: relative;
-  padding-left: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Center vertical line */
 .agenda-timeline::before {
   content: '';
   position: absolute;
-  left: 20px;
+  left: 50%;
   top: 0;
   bottom: 0;
   width: 2px;
   background: linear-gradient(180deg, var(--uk-primary-color) 0%, var(--uk-secondary-color) 100%);
+  transform: translateX(-50%);
+}
+
+.agenda-timeline .uk-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .agenda-timeline .uk-list > li {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  clear: both;
 }
 
+/* Circle markers - centered on line */
 .agenda-timeline .uk-list > li::before {
   content: '';
   position: absolute;
-  left: -33px;
+  left: 50%;
   top: 20px;
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background: var(--uk-primary-color);
   border: 3px solid #fff;
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--uk-global-muted-background);
-  z-index: 1;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
-.agenda-timeline .uk-card {
-  margin-left: 20px;
+/* Alternate left-right pattern */
+.agenda-timeline .uk-list > li:nth-child(odd) .uk-card {
+  float: left;
+  width: calc(50% - 40px);
+  margin-right: auto;
+  margin-left: 0;
 }
 
-.agenda-timeline .uk-card-secondary::before {
+.agenda-timeline .uk-list > li:nth-child(even) .uk-card {
+  float: right;
+  width: calc(50% - 40px);
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Secondary items (breaks) */
+.agenda-timeline .uk-card-secondary + li::before,
+.agenda-timeline li:has(.uk-card-secondary)::before {
   background: var(--uk-muted-color) !important;
+}
+
+/* Clear floats */
+.agenda-timeline .uk-list > li::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /* ============================================
@@ -885,21 +918,28 @@ html {
 /* ============================================
    RESPONSIVE ADJUSTMENTS
    ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
   .uk-section {
     padding: 40px 0;
   }
   
-  .agenda-timeline {
-    padding-left: 30px;
-  }
-  
+  /* Stack timeline on mobile */
   .agenda-timeline::before {
-    left: 15px;
+    left: 30px;
+    transform: none;
   }
   
   .agenda-timeline .uk-list > li::before {
-    left: -28px;
+    left: 30px;
+    transform: translateX(-50%);
+  }
+  
+  .agenda-timeline .uk-list > li:nth-child(odd) .uk-card,
+  .agenda-timeline .uk-list > li:nth-child(even) .uk-card {
+    float: none;
+    width: 100%;
+    margin-left: 60px;
+    margin-right: 0;
   }
 }
 
