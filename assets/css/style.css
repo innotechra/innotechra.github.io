@@ -189,6 +189,7 @@ a:hover,
   transition: all 0.3s ease !important;
   font-weight: 500 !important;
   font-family: var(--uk-global-font-family) !important;
+  text-transform: none !important;
 }
 
 /* Primary Button */
@@ -283,23 +284,26 @@ a:hover,
 }
 
 /* ============================================
-   CARDS
+   CARDS - TECHWISER STYLE
    ============================================ */
 .uk-card {
   background-color: #ffffff !important;
   border-radius: var(--uk-border-radius-medium) !important;
   box-shadow: var(--uk-global-small-box-shadow) !important;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease !important;
+  border: 1px solid var(--uk-global-border) !important;
 }
 
-.uk-card:hover {
-  box-shadow: var(--uk-global-medium-box-shadow) !important;
-  transform: translateY(-4px);
+/* Remove transform on hover for cleaner look */
+.uk-card-hover:hover {
+  box-shadow: 0 14px 25px rgba(44, 165, 184, 0.16) !important;
+  transform: none !important;
 }
 
 .uk-card-primary {
   background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 100%) !important;
   border-top: none !important;
+  border: none !important;
   color: #ffffff !important;
 }
 
@@ -315,6 +319,7 @@ a:hover,
 .uk-card-secondary {
   background: linear-gradient(135deg, #5fbd8f 0%, #6dca9a 100%) !important;
   border-top: none !important;
+  border: none !important;
   color: #ffffff !important;
 }
 
@@ -350,6 +355,10 @@ a:hover,
   border-radius: var(--uk-border-radius-small) !important;
   font-weight: 500;
   color: #ffffff !important;
+}
+
+.uk-card-media-top img {
+  border-radius: var(--uk-border-radius-medium) var(--uk-border-radius-medium) 0 0;
 }
 
 /* ============================================
@@ -395,6 +404,10 @@ a:hover,
 /* ============================================
    SECTIONS
    ============================================ */
+.uk-section {
+  padding: 60px 0;
+}
+
 .uk-section-primary {
   background: linear-gradient(135deg, #2ca5b8 0%, #35b3c4 50%, #5fbd8f 100%) !important;
 }
@@ -409,6 +422,51 @@ a:hover,
 
 .uk-section-default {
   background-color: #ffffff !important;
+}
+
+/* ============================================
+   TIMELINE / AGENDA - TECHWISER STYLE
+   ============================================ */
+.agenda-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.agenda-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--uk-primary-color) 0%, var(--uk-secondary-color) 100%);
+}
+
+.agenda-timeline .uk-list > li {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.agenda-timeline .uk-list > li::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: var(--uk-primary-color);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--uk-global-muted-background);
+  z-index: 1;
+}
+
+.agenda-timeline .uk-card {
+  margin-left: 20px;
+}
+
+.agenda-timeline .uk-card-secondary::before {
+  background: var(--uk-muted-color) !important;
 }
 
 /* ============================================
@@ -740,6 +798,74 @@ a:hover,
 }
 
 /* ============================================
+   TESTIMONIALS - TECHWISER STYLE
+   ============================================ */
+blockquote {
+  border-left: 4px solid var(--uk-primary-color);
+  padding-left: 20px;
+  font-style: italic;
+  color: var(--uk-global-muted-color);
+}
+
+blockquote footer {
+  font-style: normal;
+  margin-top: 15px;
+}
+
+blockquote footer cite {
+  font-weight: 600;
+  color: var(--uk-global-emphasis-color);
+}
+
+/* ============================================
+   COUNTDOWN TIMER
+   ============================================ */
+.uk-countdown-number {
+  font-weight: 700;
+}
+
+/* ============================================
+   TEXT META
+   ============================================ */
+.uk-text-meta {
+  color: var(--uk-global-muted-color);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+.uk-text-lead {
+  font-size: 1.125rem;
+  color: var(--uk-global-muted-color);
+}
+
+/* ============================================
+   SPONSOR MARQUEE / COMPANY LOGOS
+   ============================================ */
+.sponsor-marquee,
+.company-logos {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sponsor-marquee img,
+.company-logos img {
+  display: inline-block;
+  margin: 0 30px;
+  max-height: 60px;
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  filter: grayscale(100%);
+}
+
+.sponsor-marquee img:hover,
+.company-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* ============================================
    UTILITIES
    ============================================ */
 html {
@@ -749,6 +875,32 @@ html {
 ::selection {
   background-color: rgba(44, 165, 184, 0.2);
   color: var(--uk-global-emphasis-color);
+}
+
+/* Center alignment helpers */
+.uk-text-center h2 {
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .uk-section {
+    padding: 40px 0;
+  }
+  
+  .agenda-timeline {
+    padding-left: 30px;
+  }
+  
+  .agenda-timeline::before {
+    left: 15px;
+  }
+  
+  .agenda-timeline .uk-list > li::before {
+    left: -28px;
+  }
 }
 
 /* ============================================
