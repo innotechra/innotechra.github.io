@@ -1,142 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- SEO Meta Tags -->
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<!-- OG Meta Tags -->
-		<meta property="og:site_name" content="" />
-		<meta property="og:site" content="" />
-		<meta property="og:title" content=""/>
-		<meta property="og:description" content="" />
-		<meta property="og:image" content="" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:url" content="" />
-		<meta name="twitter:card" content="summary_large_image">
-		<title>InnoTechra</title>
-		<link href="/assets/css/uikit.min.css" rel="stylesheet">
-		<link href="/assets/css/style.css" rel="stylesheet">
-		<!-- Favicon  -->
-		<link rel="icon" href="/favicon.svg">
-		<!-- Canonical  -->
-		<link rel="canonical" href="https://www.innotechra.com" />
-  </head>
-  <body>
-	<!-- Navbar - Logo Left Start -->
-	<div uk-sticky="start: 200; show-on-up: true; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky uk-dark">
-		<nav class="uk-navbar-container">
-			<div class="uk-container">
-				<div uk-navbar>
-					<div class="uk-navbar-left">
-						<a class="uk-navbar-item uk-logo" href="/" aria-label="Back to Home">
-							<img src="/assets/img/logo.svg" alt="" style="height:50px;width:auto;">
-							<img class="uk-logo-inverse" src="/assets/img/logo-inverse.svg" alt="" style="height:50px;width:auto;">
-						</a>
-					</div>
-					<div class="uk-navbar-center">
-						<ul class="uk-navbar-nav uk-visible@m">
-							<li><a href="#who-we-are">Who We Are</a></li>
-							<li><a href="#solutions">Solutions</a></li>
-							<li><a href="#events">Events</a></li>
-						</ul>
-					</div>
-					<div class="uk-navbar-right">
-						<ul class="uk-navbar-nav uk-visible@m">
-							<li><a href="#" class="uk-icon-button" uk-icon="icon: linkedin"></a></li>
-						</ul>
-						<div class="uk-navbar-item uk-hidden@m"><a href="#off-canvas" class="uk-button uk-button-default" uk-icon="icon: menu" uk-toggle></a></div>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</div>
-	
-	<!-- Off-canvas menu -->
-	<div class="uk-hidden@m" id="off-canvas" uk-offcanvas="overlay: true; flip: true">
-		<div class="uk-offcanvas-bar uk-flex uk-flex-column">
-			
-			<div class="uk-flex-1 uk-flex uk-flex-column uk-flex-middle uk-flex-center">
-				<a class="off-canvas-logo" href="">
-                    <img class="uk-logo-inverse" src="/assets/img/logo-inverse.svg" alt="" style="height:65px;width:auto;">
-                </a>
-				
-				<ul class="uk-nav uk-nav-default uk-margin-medium-top" uk-nav>
-					<li><a href="#who-we-are">Who We Are</a></li>
-					<li><a href="#solutions">Solutions</a></li>
-					<li><a href="#events">Events</a></li>
-					<li><a href="/contact">Contact</a></li>
-				</ul>
-					
-				<ul class="uk-iconnav socials uk-margin-medium-top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnoTechra – Innovating the Future of Tech</title>
+  <meta name="description" content="InnoTechra – Innovating the future of tech. Customized C-suite events connecting Europe's top technology leaders." />
+  <link rel="canonical" href="https://innotechra.io/" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-				</ul>
-			</div>
-			
-			<button class="uk-offcanvas-close" type="button" uk-close></button>
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://innotechra.io/" />
+  <meta property="og:title"       content="InnoTechra – Innovating the Future of Tech" />
+  <meta property="og:description" content="InnoTechra – Customized C-suite events connecting Europe's top technology leaders." />
+  <meta property="og:image"       content="https://innotechra.io/og-image.jpg" />
+  <meta name="twitter:card"       content="summary_large_image" />
 
-		</div>
-	</div>
-	<!-- Navbar - Logo Left End -->
-	 
-	<!-- Hero Slideshow Start -->
-	<div id="hero" class="uk-position-relative" loading="lazy" uk-slideshow="animation: fade; autoplay: true; ratio: false">
-		<ul class="uk-slideshow-items" uk-height-viewport>
-			<li>
-				<div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
-					<img src="assets/img/hero.jpg" alt="" uk-cover>
-				</div>
-			</li>	
-		</ul>
-		
-		<div class="uk-position-center">
-			<div class="uk-container">
-				<div class="uk-width-2-3@m">
-					<div class="text-container uk-light">
-						<h1>Where visionary leaders share the future of tech</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<a class="uk-button uk-button-default uk-button-large" href="">Contact Us</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-	<!-- Hero Slideshow End -->
+  <!-- Google Fonts - Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
 
-	<!-- Footer Start -->	
-	<footer id="footer" class="uk-section uk-section-large uk-padding-remove-bottom uk-section-muted uk-dark">
-		<div class="uk-container">	
-			<div class="uk-grid-large uk-margin-large-bottom" uk-grid>
-				<div class="uk-width-1-3@m">
-					<a class="uk-logo" href="/" aria-label="Back to Home">
-						<img src="/assets/img/logo-alt.svg" height="" width="" alt="">
-						<img class="uk-logo-inverse" src="" height="" width="" alt="">
-					</a>
-					<div class="text-container uk-margin-medium-top">
-						<p class="uk-text-meta">InnoTechra is the premier platform connecting senior technology and security leaders through exclusive AI & Cyber summits worldwide. Join the conversation shaping the future of enterprise technology and cybersecurity.</p>
-					</div>
-					<ul class="uk-iconnav socials uk-margin-medium-top">
-						<li><a href="#" class="uk-icon-button" uk-icon="icon: linkedin"></a></li>
-					</ul>
-				</div>
-			</div>
-			<hr>
-			<div class="uk-flex uk-flex-between uk-flex-middle uk-flex-wrap-reverse uk-margin-bottom">
-				<div class="copyright uk-text-meta">Copyright &copy; 2026. InnoTechra</div>
-				<div class="legal">
-					<ul class="uk-nav uk-nav-default uk-flex">
-						<li class="uk-margin-left"><a href="/privacy-policy">Privacy Policy</a></li>
-						<li class="uk-margin-left"><a href="/terms-of-service">Terms of Service</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- Footer End -->
-	<script src="/assets/js/uikit.min.js"></script>
-	<script src="/assets/js/uikit-icons.min.js"></script>
-	<script src="/assets/js/scripts.js"></script>
-  </body>
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Slick -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+  <style>
+    /* ── TOKENS ──────────────────────────────── */
+    :root {
+      --accent:    #00b4cc;
+      --accent-dk: #0099b0;
+      --accent2:   #2B3FBF;
+      --bg:        #08101e;
+      --bg2:       #0d1928;
+      --bg3:       #122034;
+      --border:    rgba(255,255,255,.08);
+      --text:      #d8e8f0;
+      --muted:     #7a9ab0;
+      --grad:      linear-gradient(135deg, #00C8C8 0%, #2B3FBF 100%);
+      --grad-text: linear-gradient(90deg, #00C8C8 0%, #2B3FBF 100%);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html  { scroll-behavior: smooth; }
+    body  {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      font-size: 15px;
+    }
+    a     { color: inherit; text-decoration: none; }
+    img   { display: block; }
+
+    /* ── NAVBAR ──────────────────────────────── */
+    .navbar {
+      background: transparent !important;
+      transition: background .35s, box-shadow .35s;
+      position: fixed !important;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      min-height: 64px;
+    }
+    .navbar.is-scrolled {
+      background: rgba(8,16,30,.96) !important;
+      box-shadow: 0 2px 16px rgba(0,0,0,.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .navbar-brand, .navbar-menu { background: transparent !important; }
+    .navbar-item, .navbar-link {
+      color: rgba(255,255,255,.75) !important;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .3px;
+      background: transparent !important;
+      transition: color .18s;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .navbar-item:hover, .navbar-link:hover { color: #fff !important; background: transparent !important; }
+    .navbar-item.is-accent {
+      color: var(--accent) !important;
+      font-weight: 700;
+    }
+
+    /* FIX 1 – social icon size matched to reference (was .68rem / .12 / .65) */
+    .nav-socials { display: flex; align-items: center; gap: 4px; padding: 0 .5rem; }
+    .nav-socials a { display: inline-flex; }
+    .nav-socials .fa-stack { font-size: .82rem; }
+    .nav-socials .fa-stack .fa-circle  { color: rgba(255,255,255,.15); transition: color .18s; }
+    .nav-socials .fa-stack .fa-inverse { color: rgba(255,255,255,.75); font-size: .85em; transition: color .18s; }
+    .nav-socials a:hover .fa-circle  { color: var(--accent); }
+    .nav-socials a:hover .fa-inverse { color: #fff; }
+
+    .navbar-burger {
+      color: #fff !important;
+      height: 64px !important;
+    }
+    .navbar-burger span { background-color: #fff !important; }
+
+    @media screen and (max-width: 1023px) {
+      .navbar-menu {
+        background: rgba(8,16,30,.97) !important;
+        border-top: 1px solid var(--border);
+        padding: .5rem 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,.5);
+      }
+    }
+
+    /* ── PILL BUTTONS ────────────────────────── */
+    .tw-btn {
+      display: inline-block;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: .82rem;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      padding: .72rem 2rem;
+      text-align: center;
+      letter-spacing: .4px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .tw-btn:hover { transform: translateY(-1px); }
+    .tw-btn-accent {
+      background: var(--accent);
+      color: #fff !important;
+    }
+    .tw-btn-accent:hover {
+      background: var(--accent-dk);
+      box-shadow: 0 4px 18px rgba(0,180,204,.35);
+    }
+    .tw-btn-sm {
+      padding: .38rem 1.1rem;
+      font-size: .74rem;
+      display: inline-block;
+      width: auto;
+      white-space: nowrap;
+    }
+
+    /* FIX 2 – hero overlay uniform (was directional left-to-right) */
+    .hero-section {
+      background:
+        linear-gradient(rgba(8,16,30,.62), rgba(8,16,30,.62)),
+        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80')
+        center / cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 9rem 0 6rem;
+    }
+    .hero-inner  { max-width: 600px; }
+    .hero-eyebrow {
+      font-size: .65rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero-inner h1 {
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      white-space: nowrap;
+    }
+    .hero-typewriter {
+      display: inline;
+      color: var(--accent);
+    }
+    .hero-cursor {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 900;
+      animation: blink 0.7s step-end infinite;
+      margin-left: 1px;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+    .hero-inner p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 2.25rem;
+      font-weight: 400;
+    }
+
+    /* ── COUNTDOWN ───────────────────────────── */
+    .countdown-section {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 4.5rem 0;
+      text-align: center;
+    }
+    .countdown-section h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .55rem;
+      letter-spacing: -.3px;
+    }
+    .countdown-section .csub {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      font-size: .95rem;
+      font-weight: 400;
+    }
+    .cd-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 2.25rem;
+    }
+    .cd-item  {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 2.2rem;
+    }
+    .cd-item:first-child { padding-left: 0; }
+    .cd-item:last-child  { padding-right: 0; }
+    .cd-sep  {
+      width: 1px;
+      height: 44px;
+      background: rgba(255,255,255,.18);
+      flex-shrink: 0;
+    }
+    .cd-item .n {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      display: block;
+    }
+    .cd-item .l {
+      font-size: .58rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--muted);
+      margin-top: .35rem;
+      font-weight: 600;
+    }
+    .cd-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .cd-links .li-icon {
+      font-size: 1.4rem;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .cd-links .li-icon:hover { color: var(--accent); }
+
+    /* ── SHARED ──────────────────────────────── */
+    .tw-section { padding: 5.5rem 0; }
+
+    .sec-hd     { text-align: center; margin-bottom: 3.5rem; }
+    .sec-hd .stag  {
+      font-size: .62rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .55rem;
+      display: block;
+      font-weight: 700;
+    }
+    .sec-hd .stitle {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .65rem;
+      letter-spacing: -.2px;
+    }
+    .sec-hd .ssub  {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .sec-hd-left { text-align: left; margin-bottom: 1.5rem; }
+    .sec-hd-left .stag  {
+      font-size: .62rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .55rem;
+      display: block;
+      font-weight: 700;
+    }
+    .sec-hd-left .stitle {
+      font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .5rem;
+      letter-spacing: -.2px;
+    }
+    .sec-hd-left .ssub  {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* ── WHO WE ARE ──────────────────────────── */
+    .who-section { background: var(--bg2); }
+    .who-img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .who-copy { padding-left: 2.5rem; }
+    .who-copy p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+      font-weight: 400;
+    }
+    @media (max-width: 768px) {
+      .who-copy { padding-left: 0; margin-top: 2rem; }
+    }
+
+    /* ── STATS ───────────────────────────────── */
+    .stats-section { background: var(--bg); }
+    .stat-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.6rem;
+      text-align: left;
+    }
+    .stat-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: .8rem;
+    }
+    .stat-div {
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: .8rem;
+    }
+    .stat-lbl {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    /* ── WHAT WE DO ──────────────────────────── */
+    .services-section { background: var(--bg2); }
+    .svc-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 1.4rem;
+    }
+    .svc-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .9rem;
+      letter-spacing: -.1px;
+    }
+    .svc-card ul { list-style: none; padding: 0; margin: 0; }
+    .svc-card ul li {
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.65;
+      padding: .28rem 0 .28rem 1.15rem;
+      position: relative;
+      font-weight: 400;
+    }
+    .svc-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .68rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── WORK PROCESS ────────────────────────── */
+    .process-section { background: var(--bg); }
+    .proc-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      height: 100%;
+    }
+    .proc-num  {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: .7rem;
+      display: block;
+    }
+    .proc-card h3 {
+      font-size: .96rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .6rem;
+    }
+    .proc-card p  {
+      font-size: .87rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    /* ── PAST EVENTS ─────────────────────────── */
+    .events-section { background: var(--bg2); }
+
+    .ev-slide { padding: 0 .4rem; }
+    .ev-slide .columns { margin: 0; }
+    .ev-slide .column  { padding: .5rem; }
+
+    .ev-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      display: flex;
+      overflow: hidden;
+      height: 600px;
+    }
+    .ev-card-img {
+      width: 50%;
+      min-width: 50%;
+      max-width: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+    }
+    .ev-card-body {
+      padding: 1.4rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      overflow: hidden;
+    }
+    .ev-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+    }
+    .ev-card-body h4 {
+      font-size: .85rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 .22rem;
+      letter-spacing: -.1px;
+    }
+    .ev-sub  {
+      font-size: .75rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: .45rem;
+      font-weight: 500;
+    }
+    .ev-meta { list-style: none; padding: 0; margin: 0; }
+    .ev-meta li {
+      font-size: .73rem;
+      color: var(--muted);
+      padding: .1rem 0 .1rem 1rem;
+      position: relative;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+    .ev-meta li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .5rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .ev-meta li.is-date {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .ev-card-body .tw-btn-sm {
+      align-self: flex-start;
+      margin-top: .25rem;
+    }
+
+    @media (max-width: 768px) {
+      .ev-card { flex-direction: column; height: auto; }
+      .ev-card-img { width: 100%; min-width: 0; max-width: 100%; height: 200px; }
+      .ev-mobile-hide { display: none !important; }
+    }
+
+    /* FIX 3 – Slick: bare chevrons on desktop, white circle on mobile */
+    .slick-prev, .slick-next {
+      width: 32px !important;
+      height: 32px !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      z-index: 5 !important;
+      border-radius: 50% !important;
+    }
+    .slick-prev { left: -40px !important; }
+    .slick-next { right: -40px !important; }
+    .slick-prev::before {
+      content: '\f053' !important;
+      font-family: 'Font Awesome 6 Free' !important;
+      font-weight: 900 !important;
+      font-size: 15px !important;
+      color: var(--muted) !important;
+    }
+    .slick-next::before {
+      content: '\f054' !important;
+      font-family: 'Font Awesome 6 Free' !important;
+      font-weight: 900 !important;
+      font-size: 15px !important;
+      color: var(--muted) !important;
+    }
+    .slick-prev:hover::before, .slick-next:hover::before { color: #fff !important; }
+
+    /* FIX 4 – Mobile: white round background on arrows */
+    @media (max-width: 640px) {
+      .slick-prev {
+        left: 2px !important;
+        background: rgba(255,255,255,.92) !important;
+      }
+      .slick-next {
+        right: 2px !important;
+        background: rgba(255,255,255,.92) !important;
+      }
+      .slick-prev::before { color: var(--bg) !important; }
+      .slick-next::before { color: var(--bg) !important; }
+    }
+
+    /* Events: hide dots */
+    .events-slick .slick-dots { display: none !important; }
+
+    /* Testimonials dots */
+    .testimonials-slick .slick-dots {
+      margin-top: 1.5rem !important;
+      bottom: -2.5rem !important;
+    }
+    .testimonials-slick .slick-dots li button::before {
+      color: var(--muted) !important;
+      font-size: 12px !important;
+    }
+    .testimonials-slick .slick-dots li.slick-active button::before {
+      color: var(--accent) !important;
+    }
+
+    .slick-wrap { padding: 0 44px; }
+    @media (max-width: 640px) { .slick-wrap { padding: 0 28px; } }
+    .testimonials-section .slick-wrap { padding-bottom: 3rem; }
+
+    /* ── TESTIMONIALS ────────────────────────── */
+    .testimonials-section { background: var(--bg); }
+    .testi-slide { padding: 0 2rem; text-align: center; }
+    .testi-qi   {
+      font-size: 2rem;
+      color: var(--accent);
+      opacity: .45;
+      line-height: 1;
+      margin-bottom: 1.1rem;
+    }
+    .testi-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .2rem;
+    }
+    .testi-role {
+      font-size: .78rem;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+    .testi-text {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.82;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ──────────────────────────────── */
+    .tw-footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+    .foot-logo  {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .4rem;
+      letter-spacing: -.2px;
+    }
+    .foot-logo .grad-text {
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .foot-tag   { color: var(--muted); font-size: .84rem; margin-bottom: .85rem; font-weight: 500; }
+    .foot-desc  { color: var(--muted); font-size: .82rem; line-height: 1.8; max-width: 420px; font-weight: 500; }
+
+    .foot-social-wrap { margin-top: 2rem; }
+    @media (min-width: 769px) {
+      .foot-social-wrap { margin-top: 0; }
+    }
+    .foot-follow-lbl {
+      font-size: .62rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .8rem;
+      font-weight: 700;
+    }
+    .foot-social { display: flex; gap: 6px; }
+    .foot-social a { display: inline-flex; }
+    .foot-social .fa-stack { font-size: .82rem; }
+    .foot-social .fa-stack .fa-circle  { color: var(--bg3); transition: color .18s; }
+    .foot-social .fa-stack .fa-inverse { color: var(--muted); transition: color .18s; }
+    .foot-social a:hover .fa-circle  { color: var(--accent); }
+    .foot-social a:hover .fa-inverse { color: #fff; }
+    .foot-bottom {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 500;
+    }
+
+    .offset-nav { padding-top: 64px; }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+      }
+      .slick-wrap { padding: 0 24px; }
+      .cd-item { padding: 0 1.2rem; }
+    }
+
+    .nav-logo-img  { height: 34px; width: auto; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ NAVBAR ════════════════════════ -->
+<nav class="navbar" role="navigation" aria-label="main navigation" id="mainNav">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html" style="padding:0 .75rem">
+        <img src="assets/img/logo.svg" alt="InnoTechra logo" class="nav-logo-img"
+             onerror="this.style.display='none'" />
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#about">Who we are</a>
+        <a class="navbar-item" href="#services">Solutions</a>
+        <a class="navbar-item" href="#events">Events</a>
+        <a class="navbar-item is-accent" href="https://innotechra.io/events" target="_blank">InnoTechraX2026</a>
+        <div class="navbar-item nav-socials">
+          <a href="https://www.linkedin.com/company/innotechra" target="_blank" title="LinkedIn">
+            <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span>
+          </a>
+          <a href="mailto:info@innotechra.io" title="Email">
+            <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span>
+          </a>
+          <a href="tel:+36303897041" title="Phone">
+            <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-phone fa-stack-1x fa-inverse"></i></span>
+          </a>
+          <a href="https://instagram.com/" target="_blank" title="Instagram">
+            <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-instagram fa-stack-1x fa-inverse"></i></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ════════════════ HERO ═══════════════════════════ -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-inner">
+      <h1><span class="hero-typewriter" id="heroText"></span><span class="hero-cursor">|</span></h1>
+      <p>Unleash your full potential and elevate your business to new heights through our customized events and C-suite tech community.</p>
+      <a href="contacts.html" class="tw-btn tw-btn-accent">Contact us</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ COUNTDOWN ══════════════════════ -->
+<section class="countdown-section">
+  <div class="container">
+    <h2>InnoTechraX 2026</h2>
+    <p class="csub">Join the InnoTechraX AI &amp; Cyber Series in 2026. Where Europe's Tech Leaders Meet —<br>InnoTechraX 2026 in Amsterdam, London &amp; Munich.</p>
+    <div class="cd-strip">
+      <div class="cd-item"><span class="n" id="cd-d">00</span><span class="l">Days</span></div>
+      <div class="cd-sep"></div>
+      <div class="cd-item"><span class="n" id="cd-h">00</span><span class="l">Hours</span></div>
+      <div class="cd-sep"></div>
+      <div class="cd-item"><span class="n" id="cd-m">00</span><span class="l">Minutes</span></div>
+      <div class="cd-sep"></div>
+      <div class="cd-item"><span class="n" id="cd-s">00</span><span class="l">Seconds</span></div>
+    </div>
+    <div class="cd-links">
+      <a href="https://www.linkedin.com/company/innotechra/" target="_blank" class="li-icon">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://innotechra.io/events" target="_blank" class="tw-btn tw-btn-accent">Join the Event</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ WHO WE ARE ═════════════════════ -->
+<section class="tw-section who-section" id="about">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-5">
+        <img class="who-img"
+          src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=900&q=80"
+          alt="InnoTechra community" />
+      </div>
+      <div class="column is-7 who-copy">
+        <div class="sec-hd-left">
+          <span class="stag" style="display:none">About Us</span>
+          <h2 class="stitle">Who we are</h2>
+          <p class="ssub">InnoTechra is helping you worldwide.</p>
+        </div>
+        <p>The InnoTechra community is made up of the most influential and innovative minds in technology. Our programs are designed to foster meaningful connections between industry leaders and solution providers, helping you unlock new opportunities for your business.</p>
+        <a href="#process" class="tw-btn tw-btn-accent" style="margin-top:1.5rem; display:inline-block;">More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ STATS ══════════════════════════ -->
+<section class="tw-section stats-section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3"><div class="stat-card">
+        <span class="stat-num">50+</span><div class="stat-div"></div>
+        <span class="stat-lbl">Countries across Europe, US and Middle East</span>
+      </div></div>
+      <div class="column is-3"><div class="stat-card">
+        <span class="stat-num">10+</span><div class="stat-div"></div>
+        <span class="stat-lbl">Years of experience</span>
+      </div></div>
+      <div class="column is-3"><div class="stat-card">
+        <span class="stat-num">80%</span><div class="stat-div"></div>
+        <span class="stat-lbl">C-level decision makers</span>
+      </div></div>
+      <div class="column is-3"><div class="stat-card">
+        <span class="stat-num">20+</span><div class="stat-div"></div>
+        <span class="stat-lbl">Fields</span>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ WHAT WE DO ═════════════════════ -->
+<section class="tw-section services-section" id="services">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="stag" style="display:none">Our Solutions</span>
+      <h2 class="stitle">What We Do</h2>
+      <p class="ssub">Our programs are tailored to meet your needs. Whether physical or virtual, we plan your event from the ground up, ensuring all elements are customized to your exact requirements.</p>
+    </div>
+    <div class="columns">
+      <div class="column is-4"><div class="svc-card">
+        <img class="svc-img" src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800&q=80" alt="CxO Leadership Dinners" />
+        <h3>CxO Leadership Dinners</h3>
+        <ul>
+          <li>Exclusive intimate gatherings for CIOs, CTOs, CISOs</li>
+          <li>Share expertise and insights with peers</li>
+          <li>High class event organization by dedicated venue experts</li>
+          <li>Personalized engagement with extremely high ROI and post-event optimization</li>
+        </ul>
+      </div></div>
+      <div class="column is-4"><div class="svc-card">
+        <img class="svc-img" src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80" alt="CxO Summits" />
+        <h3>CxO Summits</h3>
+        <ul>
+          <li>Gather top-tier executives from various industries under one roof</li>
+          <li>Thought-provoking panel discussions</li>
+          <li>Exceptional keynote speakers</li>
+          <li>Peer to peer meetings and networking with industry leaders</li>
+        </ul>
+      </div></div>
+      <div class="column is-4"><div class="svc-card">
+        <img class="svc-img" src="https://images.unsplash.com/photo-1591522811280-a8759970b03f?w=800&q=80" alt="Invited-only CxO Meetings" />
+        <h3>Invited-only CxO Meetings</h3>
+        <ul>
+          <li>Virtual platform for industry leaders</li>
+          <li>Insights on emerging tech trends</li>
+          <li>Engage in thought-provoking discussions highlighting your solutions</li>
+          <li>Gain valuable knowledge and connect with like-minded professionals</li>
+        </ul>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ WORK PROCESS ═══════════════════ -->
+<section class="tw-section process-section" id="process">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="stag" style="display:none">How We Work</span>
+      <h2 class="stitle">Our Work Process</h2>
+      <p class="ssub">We are guided by clear and long-term cooperation with clients. Look through the process of our work.</p>
+    </div>
+    <div class="columns is-multiline">
+      <div class="column is-4"><div class="proc-card"><span class="proc-num">01.</span><h3>Research</h3><p>In the ever-evolving tech ecosystem, staying ahead is crucial. We begin with a deep dive to identify your ICP and gain a comprehensive understanding of your products, solutions, and company ethos.</p></div></div>
+      <div class="column is-4"><div class="proc-card"><span class="proc-num">02.</span><h3>Strategy</h3><p>We design targeted programs aligned with your unique needs to maximize ROI and unlock new business opportunities. A strategic blend of innovation and precision ensuring impactful results.</p></div></div>
+      <div class="column is-4"><div class="proc-card"><span class="proc-num">03.</span><h3>Design</h3><p>Whether physical or virtual, our curated settings feature exclusive 5-star venues. Each detail aligns with your company's design, ensuring every touchpoint radiates professionalism and innovation.</p></div></div>
+      <div class="column is-4"><div class="proc-card"><span class="proc-num">04.</span><h3>Qualification</h3><p>We carefully select experts aligned with your organizational needs. Our thorough qualification process ensures meaningful connections with industry leaders, streamlining your path to success.</p></div></div>
+      <div class="column is-4"><div class="proc-card"><span class="proc-num">05.</span><h3>Execution</h3><p>Our commitment to excellence guarantees your vision not only meets but exceeds expectations. Strategic partnerships transform aspirations into a professional and impactful reality.</p></div></div>
+      <div class="column is-4"><div class="proc-card"><span class="proc-num">06.</span><h3>Post-Campaign Optimization</h3><p>Beyond the campaign's conclusion, we proactively nurture meaningful connections, transforming them into lucrative business opportunities through meticulous continuous improvement.</p></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ PAST EVENTS ════════════════════ -->
+<section class="tw-section events-section" id="events">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="stag" style="display:none">Our Portfolio</span>
+      <h2 class="stitle">Past Events</h2>
+      <p class="ssub">Our exclusive events are designed to provide valuable insights into emerging trends and cutting-edge technologies.</p>
+    </div>
+    <div class="slick-wrap">
+      <div class="events-slick">
+
+        <!-- Slide 1 -->
+        <div class="ev-slide"><div class="columns is-variable is-2">
+          <div class="column is-6"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="CIO Dinner London" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CIO Dinner – London</h4>
+              <p class="ev-sub">The Rise of AI-Powered "Instant Invoicing Assistants"</p>
+              <ul class="ev-meta"><li class="is-date">April 30, 2025</li><li>Aqua, Shard London</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+          <div class="column is-6 ev-mobile-hide"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="CISO Dinner Amsterdam" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Enhancing Cybersecurity Resilience through Breach Attack Simulation</p>
+              <ul class="ev-meta"><li class="is-date">February 29, 2024</li><li>Pillows Maurits, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+        </div></div>
+
+        <!-- Slide 2 -->
+        <div class="ev-slide"><div class="columns is-variable is-2">
+          <div class="column is-6"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="CISO Dinner Zurich" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Zurich</h4>
+              <p class="ev-sub">Quantum-Resistant Cryptography: Safeguarding Against Future Threats</p>
+              <ul class="ev-meta"><li class="is-date">March 20, 2024</li><li>Mandarin Oriental Savoy, Zurich</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+          <div class="column is-6 ev-mobile-hide"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" alt="CISO Dinner London" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – London</h4>
+              <p class="ev-sub">Strategic Integration: Harnessing AI and ML for Cybersecurity Excellence</p>
+              <ul class="ev-meta"><li class="is-date">April 11, 2024</li><li>The Shard, London</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+        </div></div>
+
+        <!-- Slide 3 -->
+        <div class="ev-slide"><div class="columns is-variable is-2">
+          <div class="column is-6"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80" alt="InnoTechraX Summit" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>InnoTechraX Summit Amsterdam</h4>
+              <p class="ev-sub">&nbsp;</p>
+              <ul class="ev-meta"><li class="is-date">November 19, 2025</li><li>Park Inn by Radisson Amsterdam City West</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+          <div class="column is-6 ev-mobile-hide"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="CISO Dinner Munich" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Munich</h4>
+              <p class="ev-sub">Reshaping Cybersecurity: Harnessing the Power of Breach and Attack Simulation</p>
+              <ul class="ev-meta"><li class="is-date">April 18, 2024</li><li>Louis Hotel, Munich</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+        </div></div>
+
+        <!-- Slide 4 -->
+        <div class="ev-slide"><div class="columns is-variable is-2">
+          <div class="column is-6"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="CISO Dinner Amsterdam Jul" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Navigating the Cyber Threat Landscape: Mastering Risk Scoring</p>
+              <ul class="ev-meta"><li class="is-date">July 4, 2024</li><li>Pillow Maurits, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+          <div class="column is-6 ev-mobile-hide"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="CISO Summit Dubai" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Summit – Dubai</h4>
+              <p class="ev-sub">AI at the Heart of Security: Enhancing Efficiency with Intelligent Automation</p>
+              <ul class="ev-meta"><li class="is-date">September 19, 2024</li><li>JW Marriott Marquis Hotel, Dubai</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+        </div></div>
+
+        <!-- Slide 5 -->
+        <div class="ev-slide"><div class="columns is-variable is-2">
+          <div class="column is-6"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&q=80" alt="CISO Dinner Amsterdam Oct" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Unleashing Cryptoagility: A Blueprint for Modernizing PKI Solutions</p>
+              <ul class="ev-meta"><li class="is-date">October 3, 2024</li><li>Art'otel, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+          <div class="column is-6 ev-mobile-hide"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&q=80" alt="CISO Dinner Amsterdam Oct 2" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Protecting your C-Suite's private lives to protect the enterprise</p>
+              <ul class="ev-meta"><li class="is-date">October 29, 2024</li><li>NH Collection, Barbizon Palace Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+        </div></div>
+
+        <!-- Slide 6 -->
+        <div class="ev-slide"><div class="columns is-variable is-2">
+          <div class="column is-6"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="CIO Dinner Munich" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CIO Dinner – Munich</h4>
+              <p class="ev-sub">Optimizing business resilience through AI and multi-cloud strategies</p>
+              <ul class="ev-meta"><li class="is-date">November 27, 2024</li><li>Rocco Charles Hotel, Munich</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+          <div class="column is-6 ev-mobile-hide"><div class="ev-card">
+            <img class="ev-card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="CIO Dinner Amsterdam" />
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CIO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Navigating Digital Transformation: Leveraging Data and Technology for Competitive Advantage</p>
+              <ul class="ev-meta"><li class="is-date">November 28, 2024</li><li>Conservatorium Hotel, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
+          </div></div>
+        </div></div>
+
+      </div><!-- /.events-slick -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ TESTIMONIALS ═══════════════════ -->
+<section class="tw-section testimonials-section">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="stag" style="display:none">Client Feedback</span>
+      <h2 class="stitle">What Our Clients Say</h2>
+      <p class="ssub">We're very grateful for every review you leave.</p>
+    </div>
+    <div class="slick-wrap">
+      <div class="testimonials-slick">
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Philips</h4><p class="testi-role">Group Security-Regulatory &amp; Standards</p><p class="testi-text">"Excellent, good event with opportunities to network in a relaxed environment, interesting table companions &amp; discussions."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Shell</h4><p class="testi-role">Business Information Risk Management Advisor</p><p class="testi-text">"Good organization. I love that it was kept small and intimate."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">NN Group</h4><p class="testi-role">Senior Cybersecurity Officer</p><p class="testi-text">"Pleasant experience, interested in coming ones."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Booz Allen Hamilton</h4><p class="testi-role">Director of Cybersecurity</p><p class="testi-text">"Great venue, very interesting conversations."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Boston Consulting Group (BCG)</h4><p class="testi-role">Director of Cyber Security</p><p class="testi-text">"It was a very interactive session. Not death by PPT. I enjoyed the product overview explained in simple terms. Looking forward to more such events."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Infineon Technologies</h4><p class="testi-role">Senior Data Protection Officer</p><p class="testi-text">"Great organization! The product was also quite interesting."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Regional Education Center Netherlands</h4><p class="testi-role">CISO</p><p class="testi-text">"The event was organized excellently and people I have met knew what they are looking for. I am looking forward to the next event and will certainly promote this to my network."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">EuroCPT</h4><p class="testi-role">CISO</p><p class="testi-text">"Good location, food, and people."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Alfen</h4><p class="testi-role">Team Lead IT Infrastructure</p><p class="testi-text">"Great event location, felt very welcome and all the questions were answered in a good way."</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Codelit40</h4><p class="testi-role">CEO</p><p class="testi-text">"The first business development company who is truly exceeding expectations, really good meetings — this is our third campaign together. Well done team!"</p></div>
+        <div class="testi-slide"><div class="testi-qi"><i class="fas fa-quote-left"></i></div><h4 class="testi-name">Matthew Lore</h4><p class="testi-role">CTO, PulseSec</p><p class="testi-text">"The audience was a perfect match! Well-organized, fantastic venue. It's been a genuine pleasure collaborating with you!"</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ FOOTER ═════════════════════════ -->
+<footer class="tw-footer">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8">
+        <div class="foot-logo">Inno<span class="grad-text">Techra</span> Innovation Kft.</div>
+        <p class="foot-tag">Innovating the future of tech</p>
+        <p class="foot-desc">InnoTechra community is dedicated to helping the tech industry access new business opportunities through our extensive tech professional network.</p>
+      </div>
+      <div class="column is-4">
+        <div class="foot-social-wrap">
+          <p class="foot-follow-lbl">Follow us</p>
+          <div class="foot-social">
+            <a href="https://www.linkedin.com/company/innotechra/" target="_blank" title="LinkedIn">
+              <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>Created by InnoTechra.io &nbsp;|&nbsp; InnoTechra Innovation Kft. © All rights Reserved</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════ SCRIPTS ════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  /* ── Burger ── */
+  document.addEventListener('DOMContentLoaded', function () {
+    const burgers = document.querySelectorAll('.navbar-burger');
+    burgers.forEach(function (burger) {
+      burger.addEventListener('click', function () {
+        const target = document.getElementById(burger.dataset.target);
+        burger.classList.toggle('is-active');
+        target.classList.toggle('is-active');
+      });
+    });
+  });
+
+  /* ── Scroll nav ── */
+  window.addEventListener('scroll', function () {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 60) {
+      nav.classList.add('is-scrolled');
+    } else {
+      nav.classList.remove('is-scrolled');
+    }
+  });
+
+  /* ── Countdown ── */
+  function tick() {
+    const diff = Math.max(0, new Date('2026-11-19T09:00:00').getTime() - Date.now());
+    const pad  = n => String(n).padStart(2, '0');
+    document.getElementById('cd-d').textContent = pad(Math.floor(diff / 86400000));
+    document.getElementById('cd-h').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor((diff % 3600000) / 60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor((diff % 60000) / 1000));
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ── Typewriter hero ── */
+  (function () {
+    const el = document.getElementById('heroText');
+    if (!el) return;
+    const phraseA = 'Where visionary leaders';
+    const phraseB = 'shape the future of tech';
+    const speed   = 60;
+    const pause   = 900;
+    let   current = '';
+    let   phase   = 'typeA';
+
+    function step() {
+      if (phase === 'typeA') {
+        current = phraseA.slice(0, current.length + 1);
+        el.textContent = current;
+        if (current === phraseA) { phase = 'pauseA'; setTimeout(step, pause); }
+        else setTimeout(step, speed);
+      } else if (phase === 'pauseA') {
+        phase = 'deleteA'; setTimeout(step, speed);
+      } else if (phase === 'deleteA') {
+        current = current.slice(0, -1);
+        el.textContent = current;
+        if (current === '') { phase = 'typeB'; setTimeout(step, speed * 2); }
+        else setTimeout(step, speed / 2);
+      } else if (phase === 'typeB') {
+        current = phraseB.slice(0, current.length + 1);
+        el.textContent = current;
+        if (current === phraseB) { phase = 'pauseB'; setTimeout(step, pause); }
+        else setTimeout(step, speed);
+      } else if (phase === 'pauseB') {
+        phase = 'deleteB'; setTimeout(step, speed);
+      } else if (phase === 'deleteB') {
+        current = current.slice(0, -1);
+        el.textContent = current;
+        if (current === '') { phase = 'typeA'; setTimeout(step, speed * 2); }
+        else setTimeout(step, speed / 2);
+      }
+    }
+    setTimeout(step, 500);
+  })();
+
+  /* ── Slick ── */
+  $(function () {
+    $('.events-slick').slick({
+      slidesToShow: 1, slidesToScroll: 1,
+      arrows: true, dots: true, adaptiveHeight: false
+    });
+    $('.testimonials-slick').slick({
+      slidesToShow: 1, slidesToScroll: 1,
+      arrows: true, dots: true,
+      fade: true, cssEase: 'linear', adaptiveHeight: true
+    });
+  });
+</script>
+</body>
 </html>
