@@ -7,30 +7,41 @@
   <meta name="description" content="InnoTechra – Innovating the future of tech. Customized C-suite events connecting Europe's top technology leaders." />
   <link rel="canonical" href="https://innotechra.io/" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://innotechra.io/" />
-  <meta property="og:title" content="InnoTechra – Innovating the Future of Tech" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://innotechra.io/" />
+  <meta property="og:title"       content="InnoTechra – Innovating the Future of Tech" />
   <meta property="og:description" content="InnoTechra – Customized C-suite events connecting Europe's top technology leaders." />
-  <meta property="og:image" content="https://innotechra.io/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image"       content="https://innotechra.io/og-image.jpg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <!-- Google Fonts - Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Bulma -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Slick -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
   <style>
+    /* ── TOKENS ──────────────────────────────── */
     :root {
       --accent:    #00b4cc;
       --accent-dk: #0099b0;
+      --accent2:   #2B3FBF;
       --bg:        #08101e;
       --bg2:       #0d1928;
       --bg3:       #122034;
       --border:    rgba(255,255,255,.08);
       --text:      #d8e8f0;
       --muted:     #7a9ab0;
+      --grad:      linear-gradient(135deg, #00C8C8 0%, #2B3FBF 100%);
       --grad-text: linear-gradient(90deg, #00C8C8 0%, #2B3FBF 100%);
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -42,40 +53,8 @@
       margin: 0;
       font-size: 15px;
     }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; }
-
-    /* ── WATERMARK SYSTEM ────────────────────────
-       The watermark is a large UPPERCASE ghost label that sits
-       at the TOP of each section, horizontally centred, behind the
-       section heading — matching the reference (techwiser.io).
-       It is NOT vertically centred in the full section height.
-    ─────────────────────────────────────────────── */
-    .wm-wrap {
-      position: relative;
-      overflow: hidden;
-    }
-    /* The watermark spans the full width, fixed near the top of the section */
-    .wm-wrap::before {
-      content: attr(data-wm);
-      position: absolute;
-      /* Sits just above where the heading lives — approx top padding offset */
-      top: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: clamp(3.5rem, 9vw, 8.5rem);
-      font-weight: 900;
-      color: rgba(255,255,255,.04);
-      white-space: nowrap;
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: 6px;
-      line-height: 1;
-      z-index: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-    /* All direct children of .wm-wrap stack above the watermark */
-    .wm-wrap > * { position: relative; z-index: 1; }
+    a     { color: inherit; text-decoration: none; }
+    img   { display: block; }
 
     /* ── NAVBAR ──────────────────────────────── */
     .navbar {
@@ -91,6 +70,7 @@
       box-shadow: 0 2px 16px rgba(0,0,0,.4);
       backdrop-filter: blur(8px);
     }
+
     .navbar-brand, .navbar-menu { background: transparent !important; }
     .navbar-item, .navbar-link {
       color: rgba(255,255,255,.75) !important;
@@ -102,7 +82,12 @@
       font-family: 'Montserrat', sans-serif;
     }
     .navbar-item:hover, .navbar-link:hover { color: #fff !important; background: transparent !important; }
-    .navbar-item.is-accent { color: var(--accent) !important; font-weight: 700; }
+    .navbar-item.is-accent {
+      color: var(--accent) !important;
+      font-weight: 700;
+    }
+
+    /* FIX 1 – social icon size matched to reference (was .68rem / .12 / .65) */
     .nav-socials { display: flex; align-items: center; gap: 4px; padding: 0 .5rem; }
     .nav-socials a { display: inline-flex; }
     .nav-socials .fa-stack { font-size: .82rem; }
@@ -110,8 +95,13 @@
     .nav-socials .fa-stack .fa-inverse { color: rgba(255,255,255,.75); font-size: .85em; transition: color .18s; }
     .nav-socials a:hover .fa-circle  { color: var(--accent); }
     .nav-socials a:hover .fa-inverse { color: #fff; }
-    .navbar-burger { color: #fff !important; height: 64px !important; }
+
+    .navbar-burger {
+      color: #fff !important;
+      height: 64px !important;
+    }
     .navbar-burger span { background-color: #fff !important; }
+
     @media screen and (max-width: 1023px) {
       .navbar-menu {
         background: rgba(8,16,30,.97) !important;
@@ -121,7 +111,7 @@
       }
     }
 
-    /* ── BUTTONS ────────────────────────────── */
+    /* ── PILL BUTTONS ────────────────────────── */
     .tw-btn {
       display: inline-block;
       border-radius: 100px;
@@ -136,8 +126,14 @@
       font-family: 'Montserrat', sans-serif;
     }
     .tw-btn:hover { transform: translateY(-1px); }
-    .tw-btn-accent { background: var(--accent); color: #fff !important; }
-    .tw-btn-accent:hover { background: var(--accent-dk); box-shadow: 0 4px 18px rgba(0,180,204,.35); }
+    .tw-btn-accent {
+      background: var(--accent);
+      color: #fff !important;
+    }
+    .tw-btn-accent:hover {
+      background: var(--accent-dk);
+      box-shadow: 0 4px 18px rgba(0,180,204,.35);
+    }
     .tw-btn-sm {
       padding: .38rem 1.1rem;
       font-size: .74rem;
@@ -146,7 +142,7 @@
       white-space: nowrap;
     }
 
-    /* ── HERO ───────────────────────────────── */
+    /* FIX 2 – hero overlay uniform (was directional left-to-right) */
     .hero-section {
       background:
         linear-gradient(rgba(8,16,30,.62), rgba(8,16,30,.62)),
@@ -157,33 +153,47 @@
       align-items: center;
       padding: 9rem 0 6rem;
     }
-    .hero-inner { max-width: 620px; }
+    .hero-inner  { max-width: 600px; }
+    .hero-eyebrow {
+      font-size: .65rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
     .hero-inner h1 {
-      font-size: clamp(1.55rem, 3vw, 2.4rem);
-      font-weight: 600;
-      line-height: 1.2;
+      font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.15;
       color: #fff;
       margin-bottom: 1.25rem;
       white-space: nowrap;
     }
-    .hero-typewriter { display: inline; color: var(--accent); }
+    .hero-typewriter {
+      display: inline;
+      color: var(--accent);
+    }
     .hero-cursor {
       display: inline-block;
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 900;
       animation: blink 0.7s step-end infinite;
       margin-left: 1px;
     }
-    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
     .hero-inner p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: var(--muted);
       line-height: 1.85;
       margin-bottom: 2.25rem;
       font-weight: 400;
     }
 
-    /* ── COUNTDOWN ──────────────────────────── */
+    /* ── COUNTDOWN ───────────────────────────── */
     .countdown-section {
       background: var(--bg2);
       border-top: 1px solid var(--border);
@@ -208,87 +218,227 @@
     .cd-strip {
       display: inline-flex;
       align-items: center;
+      gap: 0;
       margin-bottom: 2.25rem;
     }
-    .cd-item { display: flex; flex-direction: column; align-items: center; padding: 0 2.2rem; }
+    .cd-item  {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 2.2rem;
+    }
     .cd-item:first-child { padding-left: 0; }
     .cd-item:last-child  { padding-right: 0; }
-    .cd-sep { width: 1px; height: 44px; background: rgba(255,255,255,.18); flex-shrink: 0; }
-    .cd-item .n { font-size: 2.5rem; font-weight: 900; color: #fff; line-height: 1; display: block; }
-    .cd-item .l { font-size: .58rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--muted); margin-top: .35rem; font-weight: 600; }
-    .cd-links { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
-    .cd-links .li-icon { font-size: 1.4rem; color: var(--muted); transition: color .2s; }
+    .cd-sep  {
+      width: 1px;
+      height: 44px;
+      background: rgba(255,255,255,.18);
+      flex-shrink: 0;
+    }
+    .cd-item .n {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      display: block;
+    }
+    .cd-item .l {
+      font-size: .58rem;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--muted);
+      margin-top: .35rem;
+      font-weight: 600;
+    }
+    .cd-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .cd-links .li-icon {
+      font-size: 1.4rem;
+      color: var(--muted);
+      transition: color .2s;
+    }
     .cd-links .li-icon:hover { color: var(--accent); }
 
-    /* ── SHARED ─────────────────────────────── */
+    /* ── SHARED ──────────────────────────────── */
     .tw-section { padding: 5.5rem 0; }
-    .sec-hd { text-align: center; margin-bottom: 3.5rem; }
-    .sec-hd .stag {
-      font-size: .62rem; letter-spacing: 3.5px; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .55rem; display: block; font-weight: 700;
+
+    .sec-hd     { text-align: center; margin-bottom: 3.5rem; }
+    .sec-hd .stag  {
+      font-size: .62rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .55rem;
+      display: block;
+      font-weight: 700;
     }
     .sec-hd .stitle {
-      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; color: #fff;
-      margin-bottom: .65rem; letter-spacing: -.2px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .65rem;
+      letter-spacing: -.2px;
     }
-    .sec-hd .ssub {
-      color: var(--muted); font-size: .95rem; line-height: 1.8;
-      max-width: 640px; margin: 0 auto; font-weight: 400;
+    .sec-hd .ssub  {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto;
+      font-weight: 400;
     }
+
     .sec-hd-left { text-align: left; margin-bottom: 1.5rem; }
-    .sec-hd-left .stag {
-      font-size: .62rem; letter-spacing: 3.5px; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .55rem; display: block; font-weight: 700;
+    .sec-hd-left .stag  {
+      font-size: .62rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .55rem;
+      display: block;
+      font-weight: 700;
     }
     .sec-hd-left .stitle {
-      font-size: clamp(1.4rem, 2.8vw, 1.9rem); font-weight: 700; color: #fff;
-      margin-bottom: .5rem; letter-spacing: -.2px;
+      font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .5rem;
+      letter-spacing: -.2px;
     }
-    .sec-hd-left .ssub { color: var(--muted); font-size: .95rem; line-height: 1.8; font-weight: 400; }
+    .sec-hd-left .ssub  {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.8;
+      font-weight: 400;
+    }
 
     /* ── WHO WE ARE ──────────────────────────── */
     .who-section { background: var(--bg2); }
-    .who-img { width: 100%; height: 420px; object-fit: cover; border-radius: 12px; }
+    .who-img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
     .who-copy { padding-left: 2.5rem; }
-    .who-copy p { color: var(--muted); line-height: 1.9; margin-bottom: 1.5rem; font-size: .95rem; font-weight: 400; }
-    @media (max-width: 768px) { .who-copy { padding-left: 0; margin-top: 2rem; } }
+    .who-copy p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+      font-weight: 400;
+    }
+    @media (max-width: 768px) {
+      .who-copy { padding-left: 0; margin-top: 2rem; }
+    }
 
     /* ── STATS ───────────────────────────────── */
     .stats-section { background: var(--bg); }
     .stat-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.75rem 1.6rem; text-align: left;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.6rem;
+      text-align: left;
     }
-    .stat-num { font-size: 2.5rem; font-weight: 900; color: var(--accent); line-height: 1; display: block; margin-bottom: .8rem; }
-    .stat-div { width: 32px; height: 3px; background: var(--accent); border-radius: 2px; margin-bottom: .8rem; }
-    .stat-lbl { font-size: .82rem; color: var(--muted); line-height: 1.55; font-weight: 500; }
+    .stat-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: .8rem;
+    }
+    .stat-div {
+      width: 32px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: .8rem;
+    }
+    .stat-lbl {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 500;
+    }
 
     /* ── WHAT WE DO ──────────────────────────── */
     .services-section { background: var(--bg2); }
-    .svc-img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; display: block; margin-bottom: 1.4rem; }
-    .svc-card h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .9rem; letter-spacing: -.1px; }
+    .svc-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 1.4rem;
+    }
+    .svc-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .9rem;
+      letter-spacing: -.1px;
+    }
     .svc-card ul { list-style: none; padding: 0; margin: 0; }
     .svc-card ul li {
-      color: var(--muted); font-size: .87rem; line-height: 1.65;
-      padding: .28rem 0 .28rem 1.15rem; position: relative; font-weight: 400;
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.65;
+      padding: .28rem 0 .28rem 1.15rem;
+      position: relative;
+      font-weight: 400;
     }
     .svc-card ul li::before {
-      content: ''; position: absolute; left: 0; top: .68rem;
-      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .68rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
     /* ── WORK PROCESS ────────────────────────── */
     .process-section { background: var(--bg); }
     .proc-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 2rem 1.75rem; height: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      height: 100%;
     }
-    .proc-num { font-size: 1.8rem; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: .7rem; display: block; }
-    .proc-card h3 { font-size: .96rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
-    .proc-card p { font-size: .87rem; color: var(--muted); line-height: 1.75; margin: 0; font-weight: 400; }
+    .proc-num  {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: .7rem;
+      display: block;
+    }
+    .proc-card h3 {
+      font-size: .96rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .6rem;
+    }
+    .proc-card p  {
+      font-size: .87rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+      font-weight: 400;
+    }
 
     /* ── PAST EVENTS ─────────────────────────── */
     .events-section { background: var(--bg2); }
+
     .ev-slide { padding: 0 .4rem; }
     .ev-slide .columns { margin: 0; }
     .ev-slide .column  { padding: .5rem; }
@@ -299,93 +449,135 @@
       border-radius: 0;
       display: flex;
       overflow: hidden;
-      /* Height matched to reference — tall enough to show image well */
-      height: 420px;
+      height: 600px;
     }
     .ev-card-img {
-      width: 50%; min-width: 50%; max-width: 50%;
-      object-fit: cover; flex-shrink: 0; display: block;
+      width: 50%;
+      min-width: 50%;
+      max-width: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
     }
     .ev-card-body {
-      padding: 1.8rem 1.5rem;
+      padding: 1.4rem 1.4rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* title/sub at top, meta in middle, button at bottom */
+      justify-content: center;
       flex: 1;
       overflow: hidden;
     }
-    /* Top block: title + subtitle */
-    .ev-top { display: flex; flex-direction: column; gap: .55rem; }
-    /* Middle block: meta list */
-    .ev-meta { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .28rem; }
-    /* Bottom block: button */
-    .ev-bottom { }
-
+    .ev-card-text {
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+    }
     .ev-card-body h4 {
-      font-size: .88rem;
+      font-size: .85rem;
       font-weight: 700;
       color: #fff;
-      margin: 0;
+      margin: 0 0 .22rem;
       letter-spacing: -.1px;
-      line-height: 1.35;
     }
-    .ev-sub {
-      font-size: .76rem;
+    .ev-sub  {
+      font-size: .75rem;
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.5;
+      margin-bottom: .45rem;
       font-weight: 500;
     }
+    .ev-meta { list-style: none; padding: 0; margin: 0; }
     .ev-meta li {
       font-size: .73rem;
       color: var(--muted);
-      padding: .08rem 0 .08rem 1rem;
+      padding: .1rem 0 .1rem 1rem;
       position: relative;
       line-height: 1.45;
       font-weight: 500;
     }
     .ev-meta li::before {
-      content: ''; position: absolute; left: 0; top: .48rem;
-      width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .5rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
     }
-    .ev-meta li.is-date { color: var(--accent); font-weight: 700; }
+    .ev-meta li.is-date {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .ev-card-body .tw-btn-sm {
+      align-self: flex-start;
+      margin-top: .25rem;
+    }
 
     @media (max-width: 768px) {
       .ev-card { flex-direction: column; height: auto; }
-      .ev-card-img { width: 100%; min-width: 0; max-width: 100%; height: 180px; }
-      .ev-card-body { justify-content: flex-start; gap: 1rem; }
+      .ev-card-img { width: 100%; min-width: 0; max-width: 100%; height: 200px; }
       .ev-mobile-hide { display: none !important; }
     }
 
-    /* ── SLICK ARROWS ────────────────────────── */
+    /* FIX 3 – Slick: bare chevrons on desktop, white circle on mobile */
     .slick-prev, .slick-next {
-      width: 32px !important; height: 32px !important;
-      background: transparent !important; border: none !important;
-      box-shadow: none !important; z-index: 5 !important; border-radius: 50% !important;
+      width: 32px !important;
+      height: 32px !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      z-index: 5 !important;
+      border-radius: 50% !important;
     }
     .slick-prev { left: -40px !important; }
     .slick-next { right: -40px !important; }
     .slick-prev::before {
-      content: '\f053' !important; font-family: 'Font Awesome 6 Free' !important;
-      font-weight: 900 !important; font-size: 15px !important; color: var(--muted) !important;
+      content: '\f053' !important;
+      font-family: 'Font Awesome 6 Free' !important;
+      font-weight: 900 !important;
+      font-size: 15px !important;
+      color: var(--muted) !important;
     }
     .slick-next::before {
-      content: '\f054' !important; font-family: 'Font Awesome 6 Free' !important;
-      font-weight: 900 !important; font-size: 15px !important; color: var(--muted) !important;
+      content: '\f054' !important;
+      font-family: 'Font Awesome 6 Free' !important;
+      font-weight: 900 !important;
+      font-size: 15px !important;
+      color: var(--muted) !important;
     }
     .slick-prev:hover::before, .slick-next:hover::before { color: #fff !important; }
 
-    /* Mobile: white circle bg, DARK chevron always (even on hover) */
+    /* FIX 4 – Mobile: white round background on arrows */
     @media (max-width: 640px) {
-      .slick-prev { left: 2px !important; background: rgba(255,255,255,.92) !important; }
-      .slick-next { right: 2px !important; background: rgba(255,255,255,.92) !important; }
-      .slick-prev::before, .slick-next::before { color: var(--bg) !important; }
-      .slick-prev:hover::before, .slick-next:hover::before { color: var(--bg) !important; }
+      .slick-prev {
+        left: 2px !important;
+        background: rgba(255,255,255,.92) !important;
+      }
+      .slick-next {
+        right: 2px !important;
+        background: rgba(255,255,255,.92) !important;
+      }
+      .slick-prev::before { color: var(--bg) !important; }
+      .slick-next::before { color: var(--bg) !important; }
     }
 
+    /* Events: hide dots */
     .events-slick .slick-dots { display: none !important; }
-    .testimonials-slick .slick-dots { margin-top: 1.5rem !important; bottom: -2.5rem !important; }
-    .testimonials-slick .slick-dots li button::before { color: var(--muted) !important; font-size: 12px !important; }
-    .testimonials-slick .slick-dots li.slick-active button::before { color: var(--accent) !important; }
+
+    /* Testimonials dots */
+    .testimonials-slick .slick-dots {
+      margin-top: 1.5rem !important;
+      bottom: -2.5rem !important;
+    }
+    .testimonials-slick .slick-dots li button::before {
+      color: var(--muted) !important;
+      font-size: 12px !important;
+    }
+    .testimonials-slick .slick-dots li.slick-active button::before {
+      color: var(--accent) !important;
+    }
+
     .slick-wrap { padding: 0 44px; }
     @media (max-width: 640px) { .slick-wrap { padding: 0 28px; } }
     .testimonials-section .slick-wrap { padding-bottom: 3rem; }
@@ -393,23 +585,69 @@
     /* ── TESTIMONIALS ────────────────────────── */
     .testimonials-section { background: var(--bg); }
     .testi-slide { padding: 0 2rem; text-align: center; }
-    .testi-qi { font-size: 2rem; color: var(--accent); opacity: .45; line-height: 1; margin-bottom: 1.1rem; }
-    .testi-name { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: .2rem; }
-    .testi-role { font-size: .78rem; color: var(--accent); margin-bottom: 1.4rem; font-weight: 600; letter-spacing: .3px; }
-    .testi-text { font-size: 1rem; color: var(--text); line-height: 1.82; max-width: 700px; margin: 0 auto; font-weight: 500; }
+    .testi-qi   {
+      font-size: 2rem;
+      color: var(--accent);
+      opacity: .45;
+      line-height: 1;
+      margin-bottom: 1.1rem;
+    }
+    .testi-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .2rem;
+    }
+    .testi-role {
+      font-size: .78rem;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+    .testi-text {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.82;
+      max-width: 700px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
 
     /* ── FOOTER ──────────────────────────────── */
-    .tw-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
-    .foot-logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: .4rem; letter-spacing: -.2px; }
-    .foot-logo .grad-text {
-      background: var(--grad-text); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; background-clip: text;
+    .tw-footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
     }
-    .foot-tag  { color: var(--muted); font-size: .84rem; margin-bottom: .85rem; font-weight: 500; }
-    .foot-desc { color: var(--muted); font-size: .82rem; line-height: 1.8; max-width: 420px; font-weight: 500; }
+    .foot-logo  {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .4rem;
+      letter-spacing: -.2px;
+    }
+    .foot-logo .grad-text {
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .foot-tag   { color: var(--muted); font-size: .84rem; margin-bottom: .85rem; font-weight: 500; }
+    .foot-desc  { color: var(--muted); font-size: .82rem; line-height: 1.8; max-width: 420px; font-weight: 500; }
+
     .foot-social-wrap { margin-top: 2rem; }
-    @media (min-width: 769px) { .foot-social-wrap { margin-top: 0; } }
-    .foot-follow-lbl { font-size: .62rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: .8rem; font-weight: 700; }
+    @media (min-width: 769px) {
+      .foot-social-wrap { margin-top: 0; }
+    }
+    .foot-follow-lbl {
+      font-size: .62rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .8rem;
+      font-weight: 700;
+    }
     .foot-social { display: flex; gap: 6px; }
     .foot-social a { display: inline-flex; }
     .foot-social .fa-stack { font-size: .82rem; }
@@ -418,31 +656,47 @@
     .foot-social a:hover .fa-circle  { color: var(--accent); }
     .foot-social a:hover .fa-inverse { color: #fff; }
     .foot-bottom {
-      border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1.5rem;
-      text-align: center; color: var(--muted); font-size: .76rem; font-weight: 500;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 500;
     }
 
+    .offset-nav { padding-top: 64px; }
+
     @media (max-width: 768px) {
-      .container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+      .container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+      }
       .slick-wrap { padding: 0 24px; }
       .cd-item { padding: 0 1.2rem; }
     }
-    .nav-logo-img { height: 34px; width: auto; }
+
+    .nav-logo-img  { height: 34px; width: auto; }
   </style>
 </head>
 <body>
 
-<!-- ════ NAVBAR ════════════════════════════════════ -->
+<!-- ════════════════ NAVBAR ════════════════════════ -->
 <nav class="navbar" role="navigation" aria-label="main navigation" id="mainNav">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="index.html" style="padding:0 .75rem">
-        <img src="assets/img/logo.svg" alt="InnoTechra logo" class="nav-logo-img" onerror="this.style.display='none'" />
+        <img src="assets/img/logo.svg" alt="InnoTechra logo" class="nav-logo-img"
+             onerror="this.style.display='none'" />
       </a>
+
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
+
     <div id="navMenu" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="#about">Who we are</a>
@@ -453,7 +707,7 @@
           <a href="https://www.linkedin.com/company/innotechra" target="_blank" title="LinkedIn">
             <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span>
           </a>
-          <a href="/cdn-cgi/l/email-protection#167f787079567f7878796273757e6477387f79" title="Email">
+          <a href="mailto:info@innotechra.io" title="Email">
             <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span>
           </a>
           <a href="tel:+36303897041" title="Phone">
@@ -469,7 +723,7 @@
 </nav>
 
 
-<!-- ════ HERO ══════════════════════════════════════ -->
+<!-- ════════════════ HERO ═══════════════════════════ -->
 <section class="hero-section">
   <div class="container">
     <div class="hero-inner">
@@ -481,11 +735,8 @@
 </section>
 
 
-<!-- ════ COUNTDOWN ═════════════════════════════════
-     Watermark: "INNOTECHRAX 2026" centred at top, behind heading
-     data-wm drives the ::before content via attr()
-══════════════════════════════════════════════════ -->
-<section class="countdown-section wm-wrap" data-wm="InnoTechraX 2026">
+<!-- ════════════════ COUNTDOWN ══════════════════════ -->
+<section class="countdown-section">
   <div class="container">
     <h2>InnoTechraX 2026</h2>
     <p class="csub">Join the InnoTechraX AI &amp; Cyber Series in 2026. Where Europe's Tech Leaders Meet —<br>InnoTechraX 2026 in Amsterdam, London &amp; Munich.</p>
@@ -508,17 +759,18 @@
 </section>
 
 
-<!-- ════ WHO WE ARE ════════════════════════════════
-     Watermark: "WHO WE ARE" at top of section, behind heading
-══════════════════════════════════════════════════ -->
-<section class="tw-section who-section wm-wrap" id="about" data-wm="Who we are">
+<!-- ════════════════ WHO WE ARE ═════════════════════ -->
+<section class="tw-section who-section" id="about">
   <div class="container">
     <div class="columns is-vcentered">
       <div class="column is-5">
-        <img class="who-img" src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=900&q=80" alt="InnoTechra community" />
+        <img class="who-img"
+          src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=900&q=80"
+          alt="InnoTechra community" />
       </div>
       <div class="column is-7 who-copy">
         <div class="sec-hd-left">
+          <span class="stag" style="display:none">About Us</span>
           <h2 class="stitle">Who we are</h2>
           <p class="ssub">InnoTechra is helping you worldwide.</p>
         </div>
@@ -530,9 +782,7 @@
 </section>
 
 
-<!-- ════ STATS ═════════════════════════════════════
-     No watermark in reference for stats strip
-══════════════════════════════════════════════════ -->
+<!-- ════════════════ STATS ══════════════════════════ -->
 <section class="tw-section stats-section">
   <div class="container">
     <div class="columns">
@@ -557,12 +807,11 @@
 </section>
 
 
-<!-- ════ WHAT WE DO ════════════════════════════════
-     Watermark: "WHAT WE DO" at top, behind heading
-══════════════════════════════════════════════════ -->
-<section class="tw-section services-section wm-wrap" id="services" data-wm="What We Do">
+<!-- ════════════════ WHAT WE DO ═════════════════════ -->
+<section class="tw-section services-section" id="services">
   <div class="container">
     <div class="sec-hd">
+      <span class="stag" style="display:none">Our Solutions</span>
       <h2 class="stitle">What We Do</h2>
       <p class="ssub">Our programs are tailored to meet your needs. Whether physical or virtual, we plan your event from the ground up, ensuring all elements are customized to your exact requirements.</p>
     </div>
@@ -602,12 +851,11 @@
 </section>
 
 
-<!-- ════ WORK PROCESS ══════════════════════════════
-     Watermark: "OUR WORK PROCESS" at top, behind heading
-══════════════════════════════════════════════════ -->
-<section class="tw-section process-section wm-wrap" id="process" data-wm="Our Work Process">
+<!-- ════════════════ WORK PROCESS ═══════════════════ -->
+<section class="tw-section process-section" id="process">
   <div class="container">
     <div class="sec-hd">
+      <span class="stag" style="display:none">How We Work</span>
       <h2 class="stitle">Our Work Process</h2>
       <p class="ssub">We are guided by clear and long-term cooperation with clients. Look through the process of our work.</p>
     </div>
@@ -623,12 +871,11 @@
 </section>
 
 
-<!-- ════ PAST EVENTS ═══════════════════════════════
-     Watermark: "PAST EVENTS" at top, behind heading
-══════════════════════════════════════════════════ -->
-<section class="tw-section events-section wm-wrap" id="events" data-wm="Past Events">
+<!-- ════════════════ PAST EVENTS ════════════════════ -->
+<section class="tw-section events-section" id="events">
   <div class="container">
     <div class="sec-hd">
+      <span class="stag" style="display:none">Our Portfolio</span>
       <h2 class="stitle">Past Events</h2>
       <p class="ssub">Our exclusive events are designed to provide valuable insights into emerging trends and cutting-edge technologies.</p>
     </div>
@@ -639,31 +886,19 @@
         <div class="ev-slide"><div class="columns is-variable is-2">
           <div class="column is-6"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="CIO Dinner London" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CIO Dinner – London</h4>
-                <p class="ev-sub">The Rise of AI-Powered "Instant Invoicing Assistants"</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">April 30, 2025</li>
-                <li>Aqua, Shard London</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CIO Dinner – London</h4>
+              <p class="ev-sub">The Rise of AI-Powered "Instant Invoicing Assistants"</p>
+              <ul class="ev-meta"><li class="is-date">April 30, 2025</li><li>Aqua, Shard London</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
           <div class="column is-6 ev-mobile-hide"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="CISO Dinner Amsterdam" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Dinner – Amsterdam</h4>
-                <p class="ev-sub">Enhancing Cybersecurity Resilience through Breach Attack Simulation</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">February 29, 2024</li>
-                <li>Pillows Maurits, Amsterdam</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Enhancing Cybersecurity Resilience through Breach Attack Simulation</p>
+              <ul class="ev-meta"><li class="is-date">February 29, 2024</li><li>Pillows Maurits, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
         </div></div>
 
@@ -671,31 +906,19 @@
         <div class="ev-slide"><div class="columns is-variable is-2">
           <div class="column is-6"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="CISO Dinner Zurich" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Dinner – Zurich</h4>
-                <p class="ev-sub">Quantum-Resistant Cryptography: Safeguarding Against Future Threats</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">March 20, 2024</li>
-                <li>Mandarin Oriental Savoy, Zurich</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Zurich</h4>
+              <p class="ev-sub">Quantum-Resistant Cryptography: Safeguarding Against Future Threats</p>
+              <ul class="ev-meta"><li class="is-date">March 20, 2024</li><li>Mandarin Oriental Savoy, Zurich</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
           <div class="column is-6 ev-mobile-hide"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80" alt="CISO Dinner London" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Dinner – London</h4>
-                <p class="ev-sub">Strategic Integration: Harnessing AI and ML for Cybersecurity Excellence</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">April 11, 2024</li>
-                <li>The Shard, London</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – London</h4>
+              <p class="ev-sub">Strategic Integration: Harnessing AI and ML for Cybersecurity Excellence</p>
+              <ul class="ev-meta"><li class="is-date">April 11, 2024</li><li>The Shard, London</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
         </div></div>
 
@@ -703,31 +926,19 @@
         <div class="ev-slide"><div class="columns is-variable is-2">
           <div class="column is-6"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&q=80" alt="InnoTechraX Summit" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>InnoTechraX Summit Amsterdam</h4>
-                <p class="ev-sub">&nbsp;</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">November 19, 2025</li>
-                <li>Park Inn by Radisson Amsterdam City West</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>InnoTechraX Summit Amsterdam</h4>
+              <p class="ev-sub">&nbsp;</p>
+              <ul class="ev-meta"><li class="is-date">November 19, 2025</li><li>Park Inn by Radisson Amsterdam City West</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
           <div class="column is-6 ev-mobile-hide"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="CISO Dinner Munich" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Dinner – Munich</h4>
-                <p class="ev-sub">Reshaping Cybersecurity: Harnessing the Power of Breach and Attack Simulation</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">April 18, 2024</li>
-                <li>Louis Hotel, Munich</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Munich</h4>
+              <p class="ev-sub">Reshaping Cybersecurity: Harnessing the Power of Breach and Attack Simulation</p>
+              <ul class="ev-meta"><li class="is-date">April 18, 2024</li><li>Louis Hotel, Munich</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
         </div></div>
 
@@ -735,31 +946,19 @@
         <div class="ev-slide"><div class="columns is-variable is-2">
           <div class="column is-6"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="CISO Dinner Amsterdam Jul" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Dinner – Amsterdam</h4>
-                <p class="ev-sub">Navigating the Cyber Threat Landscape: Mastering Risk Scoring</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">July 4, 2024</li>
-                <li>Pillow Maurits, Amsterdam</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Navigating the Cyber Threat Landscape: Mastering Risk Scoring</p>
+              <ul class="ev-meta"><li class="is-date">July 4, 2024</li><li>Pillow Maurits, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
           <div class="column is-6 ev-mobile-hide"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="CISO Summit Dubai" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Summit – Dubai</h4>
-                <p class="ev-sub">AI at the Heart of Security: Enhancing Efficiency with Intelligent Automation</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">September 19, 2024</li>
-                <li>JW Marriott Marquis Hotel, Dubai</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Summit – Dubai</h4>
+              <p class="ev-sub">AI at the Heart of Security: Enhancing Efficiency with Intelligent Automation</p>
+              <ul class="ev-meta"><li class="is-date">September 19, 2024</li><li>JW Marriott Marquis Hotel, Dubai</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
         </div></div>
 
@@ -767,31 +966,19 @@
         <div class="ev-slide"><div class="columns is-variable is-2">
           <div class="column is-6"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&q=80" alt="CISO Dinner Amsterdam Oct" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Dinner – Amsterdam</h4>
-                <p class="ev-sub">Unleashing Cryptoagility: A Blueprint for Modernizing PKI Solutions</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">October 3, 2024</li>
-                <li>Art'otel, Amsterdam</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Unleashing Cryptoagility: A Blueprint for Modernizing PKI Solutions</p>
+              <ul class="ev-meta"><li class="is-date">October 3, 2024</li><li>Art'otel, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
           <div class="column is-6 ev-mobile-hide"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&q=80" alt="CISO Dinner Amsterdam Oct 2" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CISO Dinner – Amsterdam</h4>
-                <p class="ev-sub">Protecting your C-Suite's private lives to protect the enterprise</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">October 29, 2024</li>
-                <li>NH Collection, Barbizon Palace Amsterdam</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CISO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Protecting your C-Suite's private lives to protect the enterprise</p>
+              <ul class="ev-meta"><li class="is-date">October 29, 2024</li><li>NH Collection, Barbizon Palace Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
         </div></div>
 
@@ -799,31 +986,19 @@
         <div class="ev-slide"><div class="columns is-variable is-2">
           <div class="column is-6"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="CIO Dinner Munich" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CIO Dinner – Munich</h4>
-                <p class="ev-sub">Optimizing business resilience through AI and multi-cloud strategies</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">November 27, 2024</li>
-                <li>Rocco Charles Hotel, Munich</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CIO Dinner – Munich</h4>
+              <p class="ev-sub">Optimizing business resilience through AI and multi-cloud strategies</p>
+              <ul class="ev-meta"><li class="is-date">November 27, 2024</li><li>Rocco Charles Hotel, Munich</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
           <div class="column is-6 ev-mobile-hide"><div class="ev-card">
             <img class="ev-card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="CIO Dinner Amsterdam" />
-            <div class="ev-card-body">
-              <div class="ev-top">
-                <h4>CIO Dinner – Amsterdam</h4>
-                <p class="ev-sub">Navigating Digital Transformation: Leveraging Data and Technology for Competitive Advantage</p>
-              </div>
-              <ul class="ev-meta">
-                <li class="is-date">November 28, 2024</li>
-                <li>Conservatorium Hotel, Amsterdam</li>
-              </ul>
-              <div class="ev-bottom"><a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div>
-            </div>
+            <div class="ev-card-body"><div class="ev-card-text">
+              <h4>CIO Dinner – Amsterdam</h4>
+              <p class="ev-sub">Navigating Digital Transformation: Leveraging Data and Technology for Competitive Advantage</p>
+              <ul class="ev-meta"><li class="is-date">November 28, 2024</li><li>Conservatorium Hotel, Amsterdam</li></ul>
+            <a href="contacts.html" class="tw-btn tw-btn-accent tw-btn-sm">Sign Up</a></div></div>
           </div></div>
         </div></div>
 
@@ -833,12 +1008,11 @@
 </section>
 
 
-<!-- ════ TESTIMONIALS ══════════════════════════════
-     Watermark: "TESTIMONIALS" at top, behind heading
-══════════════════════════════════════════════════ -->
-<section class="tw-section testimonials-section wm-wrap" data-wm="Testimonials">
+<!-- ════════════════ TESTIMONIALS ═══════════════════ -->
+<section class="tw-section testimonials-section">
   <div class="container">
     <div class="sec-hd">
+      <span class="stag" style="display:none">Client Feedback</span>
       <h2 class="stitle">What Our Clients Say</h2>
       <p class="ssub">We're very grateful for every review you leave.</p>
     </div>
@@ -861,7 +1035,7 @@
 </section>
 
 
-<!-- ════ FOOTER ════════════════════════════════════ -->
+<!-- ════════════════ FOOTER ═════════════════════════ -->
 <footer class="tw-footer">
   <div class="container">
     <div class="columns">
@@ -888,11 +1062,14 @@
 </footer>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- ════════════════ SCRIPTS ════════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script>
+  /* ── Burger ── */
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.navbar-burger').forEach(function (burger) {
+    const burgers = document.querySelectorAll('.navbar-burger');
+    burgers.forEach(function (burger) {
       burger.addEventListener('click', function () {
         const target = document.getElementById(burger.dataset.target);
         burger.classList.toggle('is-active');
@@ -901,11 +1078,17 @@
     });
   });
 
+  /* ── Scroll nav ── */
   window.addEventListener('scroll', function () {
     const nav = document.getElementById('mainNav');
-    nav.classList.toggle('is-scrolled', window.scrollY > 60);
+    if (window.scrollY > 60) {
+      nav.classList.add('is-scrolled');
+    } else {
+      nav.classList.remove('is-scrolled');
+    }
   });
 
+  /* ── Countdown ── */
   function tick() {
     const diff = Math.max(0, new Date('2026-11-19T09:00:00').getTime() - Date.now());
     const pad  = n => String(n).padStart(2, '0');
@@ -916,33 +1099,59 @@
   }
   tick(); setInterval(tick, 1000);
 
+  /* ── Typewriter hero ── */
   (function () {
     const el = document.getElementById('heroText');
     if (!el) return;
     const phraseA = 'Where visionary leaders';
     const phraseB = 'shape the future of tech';
-    const speed = 60, pause = 900;
-    let current = '', phase = 'typeA';
+    const speed   = 60;
+    const pause   = 900;
+    let   current = '';
+    let   phase   = 'typeA';
+
     function step() {
       if (phase === 'typeA') {
-        current = phraseA.slice(0, current.length + 1); el.textContent = current;
-        if (current === phraseA) { phase = 'pauseA'; setTimeout(step, pause); } else setTimeout(step, speed);
-      } else if (phase === 'pauseA') { phase = 'deleteA'; setTimeout(step, speed);
+        current = phraseA.slice(0, current.length + 1);
+        el.textContent = current;
+        if (current === phraseA) { phase = 'pauseA'; setTimeout(step, pause); }
+        else setTimeout(step, speed);
+      } else if (phase === 'pauseA') {
+        phase = 'deleteA'; setTimeout(step, speed);
       } else if (phase === 'deleteA') {
-        current = current.slice(0, -1); el.textContent = current;
-        if (current === '') { phase = 'typeB'; setTimeout(step, speed * 2); } else setTimeout(step, speed / 2);
+        current = current.slice(0, -1);
+        el.textContent = current;
+        if (current === '') { phase = 'typeB'; setTimeout(step, speed * 2); }
+        else setTimeout(step, speed / 2);
       } else if (phase === 'typeB') {
-        current = phraseB.slice(0, current.length + 1); el.textContent = current;
-        if (current === phraseB) { phase = 'pauseB'; setTimeout(step, pause); } else setTimeout(step, speed);
-      } else if (phase === 'pauseB') { phase = 'deleteB'; setTimeout(step, speed);
+        current = phraseB.slice(0, current.length + 1);
+        el.textContent = current;
+        if (current === phraseB) { phase = 'pauseB'; setTimeout(step, pause); }
+        else setTimeout(step, speed);
+      } else if (phase === 'pauseB') {
+        phase = 'deleteB'; setTimeout(step, speed);
       } else if (phase === 'deleteB') {
-        current = current.slice(0, -1); el.textContent = current;
-        if (current === '') { phase = 'typeA'; setTimeout(step, speed * 2); } else setTimeout(step, speed / 2);
+        current = current.slice(0, -1);
+        el.textContent = current;
+        if (current === '') { phase = 'typeA'; setTimeout(step, speed * 2); }
+        else setTimeout(step, speed / 2);
       }
     }
     setTimeout(step, 500);
   })();
 
+  /* ── Slick ── */
   $(function () {
-    $('.events-slick').slick({ slidesToShow: 1, slidesToScroll: 1, arrows: true, dots: true, adaptiveHeight: false });
-    $('.testimonials-slick').slick({ s
+    $('.events-slick').slick({
+      slidesToShow: 1, slidesToScroll: 1,
+      arrows: true, dots: true, adaptiveHeight: false
+    });
+    $('.testimonials-slick').slick({
+      slidesToShow: 1, slidesToScroll: 1,
+      arrows: true, dots: true,
+      fade: true, cssEase: 'linear', adaptiveHeight: true
+    });
+  });
+</script>
+</body>
+</html>
