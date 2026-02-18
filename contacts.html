@@ -7,20 +7,15 @@
   <meta name="description" content="Get in touch with InnoTechra. Contact us to discuss your event or C-suite program." />
   <link rel="canonical" href="https://innotechra.io/contacts" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://innotechra.io/contacts" />
-  <meta property="og:title"       content="Contact Us – InnoTechra" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://innotechra.io/contacts" />
+  <meta property="og:title" content="Contact Us – InnoTechra" />
   <meta property="og:description" content="Get in touch with InnoTechra to discuss your event or C-suite program." />
-  <meta property="og:image"       content="https://innotechra.io/og-image.jpg" />
-  <meta name="twitter:card"       content="summary_large_image" />
-
-  <!-- Google Fonts - Montserrat -->
+  <meta property="og:image" content="https://innotechra.io/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -28,28 +23,49 @@
     :root {
       --accent:    #00b4cc;
       --accent-dk: #0099b0;
-      --accent2:   #2B3FBF;
       --bg:        #08101e;
       --bg2:       #0d1928;
       --bg3:       #122034;
       --border:    rgba(255,255,255,.08);
       --text:      #d8e8f0;
       --muted:     #7a9ab0;
-      --grad:      linear-gradient(135deg, #00C8C8 0%, #2B3FBF 100%);
       --grad-text: linear-gradient(90deg, #00C8C8 0%, #2B3FBF 100%);
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      font-size: 15px;
+      background: var(--bg); color: var(--text);
+      font-family: 'Montserrat', sans-serif; margin: 0; font-size: 15px;
     }
-    a    { color: inherit; text-decoration: none; }
+    a { color: inherit; text-decoration: none; }
 
-    /* ── NAVBAR ──────────────────────────── */
+    /* ── WATERMARK SYSTEM ─────────────────────────
+       Same approach as index — large UPPERCASE ghost text
+       pinned to the TOP of the section, horizontally centred.
+       In the contacts page the watermark reads "STAY IN TOUCH"
+       and aligns behind / slightly above the heading.
+    ──────────────────────────────────────────────── */
+    .wm-wrap { position: relative; overflow: hidden; }
+    .wm-wrap::before {
+      content: attr(data-wm);
+      position: absolute;
+      top: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(3.5rem, 9vw, 8.5rem);
+      font-weight: 900;
+      color: rgba(255,255,255,.04);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 6px;
+      line-height: 1;
+      z-index: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .wm-wrap > * { position: relative; z-index: 1; }
+
+    /* ── NAVBAR ──────────────────────────────── */
     .navbar {
       background: rgba(8,16,30,.96) !important;
       border-bottom: 1px solid var(--border);
@@ -58,18 +74,12 @@
     }
     .navbar-brand, .navbar-menu { background: transparent !important; }
     .navbar-item, .navbar-link {
-      color: rgba(255,255,255,.75) !important;
-      font-size: .82rem;
-      font-weight: 600;
-      letter-spacing: .3px;
-      background: transparent !important;
-      transition: color .18s;
-      font-family: 'Montserrat', sans-serif;
+      color: rgba(255,255,255,.75) !important; font-size: .82rem; font-weight: 600;
+      letter-spacing: .3px; background: transparent !important;
+      transition: color .18s; font-family: 'Montserrat', sans-serif;
     }
     .navbar-item:hover, .navbar-link:hover { color: #fff !important; background: transparent !important; }
     .navbar-item.is-accent { color: var(--accent) !important; font-weight: 700; }
-
-    /* FIX 1 – social icon size matched to reference (was .68rem / .12 / .65) */
     .nav-socials { display: flex; align-items: center; gap: 4px; padding: 0 .5rem; }
     .nav-socials a { display: inline-flex; }
     .nav-socials .fa-stack { font-size: .82rem; }
@@ -77,180 +87,86 @@
     .nav-socials .fa-stack .fa-inverse { color: rgba(255,255,255,.75); font-size: .85em; transition: color .18s; }
     .nav-socials a:hover .fa-circle  { color: var(--accent); }
     .nav-socials a:hover .fa-inverse { color: #fff; }
-
     .navbar-burger { color: #fff !important; height: 64px !important; }
     .navbar-burger span { background-color: #fff !important; }
-
     @media screen and (max-width: 1023px) {
-      .navbar-menu {
-        background: rgba(8,16,30,.97) !important;
-        border-top: 1px solid var(--border);
-        padding: .5rem 0;
-      }
+      .navbar-menu { background: rgba(8,16,30,.97) !important; border-top: 1px solid var(--border); padding: .5rem 0; }
     }
 
-    /* ── BUTTONS ─────────────────────────── */
+    /* ── BUTTONS ─────────────────────────────── */
     .tw-btn {
-      display: inline-block;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: .82rem;
-      border: none;
-      cursor: pointer;
-      transition: background .2s, transform .15s;
-      text-align: center;
-      padding: .72rem 2rem;
-      letter-spacing: .4px;
+      display: inline-block; border-radius: 100px; font-weight: 700; font-size: .82rem;
+      border: none; cursor: pointer; transition: background .2s, transform .15s;
+      text-align: center; padding: .72rem 2rem; letter-spacing: .4px;
       font-family: 'Montserrat', sans-serif;
     }
     .tw-btn:hover { transform: translateY(-1px); }
-    .tw-btn-accent {
-      background: var(--accent);
-      color: #fff !important;
-    }
-    .tw-btn-accent:hover {
-      background: var(--accent-dk);
-      box-shadow: 0 4px 18px rgba(0,180,204,.35);
-    }
+    .tw-btn-accent { background: var(--accent); color: #fff !important; }
+    .tw-btn-accent:hover { background: var(--accent-dk); box-shadow: 0 4px 18px rgba(0,180,204,.35); }
 
-    /* ── CONTACT SECTION ─────────────────── */
-    .contact-section {
-      padding: 6rem 0 6rem;
-    }
-
+    /* ── CONTACT SECTION ──────────────────────
+       data-wm="STAY IN TOUCH" feeds the ::before watermark
+    ─────────────────────────────────────────── */
+    .contact-section { padding: 6rem 0 6rem; }
     .contact-left { padding-right: 3.5rem; }
-    @media (max-width: 768px) {
-      .contact-left { padding-right: 0; margin-bottom: 3rem; }
-    }
+    @media (max-width: 768px) { .contact-left { padding-right: 0; margin-bottom: 3rem; } }
 
     .contact-left .eyebrow {
-      font-size: .62rem;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: .7rem;
-      display: block;
-      font-weight: 700;
+      font-size: .62rem; letter-spacing: 3.5px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: .7rem; display: block; font-weight: 700;
     }
     .contact-left h1 {
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.15;
-      margin-bottom: .6rem;
-      letter-spacing: -.3px;
+      font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; color: #fff;
+      line-height: 1.15; margin-bottom: .6rem; letter-spacing: -.3px;
     }
-    .contact-left .tagline {
-      font-size: .96rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
+    .contact-left .tagline { font-size: .96rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
     .contact-left .intro {
-      color: var(--muted);
-      font-size: .88rem;
-      line-height: 1.85;
-      margin-bottom: 2.5rem;
-      font-weight: 500;
+      color: var(--muted); font-size: .88rem; line-height: 1.85;
+      margin-bottom: 2.5rem; font-weight: 500;
     }
 
     .ci-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem; }
     .ci-list li { display: flex; align-items: flex-start; gap: 1.1rem; }
     .ci-icon-wrap {
-      width: 46px; height: 46px; border-radius: 50%;
-      background: var(--accent);
+      width: 46px; height: 46px; border-radius: 50%; background: var(--accent);
       display: flex; align-items: center; justify-content: center;
       color: #fff; font-size: 1rem; flex-shrink: 0;
     }
-    .ci-text-label {
-      font-size: .65rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--muted);
-      margin-bottom: .18rem;
-      font-weight: 700;
-    }
-    .ci-text-value {
-      font-size: .9rem;
-      color: var(--text);
-      font-weight: 600;
-      line-height: 1.45;
-    }
+    .ci-text-label { font-size: .65rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: .18rem; font-weight: 700; }
+    .ci-text-value { font-size: .9rem; color: var(--text); font-weight: 600; line-height: 1.45; }
     .ci-text-value a { color: var(--accent); }
     .ci-text-value a:hover { text-decoration: underline; }
 
-    /* Form card */
+    /* Form card — no labels, asterisk in placeholder for required fields */
     .form-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2.75rem 2.25rem;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 2.75rem 2.25rem;
     }
-    .form-card h2 {
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 1.75rem;
-      letter-spacing: -.2px;
-    }
-
-    .label {
-      color: var(--muted) !important;
-      font-size: .7rem !important;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      font-weight: 700;
-      margin-bottom: .4rem !important;
-      font-family: 'Montserrat', sans-serif !important;
-    }
+    .field { margin-bottom: 1.1rem; }
     .input, .textarea {
-      background: var(--bg3) !important;
-      border: 1px solid var(--border) !important;
-      color: var(--text) !important;
-      border-radius: 8px !important;
-      box-shadow: none !important;
-      transition: border-color .18s !important;
-      font-family: 'Montserrat', sans-serif !important;
-      font-size: .88rem !important;
+      background: var(--bg3) !important; border: 1px solid var(--border) !important;
+      color: var(--text) !important; border-radius: 8px !important; box-shadow: none !important;
+      transition: border-color .18s !important; font-family: 'Montserrat', sans-serif !important;
+      font-size: .88rem !important; width: 100%;
     }
     .input::placeholder, .textarea::placeholder { color: var(--muted) !important; }
     .input:focus, .textarea:focus {
       border-color: var(--accent) !important;
-      box-shadow: 0 0 0 2px rgba(0,180,204,.15) !important;
+      box-shadow: 0 0 0 2px rgba(0,180,204,.15) !important; outline: none;
     }
 
-    /* ── FOOTER ──────────────────────────── */
-    .tw-footer {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-      padding: 4rem 0 2rem;
-    }
-    .foot-logo  {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: .4rem;
-      letter-spacing: -.2px;
-    }
+    /* ── FOOTER ──────────────────────────────── */
+    .tw-footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
+    .foot-logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: .4rem; letter-spacing: -.2px; }
     .foot-logo .grad-text {
-      background: var(--grad-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: var(--grad-text); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
     }
-    .foot-tag   { color: var(--muted); font-size: .84rem; margin-bottom: .85rem; font-weight: 500; }
-    .foot-desc  { color: var(--muted); font-size: .82rem; line-height: 1.8; max-width: 420px; font-weight: 500; }
-
+    .foot-tag  { color: var(--muted); font-size: .84rem; margin-bottom: .85rem; font-weight: 500; }
+    .foot-desc { color: var(--muted); font-size: .82rem; line-height: 1.8; max-width: 420px; font-weight: 500; }
     .foot-social-wrap { margin-top: 2rem; }
     @media (min-width: 769px) { .foot-social-wrap { margin-top: 0; } }
-    .foot-follow-lbl {
-      font-size: .62rem;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: .8rem;
-      font-weight: 700;
-    }
+    .foot-follow-lbl { font-size: .62rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: .8rem; font-weight: 700; }
     .foot-social { display: flex; gap: 6px; }
     .foot-social a { display: inline-flex; }
     .foot-social .fa-stack { font-size: .82rem; }
@@ -259,23 +175,14 @@
     .foot-social a:hover .fa-circle  { color: var(--accent); }
     .foot-social a:hover .fa-inverse { color: #fff; }
     .foot-bottom {
-      border-top: 1px solid var(--border);
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: .76rem;
-      font-weight: 500;
+      border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1.5rem;
+      text-align: center; color: var(--muted); font-size: .76rem; font-weight: 500;
     }
 
     @media (max-width: 768px) {
-      .container {
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
-      }
+      .container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
     }
-
-    .nav-logo-img  { height: 34px; width: auto; }
+    .nav-logo-img { height: 34px; width: auto; }
 
     /* Modal */
     .modal-card { border-radius: 14px; }
@@ -287,21 +194,17 @@
 </head>
 <body>
 
-<!-- ════════════════ NAVBAR ════════════════════════ -->
+<!-- ════ NAVBAR ════════════════════════════════════ -->
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="index.html" style="padding:0 .75rem">
-        <img src="assets/img/logo.svg" alt="InnoTechra logo" class="nav-logo-img"
-             onerror="this.style.display='none'" />
+        <img src="assets/img/logo.svg" alt="InnoTechra logo" class="nav-logo-img" onerror="this.style.display='none'" />
       </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenuC">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </a>
     </div>
-
     <div id="navMenuC" class="navbar-menu">
       <div class="navbar-end">
         <a class="navbar-item" href="index.html#about">Who we are</a>
@@ -312,7 +215,7 @@
           <a href="https://www.linkedin.com/company/innotechra" target="_blank" title="LinkedIn">
             <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i></span>
           </a>
-          <a href="mailto:info@innotechra.io" title="Email">
+          <a href="/cdn-cgi/l/email-protection#c8a1a6aea788a1a6a6a7bcadaba0baa9e6a1a7" title="Email">
             <span class="fa-stack fa-lg"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-envelope fa-stack-1x fa-inverse"></i></span>
           </a>
           <a href="tel:+36303897041" title="Phone">
@@ -328,8 +231,10 @@
 </nav>
 
 
-<!-- ════════════════ CONTACT SECTION ═══════════════ -->
-<section class="contact-section">
+<!-- ════ CONTACT ═══════════════════════════════════
+     data-wm="STAY IN TOUCH" → watermark behind the heading
+══════════════════════════════════════════════════ -->
+<section class="contact-section wm-wrap" data-wm="Stay In Touch">
   <div class="container">
     <div class="columns is-variable is-6">
 
@@ -339,7 +244,6 @@
         <h1>Stay In Touch</h1>
         <p class="tagline">Let's create something awesome together!</p>
         <p class="intro">Feel free to contact us in any convenient way to discuss your project or ask any questions. Our team is always ready to offer a comprehensive initial consultation with pleasure.</p>
-
         <ul class="ci-list">
           <li>
             <div class="ci-icon-wrap"><i class="fas fa-location-dot"></i></div>
@@ -359,7 +263,7 @@
             <div class="ci-icon-wrap"><i class="fas fa-envelope"></i></div>
             <div>
               <div class="ci-text-label">E-mail</div>
-              <div class="ci-text-value"><a href="mailto:info@innotechra.io">info@innotechra.io</a></div>
+              <div class="ci-text-value"><a href="/cdn-cgi/l/email-protection#553c3b333a153c3b3b3a2130363d27347b3c3a"><span class="__cf_email__" data-cfemail="6b02050d042b020505041f0e0803190a450204">[email&#160;protected]</span></a></div>
             </div>
           </li>
         </ul>
@@ -370,23 +274,19 @@
         <div class="form-card">
           <form id="contactForm">
             <div class="field">
-              <label class="label">Name</label>
-              <div class="control"><input class="input" type="text" name="name" placeholder="Enter your full name" required /></div>
+              <div class="control"><input class="input" type="text" name="name" placeholder="Name *" required /></div>
             </div>
             <div class="field">
-              <label class="label">Phone</label>
-              <div class="control"><input class="input" type="tel" name="phone" placeholder="Enter your phone number" /></div>
+              <div class="control"><input class="input" type="tel" name="phone" placeholder="Phone" /></div>
             </div>
             <div class="field">
-              <label class="label">Email</label>
-              <div class="control"><input class="input" type="email" name="email" placeholder="Enter your email" required /></div>
+              <div class="control"><input class="input" type="email" name="email" placeholder="Email *" required /></div>
             </div>
             <div class="field">
-              <label class="label">Message</label>
-              <div class="control"><textarea class="textarea" name="message" rows="5" placeholder="Type your message" required></textarea></div>
+              <div class="control"><textarea class="textarea" name="message" rows="5" placeholder="Message *" required></textarea></div>
             </div>
             <div class="field" style="margin-top:1.5rem;">
-              <div class="control"><button type="submit" class="tw-btn tw-btn-accent">Send Message</button></div>
+              <div class="control"><button type="submit" class="tw-btn tw-btn-accent">Request a quote</button></div>
             </div>
           </form>
         </div>
@@ -397,7 +297,7 @@
 </section>
 
 
-<!-- ════════════════ FOOTER ═════════════════════════ -->
+<!-- ════ FOOTER ════════════════════════════════════ -->
 <footer class="tw-footer">
   <div class="container">
     <div class="columns">
@@ -450,9 +350,7 @@
   </div>
 </div>
 
-
-<!-- SCRIPTS -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.navbar-burger').forEach(function (burger) {
       burger.addEventListener('click', function () {
@@ -462,18 +360,9 @@
       });
     });
   });
-
   document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
     document.getElementById('successModal').classList.add('is-active');
     this.reset();
   });
-
-  function closeModal(id) { document.getElementById(id).classList.remove('is-active'); }
-
-  document.querySelectorAll('.modal-background').forEach(function (bg) {
-    bg.addEventListener('click', function () { bg.parentElement.classList.remove('is-active'); });
-  });
-</script>
-</body>
-</html>
+  function 
