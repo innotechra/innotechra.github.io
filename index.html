@@ -35,6 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Mono:wght@300&display=swap" rel="stylesheet" />
+
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -65,7 +66,7 @@
       overflow-x: hidden;
     }
 
-    /* ── hairline rule top ── */
+    /* hairline rule top */
     .top-rule {
       position: fixed;
       top: 0;
@@ -77,7 +78,7 @@
       animation: fadeIn 1.2s ease 0.2s forwards;
     }
 
-    /* ── main stage ── */
+    /* main stage */
     .stage {
       flex: 1;
       display: flex;
@@ -88,7 +89,7 @@
       position: relative;
     }
 
-    /* ── wordmark ── */
+    /* wordmark */
     .wordmark {
       display: flex;
       flex-direction: column;
@@ -118,7 +119,7 @@
       margin-top: 0.6rem;
     }
 
-    /* ── divider ── */
+    /* divider */
     .divider {
       width: 1px;
       height: 0;
@@ -127,7 +128,7 @@
       animation: grow 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
     }
 
-    /* ── status line ── */
+    /* status line */
     .status {
       display: flex;
       align-items: center;
@@ -163,8 +164,10 @@
       color: var(--muted);
     }
 
-    /* ── footer ── */
+    /* footer */
     footer {
+      width: 100%;
+      box-sizing: border-box;
       padding: 2rem 2.5rem 2.5rem;
       display: flex;
       flex-wrap: wrap;
@@ -180,6 +183,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
+      min-width: 0;
     }
 
     .footer__label {
@@ -217,9 +221,10 @@
       letter-spacing: 0.18em;
       color: var(--faint);
       align-self: flex-end;
+      white-space: nowrap;
     }
 
-    /* ── animations ── */
+    /* animations */
     @keyframes fadeIn {
       to { opacity: 1; }
     }
@@ -238,7 +243,7 @@
       100% { transform: scale(2.2); opacity: 0; }
     }
 
-    /* ── responsive ── */
+    /* responsive */
     @media (max-width: 600px) {
       footer {
         flex-direction: column;
@@ -257,7 +262,7 @@
 
   <main class="stage">
     <div class="wordmark">
-      <!-- Replace src with the path to your SVG file e.g. "logo.svg" -->
+      <!-- Replace src with your SVG filename e.g. "logo.svg" -->
       <img src="logo.svg" alt="InnoTechra" class="wordmark__logo" />
       <div class="wordmark__tagline">Technology &amp; Leadership Events — Africa</div>
     </div>
@@ -273,7 +278,11 @@
   <footer>
     <div class="footer__col">
       <span class="footer__label">Enquiries</span>
-      <span class="footer__value"><a href="/cdn-cgi/l/email-protection#b5d0c3d0dbc1c6f5dcdbdbdac1d0d6ddc7d49bd6dad8"><span class="__cf_email__" data-cfemail="6f0a190a011b1c2f060101001b0a0c071d0e410c0002">[email&#160;protected]</span></a></span>
+      <span class="footer__value">
+        <!--email_off-->
+        <a href="mailto:events@innotechra.com">events@innotechra.com</a>
+        <!--/email_off-->
+      </span>
     </div>
     <div class="footer__col">
       <span class="footer__label">Based in</span>
@@ -281,4 +290,10 @@
     </div>
     <div class="footer__col">
       <span class="footer__label">Focus</span>
-      <span class="footer__value">Exclusive Boutique Events for C-Level Executi
+      <span class="footer__value">Exclusive Boutique Events for C-Level Executives &amp; Tech Decision-Makers</span>
+    </div>
+    <span class="footer__copy">&copy; 2026 InnoTechra</span>
+  </footer>
+
+</body>
+</html>
