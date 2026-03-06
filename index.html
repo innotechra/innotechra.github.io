@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnoTechra — Exclusive Boutique Events for C-Level Executives & Tech Decision-Makers</title>
+  <meta name="description" content="InnoTechra connects C-level executives and technology decision-makers through exclusive boutique events across Africa. Coming soon." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://www.innotechra.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.innotechra.com/" />
+  <meta property="og:title" content="InnoTechra — Exclusive Boutique Events for C-Level Executives & Tech Decision-Makers" />
+  <meta property="og:description" content="InnoTechra connects C-level executives and technology decision-makers through exclusive boutique events across Africa. Coming soon." />
+  <meta property="og:image" content="https://www.innotechra.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="InnoTechra" />
+  <meta property="og:locale" content="en_KE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@innotechra" />
+  <meta name="twitter:title" content="InnoTechra — Exclusive Boutique Events for C-Level Executives & Tech Decision-Makers" />
+  <meta name="twitter:description" content="InnoTechra connects C-level executives and technology decision-makers through exclusive boutique events across Africa. Coming soon." />
+  <meta name="twitter:image" content="https://www.innotechra.com/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Mono:wght@300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --white: #ffffff;
+      --ink: #0f0f0f;
+      --muted: #a0a0a0;
+      --faint: #d8d8d8;
+      --teal: #0d8c8c;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── hairline rule top ── */
+    .top-rule {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--ink);
+      opacity: 0;
+      animation: fadeIn 1.2s ease 0.2s forwards;
+    }
+
+    /* ── main stage ── */
+    .stage {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    /* ── wordmark ── */
+    .wordmark {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+
+    .wordmark__logo {
+      width: auto;
+      height: 80px;
+      max-width: 120px;
+      display: block;
+      object-fit: contain;
+    }
+
+    .wordmark__tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.55rem, 1.2vw, 0.72rem);
+      font-weight: 300;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.6rem;
+    }
+
+    /* ── divider ── */
+    .divider {
+      width: 1px;
+      height: 0;
+      background: var(--faint);
+      margin: 3.5rem auto;
+      animation: grow 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+    }
+
+    /* ── status line ── */
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      opacity: 0;
+      animation: fadeIn 0.8s ease 1.4s forwards;
+    }
+
+    .status__indicator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      position: relative;
+    }
+
+    .status__indicator::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1px solid var(--teal);
+      opacity: 0;
+      animation: pulse 2.4s ease 1.6s infinite;
+    }
+
+    .status__text {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.6rem, 1.3vw, 0.72rem);
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── footer ── */
+    footer {
+      padding: 2rem 2.5rem 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      border-top: 1px solid var(--faint);
+      opacity: 0;
+      animation: fadeIn 0.8s ease 1.6s forwards;
+    }
+
+    .footer__col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .footer__label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .footer__value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .footer__value a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .footer__value a:hover {
+      border-color: var(--muted);
+    }
+
+    .footer__copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--faint);
+      align-self: flex-end;
+    }
+
+    /* ── animations ── */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes grow {
+      to { height: 64px; }
+    }
+
+    @keyframes pulse {
+      0%   { transform: scale(1);   opacity: 0.6; }
+      60%  { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    /* ── responsive ── */
+    @media (max-width: 600px) {
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer__copy {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-rule"></div>
+
+  <main class="stage">
+    <div class="wordmark">
+      <!-- Replace src with the path to your SVG file e.g. "logo.svg" -->
+      <img src="logo.svg" alt="InnoTechra" class="wordmark__logo" />
+      <div class="wordmark__tagline">Technology &amp; Leadership Events — Africa</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="status">
+      <div class="status__indicator"></div>
+      <span class="status__text">Something is being built</span>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer__col">
+      <span class="footer__label">Enquiries</span>
+      <span class="footer__value"><a href="mailto:events@innotechra.com">events@innotechra.com</a></span>
+    </div>
+    <div class="footer__col">
+      <span class="footer__label">Based in</span>
+      <span class="footer__value">Nairobi, Kenya</span>
+    </div>
+    <div class="footer__col">
+      <span class="footer__label">Focus</span>
+      <span class="footer__value">Exclusive Boutique Events for C-Level Executives &amp; Tech Decision-Makers</span>
+    </div>
+    <span class="footer__copy">&copy; 2026 InnoTechra</span>
+  </footer>
+
+</body>
+</html>
